@@ -29,12 +29,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 body {
 	line-height: 1;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Cambria", Georgia, serif;
 	line-height: 1.5em;	
 	font-weight: normal;
 	clear: both;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -110,9 +112,10 @@ body {
 }
 
 #wrapper {
+//	background: url(images/grid-975x10x5.png) repeat-y left top;
 	margin: 0 auto;
 	padding: 0;	
-	max-width: 960px;
+	max-width: 975px;
 }
 
 body,
@@ -258,14 +261,19 @@ a:hover {
 #site-title {
 
 }
+
 #site-title a {
 	border: none;
-	font-size: 42px;
+	font-size: 36px;
 	line-height: 50px;
 	color: #004b69;
-	padding: 27px 0;	
+	margin-left: 10px;
+	padding: 20px 0;	
 	padding-left: 75px;
 	background: url(images/A&M-system-logo.png) no-repeat left 50%;	
+}
+
+#site-title a:hover {
 }
 
 #site-description {
@@ -285,11 +293,11 @@ a:hover {
 div.menu {	
 	overflow: hidden;
 	display: block;	
-	width: 100%;	
+	width: 955px;	
 	padding: 15px 0;
-	margin: 30px 0;	
-	border-top: 1px dashed #5f8c9a;
-	border-bottom: 1px dashed #5f8c9a;	
+	margin: 30px 10px;	
+	border-top: 1px dashed #b2c4c4;
+	border-bottom: 1px dashed #b2c4c4;	
 }
 
 #access .menu-header ul,
@@ -306,7 +314,7 @@ div.menu li {
 }
 
 #access a {
-	font-size: 24px;
+	font-size: 21px;
 	border: none;
 }
 
@@ -344,6 +352,34 @@ div.menu li {
 
 }
 
+.search {
+	position: absolute;
+	top: -72px;
+	right: -375px;
+}
+
+.search input[type=submit] {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+	-webkit-box-shodow: 0 10px 2px #444;
+	-moz-box-shodow: 0 2px 2px #444;
+	box-shodow: 0 2px 2px #444;	
+	border: none;
+	padding: 3px 8px;
+	font-size: 14px;
+	color: #fff;
+	background: #0094d0;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0094d0), to(#0082b7));		
+}
+
+.search input[type=submit]:hover {
+	cursor: pointer;
+	border: none;
+	background: #0082b7;	
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0082b7), to(#0082b7));	
+}
+
 /* =Extension Top Section
 -------------------------------------------------------------- */
 
@@ -367,9 +403,9 @@ div.menu li {
 	z-index: 2;	
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 18px;
+	font-size: 14px;
 	font-family: Avenir;
-	padding: 13px 18px 12px 18px;
+	padding: 15px 12px 15px 12px;
 	background: #004b69;
 	color: #fff;
 	border: none;
@@ -382,22 +418,218 @@ div.menu li {
 }
 
 #extension-section #drop-nav ul li a[href*='extension'] {
-	padding-right: 45px;
-	background: #004c6b url(images/ext-arrow.png) no-repeat right 50%;
+	padding-right: 50px;
+	background: #004c6b url(images/ext-arrow.png) no-repeat 267px 60%;
 }
+
+
+/***** Home Top ********************/
+
+#home-bg {
+	width: 575px;
+	float: left;
+	padding-right: 9px;
+	border-right: 1px dashed #b2c4c4;
+	position: relative;	
+	}
+
+#home-top {
+	position: relative;
+	z-index: 4;
+	float: left;
+	width: 575px;
+	margin: 0 auto 0;
+	padding: 0 0 0 10px;
+	}
+
+#home-top ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 10px 0;
+	}
+
+#home-top ul li {
+	margin: 0;
+	padding: 5px 0 0 0;
+	}
+	
+#home-top .byline {
+	margin: 0;
+	padding: 0;
+	}
+	
+#home-top .textwidget {
+	margin: 0;
+	padding: 0;
+	}
+	
+#home-top li.widget_tag_cloud div {
+	margin: 0;
+	padding: 0 0 10px 0;
+	}
+	
+#home-top .featuredpost .post, #home-top .featuredpage .page {
+	clear: both;
+	}
+	
+#home-top .featuredpost, #home-top .featuredpage  {
+	clear: both;
+	}
+	
+#home-top .featuredpost img, #home-top .featuredpage img {
+	padding: 7px;
+	border: 1px solid #BBBBBB;
+	}
+
+#home-top #tabbed-rotator {
+	background: #fff;
+	width: 564px;
+	height: 260px;
+}
+
+#home-top #tabs {
+	background: #c3af7b;
+	width: 564px;
+	height: 80px;
+}
+
+
+#home-top #tabs ul li {
+	float: left;
+	width: 165px;
+	padding: 10px;
+}
+
+/***** Home Middle ********************/
+
+#home-middle-bg {
+	width: 575px;
+	float: left;
+	overflow: hidden;	
+	}
+
+#home-middle {
+	width: 575px;
+	margin: 25px auto 0;
+	padding: 60px 0 0 0;
+	overflow: hidden;
+	float: left;
+	clear: left;
+	}
+	
+#home-middle p {
+	margin: 0;
+	padding: 0 5px 10px 10px;
+	}
+	
+#home-middle h2 {
+	margin: 0 0 5px 0;
+	padding: 0 0 0 10px;
+	text-decoration: none;
+	}
+	
+#home-middle h2 a, #home-middle h2 a:visited {
+	text-decoration: none;
+	}
+	
+#home-middle h4 {	
+	margin: 20px 0 15px 0;
+	padding: 10px 0;
+	padding-left: 5px;
+	}
+	
+#home-middle ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	}
+	
+#home-middle ul li {
+	list-style-type: none;
+	margin: 0 0 5px 0;
+	padding: 0 0 5px 0;
+	border-bottom: 1px solid #DDDDDD;
+	}
+
+#home-middle ul ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 10px 0;
+	}
+
+#home-middle ul li ul li {
+	margin: 0;
+	padding: 5px 0 0 0;
+	}
+	
+#home-middle .widget {
+	margin: 0;
+	}
+	
+#home-middle .textwidget {
+	margin: 0;
+	padding: 0;
+	}
+	
+#home-middle .featuredpost .post, #home-middle .featuredpage .page {
+	clear: both;
+	}
+	
+#home-middle .featuredpost, #home-middle .featuredpage {
+	clear: both;
+	}
+	
+#home-middle .featuredpost img {
+	background: #FFFFFF;
+	margin: 0;
+	padding: 4px;
+	}
+	
+#home-middle .user-profile .avatar {
+	background: #FFFFFF;
+	margin: 0 0 -5px 0;
+	padding: 1px;
+	border: 4px solid #EEEEEE;
+	}
+
+.home-middle-1 {
+	float: left;
+	width: 575px;
+	margin: 0;
+	padding: 0 0 20px 0;
+	}
+	
+.home-middle-2 {
+	float: left;
+	width: 390px;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 20px;
+	margin-bottom: 20px;	
+	}
+	
+.home-middle-3 {
+	float: left;
+	clear: right;
+	width: 185px;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	}
 
 /* =Content
 -------------------------------------------------------------- */
 
 #wrap, #container {
-	float: right;
-	width: 67%;	
+	float: left;
+	width: 575px;	
+	padding-left: 10px;
 }
 
 #content {
-	padding-left: 30px;
-	margin-left: 30px;
-	border-left: 1px solid #ddd;
+	padding-right: 9px;
+	border-right: 1px dashed #b2c4c4;
 }
 #content,
 #content input,
@@ -608,8 +840,8 @@ div.menu li {
 -------------------------------------------------------------- */
 
 aside {
-	float: left;
-	width: 33%;
+	float: right;
+	width: 380px;
 }
 
 #aside #aside-widget-area-1 {
@@ -975,7 +1207,7 @@ h3#reply-title {
 	margin: 0 0 18px 0;
 }
 .widget-title {
-	font-weight: bold;
+	font-size: 22px;
 }
 .widget-area a:link,
 .widget-area a:visited {
@@ -1061,7 +1293,7 @@ h3#reply-title {
 	clear: both;
 }
 #colophon {
-	border-top: 1px dashed #004b69;
+	border-top: 1px dashed #b2c4c4;
 	margin-top: -4px;
 	padding: 18px 0;
 	overflow: hidden;
