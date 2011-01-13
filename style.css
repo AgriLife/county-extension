@@ -1,10 +1,8 @@
 /*
-    Theme Name: County Child Theme
+    Theme Name: County Extension Parent Theme
     Description: Custom theme created for AgriLife Extension County websites.
     Author: Jason Weaver
     Version: 1.0
-    
-    Template: flexopotamus
 */
 
 
@@ -270,7 +268,7 @@ a:hover {
 	margin-left: 10px;
 	padding: 20px 0;	
 	padding-left: 75px;
-	background: url(images/A&M-system-logo.png) no-repeat left 50%;	
+	background: url(images/agrilife-seal.png) no-repeat left 70%;	
 }
 
 #site-title a:hover {
@@ -481,23 +479,61 @@ div.menu li {
 	border: 1px solid #BBBBBB;
 	}
 
-#home-top #tabbed-rotator {
-	background: #fff;
+#home-top ul.tabs {
+	font-family: "Cambria", Georgia, serif;	
+	position: relative;
+	overflow: hidden;
 	width: 564px;
-	height: 260px;
 }
-
-#home-top #tabs {
-	background: #c3af7b;
-	width: 564px;
-	height: 80px;
-}
-
 
 #home-top #tabs ul li {
 	float: left;
-	width: 165px;
-	padding: 10px;
+}
+
+#home-top #tabs ul li a {
+	background: #c3af7b;
+	color: #004b69;
+	width: 148px;
+	display: block;
+	padding: 20px 20px;
+	border: none;
+}
+
+#home-top #tabs ul li a:hover {
+	background: #b39a58;
+	border: none;		
+}
+
+#home-top #tabs ul li.ui-state-active a {
+	background: #bba56a;
+	border: none;		
+}
+
+.ui-tabs .ui-tabs-hide {
+     display: none;
+}
+
+.ui-tabs-panel {
+	background: #fff;
+	height: 260px;
+	width: 564px;
+}
+
+#tabs #tabs-1 {
+	background: url(images/collegestation-night.jpg) left top;
+}
+
+#tabs #tabs-2 {
+	background: url(images/century-tree.jpg) left top;
+}
+
+.ui-tabs-panel p {
+	position: absolute;
+	bottom: 50px;
+	padding: 20px;
+	width: 524px;
+	background: rgba(4,4,4,0.6);
+	color: #fff;
 }
 
 /***** Home Middle ********************/

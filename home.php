@@ -8,16 +8,23 @@
 	</div><!-- end .search -->
 	
 	<div id="home-top">
-		<div id="tabbed-rotator">
-
-		</div><!-- end #tabbed-rotator -->
 		<div id="tabs">
-			<ul>
-				<li>Headline 1</li>			
-				<li>Headline 2</li>
-				<li>Headline 3</li>											
-			</ul>	
-		</div><!-- end #tabs -->		
+
+			<div id="tabs-1">
+				<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.</p>
+			</div>
+			<div id="tabs-2">
+				<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis.</p>
+			</div>
+			<div id="tabs-3">
+				<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti.</p>
+			</div>
+			<ul class="tabs">
+				<li><a href="#tabs-1">Headline 1</a></li>
+				<li><a href="#tabs-2">Headline 2</a></li>
+				<li><a href="#tabs-3">Headline 3</a></li>
+			</ul>			
+		</div>
 	</div><!-- end #home-top -->
 
 <div id="home-middle-bg">
