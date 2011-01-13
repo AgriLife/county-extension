@@ -8,6 +8,43 @@
  */
 ?>
 <aside id="aside">
+	<h2>Events this Month</h2>
+    <div class="event">
+		<table>
+           <tr>
+				<td class="date">JAN<strong>13</strong></td>
+				<td class="title-loc">
+				<h3>Crops &amp; Livestock Conference</h3>
+                   <p><a href="">Brozos County Expo Center</a> - <span>Bryan, Texas</span></p>
+               </td>
+           </tr>
+       </table>
+   </div><!-- // event -->
+
+   <div class="event">
+		<table>
+			<tr>
+				<td class="date">JAN<strong>17</strong></td>
+           		<td class="title-loc">
+				<h3>PecanCamp</h3>
+					<p><a href="">1605 N Main St Ste 102</a> - <span>Snook, Texas</span></p>
+           </td>
+			</tr>
+		</table>
+	</div><!-- // event -->
+	
+   <div class="event last">
+		<table>
+			<tr>
+				<td class="date">JAN<strong>20</strong></td>
+           		<td class="title-loc">
+				<h3>Archery Club</h3>
+					<p><a href="">1605 N Main St Ste 102</a> - <span>Zabcikville, Texas</span></p>
+           </td>
+			</tr>
+		</table>
+	</div><!-- // event -->
+	
 	<div id="aside-widget-area-1">
 		<div id="primary" class="widget-area" role="complementary">
 			<ul class="xoxo">

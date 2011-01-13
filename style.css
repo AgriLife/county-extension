@@ -880,16 +880,45 @@ aside {
 	width: 380px;
 }
 
+aside h2 {
+	margin-bottom: 10px;
+}
+
 #aside #aside-widget-area-1 {
 	float: left;
-	width: 100%
+	width: 179px;
+	border-right: 1px dashed #b2c4c4;	
+	padding-right: 10px;
+	margin-right: 10px; 
 }
 
 #aside #aside-widget-area-2 {
 	float: left;
-	width: 100%
+	width: 180px;
 }
 
+div.event table {
+	margin: 0 0 10px 0;
+}
+
+div.event table td.date {
+	background: #fff;
+	background: rgba(255,255,255,.85);
+	padding: 10px 15px;
+	letter-spacing: 1px;
+	border-top: 1px solid #d9d0ad;
+}
+
+div.event table tbody tr td.title-loc h3,
+div.event table tbody tr td.title-loc p {
+	margin-left: 10px;	
+}
+
+div.event table td.date strong {
+	display: block;	
+	font-size: 28px;
+	letter-spacing: -1px;
+}
 
 /* Attachment pages
 -------------------------------------------------------------- */
