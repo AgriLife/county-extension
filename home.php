@@ -2,7 +2,7 @@
 
 
 <div id="home-bg">
-	
+		
 	<div class="search">
 	<?php get_search_form(); ?>
 	</div><!-- end .search -->
@@ -61,12 +61,5 @@
 </div><!-- end #home-middle-bg -->
 </div><!-- end #home-bg -->
 
-<div id="extension-section">
-	<div id="drop-nav">
-		<ul>
-			<li><a href="/ask/">Ask</a></li>
-			<li><a href="/extension/">Texas A&amp;M Extension Service</a></li>			
-	</div>	
-</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

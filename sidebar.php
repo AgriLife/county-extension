@@ -8,43 +8,54 @@
  */
 ?>
 <aside id="aside">
-	<h2>Events this Month</h2>
+	
+	<div id="event-bg">
+	<h3>Events this Month</h3>
     <div class="event">
-		<table>
-           <tr>
-				<td class="date">JAN<strong>13</strong></td>
-				<td class="title-loc">
-				<h3>Crops &amp; Livestock Conference</h3>
-                   <p><a href="">Brozos County Expo Center</a> - <span>Bryan, Texas</span></p>
-               </td>
-           </tr>
-       </table>
+           <dl class="first">
+				<dt class="date">JAN<strong>13</strong></dt>
+				<dd class="title-loc">
+				<h4>Grapefruit Shindig</h4>
+                   <p><a href="">Brazos County Expo Center</a> - <span>Bryan, Texas</span></p>
+               </dd>
+				<dd class="sign-up"><a href="">Sign Up</a></dd>
+           </dl>
    </div><!-- // event -->
 
    <div class="event">
-		<table>
-			<tr>
-				<td class="date">JAN<strong>17</strong></td>
-           		<td class="title-loc">
-				<h3>PecanCamp</h3>
+			<dl>
+				<dt class="date">JAN<strong>17</strong></dt>
+           		<dd class="title-loc">
+				<h4>PecanCamp</h4>
 					<p><a href="">1605 N Main St Ste 102</a> - <span>Snook, Texas</span></p>
-           </td>
-			</tr>
-		</table>
+           		</dd>
+				<dd class="sign-up"><a href="">Sign Up</a></dd>
+			</dl>
 	</div><!-- // event -->
+	
+   <div class="event">
+			<dl>
+				<dt class="date">JAN<strong>20</strong></dt>
+           		<dd class="title-loc">
+				<h4>Archery Club</h4>
+					<p><a href="">1605 N Main St Ste 102</a> - <span>Zabcikville, Texas</span></p>
+           		</dd>
+				<dd class="sign-up"><a href="">Sign Up</a></dd>
+			</dl>
+	</div><!-- // end event -->
 	
    <div class="event last">
-		<table>
-			<tr>
-				<td class="date">JAN<strong>20</strong></td>
-           		<td class="title-loc">
-				<h3>Archery Club</h3>
-					<p><a href="">1605 N Main St Ste 102</a> - <span>Zabcikville, Texas</span></p>
-           </td>
-			</tr>
-		</table>
-	</div><!-- // event -->
+			<dl>
+				<dt class="date">JAN<strong>27</strong></dt>
+           		<dd class="title-loc">
+				<h4>Crops &amp; Livestock Conference</h4>
+                   <p><a href="">Brazos County Expo Center</a> - <span>Bryan, Texas</span></p>
+           		</dd>
+				<dd class="sign-up"><a href="">Sign Up</a></dd>
+			</dl>
+	</div><!-- // end event -->	
 	
+	</div><!-- // end event-bg -->	
 	<div id="aside-widget-area-1">
 		<div id="primary" class="widget-area" role="complementary">
 			<ul class="xoxo">

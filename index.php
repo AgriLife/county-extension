@@ -5,12 +5,12 @@
  */
 
 get_header(); ?>
-		<section id="wrap">
-			<section id="content" role="main">
+		<div id="wrap">
+			<div id="content" role="main">
 
 			<?php get_template_part( 'loop', 'index' ); ?>
 			
-			</section><!-- #content -->
-		</section><!-- #wrap -->
+			</div><!-- #content -->
 <?php get_sidebar(); ?>
+		</div><!-- #wrap -->
 <?php get_footer(); ?>

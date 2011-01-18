@@ -42,7 +42,7 @@
 
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
-	<header id="header">
+	<div id="header">
 			<div id="branding" role="banner">
 				<h1 id="site-title">
 					<span>
@@ -50,12 +50,20 @@
 					</span>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+				<div id="state-regions"><a href="">Event Map</a></div>				
 
 			</div><!-- #branding -->
-	</header><!-- #header -->
+	</div><!-- #header -->	
 			<nav id="access" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'flexopotamus' ); ?>"><?php _e( 'Skip to content', 'flexopotamus' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #access -->
+			<div id="extension-section">
+				<div id="drop-nav">
+					<ul>
+						<li><a href="/ask/">Ask a Question</a></li>
+						<li><a href="/extension/">Texas AgriLife Extension Service</a></li>					
+				</div><!-- #drop-nav -->	
+			</div><!-- #extension-section -->			
