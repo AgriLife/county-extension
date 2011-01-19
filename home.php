@@ -2,10 +2,6 @@
 
 
 <div id="home-bg">
-		
-	<div class="search">
-	<?php get_search_form(); ?>
-	</div><!-- end .search -->
 	
 	<div id="home-top">
 		<div id="tabs">

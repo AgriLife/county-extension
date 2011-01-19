@@ -41,6 +41,57 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="extension-section-nav">
+	<div id="drop-nav">
+		<ul>
+			<li><a class="ext-link" href="/ask/">Ask a Question</a></li>
+			<li><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>					
+	</div><!-- #drop-nav -->	
+</div><!-- #extension-section-nav -->
+	
+<div id="extension-section">
+	<div class="flow">
+		<div class="contents">
+			<div class="wrap">
+            <h2>Top Extension Drop Down</h2>
+            <form action="" method="" accept-charset="utf-8">
+                <fieldset class="first">
+                    <div class="container">
+                        <label for="name">
+                            Your name
+                        </label>
+                        <input type="text" name="name" id="name" value="">
+                    </div>
+                    <div class="container">
+                        <label for="email">
+                            Your email address
+                        </label>
+                        <input type="text" name="email" id="email" value="">
+                    </div>
+                    <div class="container">
+   
+                    </div>
+                </fieldset><!-- /.first -->
+                <fieldset class="second">
+                    <div class="container">
+                        <label for="message">
+                            Your message
+                        </label>
+                        <textarea name="message" id="message" rows="7" cols="35"></textarea>
+                    </div>
+            
+                </fieldset><!-- /.second -->
+                <div class="button-container">
+                    <button type="reset">Cancel</button>
+                    <button type="submit" name="submit">Send</button>
+                    <input type="hidden" name="sent" value="true">
+                </div><!-- /.button-container -->
+            </form>
+			</div><!-- .wrap -->
+		</div><!-- .contents -->	
+	</div><!-- .flow -->		
+</div><!-- #extension-section -->
+	
 <div id="wrapper" class="hfeed">
 	<div id="header">
 			<div id="branding" role="banner">
@@ -59,11 +110,8 @@
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'flexopotamus' ); ?>"><?php _e( 'Skip to content', 'flexopotamus' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+				<div class="search">
+				<?php get_search_form(); ?>
+				</div><!-- end .search -->				
 			</nav><!-- #access -->
-			<div id="extension-section">
-				<div id="drop-nav">
-					<ul>
-						<li><a href="/ask/">Ask a Question</a></li>
-						<li><a href="/extension/">Texas AgriLife Extension Service</a></li>					
-				</div><!-- #drop-nav -->	
-			</div><!-- #extension-section -->			
+		
