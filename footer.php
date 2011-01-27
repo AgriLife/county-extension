@@ -6,8 +6,8 @@
  * after.  Calls sidebar-footer.php for bottom widgets.
  *
  * @package WordPress
- * @subpackage Flexopotamus
- * @since Flexopotamus 1.0
+ * @subpackage county_ext
+ * @since county_ext 1.0
  */
 ?>
 
@@ -21,10 +21,10 @@
 			</div><!-- #site-info -->
 
 			<div id="site-generator">
-				<?php do_action( 'flexopotamus_credits' ); ?>
-				<a href="<?php echo esc_url( __('https://github.com/indyplanets/flexopotamus', 'flexopotamus') ); ?>"
-						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'flexopotamus'); ?>" rel="generator">
-					<?php printf( __('Powered by %s.', 'flexopotamus'), 'Flexopotamus' ); ?>
+				<?php do_action( 'county_ext_credits' ); ?>
+				<a href="<?php echo esc_url( __('https://github.com/indyplanets/county_ext', 'county_ext') ); ?>"
+						title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'county_ext'); ?>" rel="generator">
+					<?php printf( __('Powered by %s.', 'county_ext'), 'county_ext' ); ?>
 				</a>
 			</div><!-- #site-generator -->
 

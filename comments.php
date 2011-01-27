@@ -4,18 +4,18 @@
  *
  * The area of the page that contains both current comments
  * and the comment form.  The actual display of comments is
- * handled by a callback to flexopotamus_comment which is
+ * handled by a callback to county_ext_comment which is
  * located in the functions.php file.
  *
  * @package WordPress
- * @subpackage Flexopotamus
- * @since Flexopotamus 1.0
+ * @subpackage county_ext
+ * @since county_ext 1.0
  */
 ?>
 
 			<div id="comments">
 <?php if ( post_password_required() ) : ?>
-				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'flexopotamus' ); ?></p>
+				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'county_ext' ); ?></p>
 			</div><!-- #comments -->
 <?php
 		/* Stop the rest of comments.php from being processed,
@@ -32,33 +32,33 @@
 
 <?php if ( have_comments() ) : ?>
 			<h3 id="comments-title"><?php
-			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'flexopotamus' ),
+			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'county_ext' ),
 			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
 			?></h3>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'flexopotamus' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'flexopotamus' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'county_ext' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'county_ext' ) ); ?></div>
 			</div> <!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
 			<ol class="commentlist">
 				<?php
 					/* Loop through and list the comments. Tell wp_list_comments()
-					 * to use flexopotamus_comment() to format the comments.
+					 * to use county_ext_comment() to format the comments.
 					 * If you want to overload this in a child theme then you can
-					 * define flexopotamus_comment() and that will be used instead.
-					 * See flexopotamus_comment() in flexopotamus/functions.php for more.
+					 * define county_ext_comment() and that will be used instead.
+					 * See county_ext_comment() in county_ext/functions.php for more.
 					 */
-					wp_list_comments( array( 'callback' => 'flexopotamus_comment' ) );
+					wp_list_comments( array( 'callback' => 'county_ext_comment' ) );
 				?>
 			</ol>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'flexopotamus' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'flexopotamus' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'county_ext' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'county_ext' ) ); ?></div>
 			</div><!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
@@ -69,7 +69,7 @@
 	 */
 	if ( ! comments_open() ) :
 ?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'flexopotamus' ); ?></p>
+	<p class="nocomments"><?php _e( 'Comments are closed.', 'county_ext' ); ?></p>
 <?php endif; // end ! comments_open() ?>
 
 <?php endif; // end have_comments() ?>

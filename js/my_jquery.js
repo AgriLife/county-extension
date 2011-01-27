@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
         };
     };
     
-    jQuery('#contact').after(jQuery('#contact-form'));
+    jQuery('#extension-section').after(jQuery('#contact-form'));
     
     var contactForm = new Revealer(
         jQuery('#extension-section .flow'),               // the relatively positioned container
