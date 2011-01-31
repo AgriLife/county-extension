@@ -29,7 +29,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "arno pro", Georgia, serif;
+	font-family: "Cambria", Georgia, serif;
 	line-height: 1.5em;	
 	font-weight: normal;
 	clear: both;
@@ -88,7 +88,7 @@ h3#reply-title,
 .widget-title,
 .wp-caption-text
 {
-	font-family: "arno pro", Georgia, serif;
+	font-family: "Cambria", Georgia, serif;
 }
 
 
@@ -329,8 +329,7 @@ a:hover {
 #extension-section-nav #drop-nav ul li a {
 	position: relative;
 	z-index: 2;	
-	font-size: 14px;
-	font-family: "arno pro", Georgia, serif;
+	font: 14px "cambria", Georgia, serif;
 	padding: 15px 12px 9px 13px;
 	background: #004b69;
 	color: #fff;
@@ -358,7 +357,7 @@ a:hover {
 	z-index: 2;
 	padding-right: 35px;
 	margin-right: 5px;
-	background: transparent url(images/ext-arrow.png) no-repeat right 50%;
+	background: transparent url(images/ext-arrow.png) no-repeat right 60%;
 }
 
 #extension-section  {
@@ -477,8 +476,8 @@ a:hover {
 }
 
 #site-title a {
+	font: 36px 'arno pro', georgia, serif;
 	border: none;
-	font-size: 36px;
 	line-height: 50px;
 	color: #004b69;
 	margin-left: 10px;
@@ -498,8 +497,7 @@ a:hover {
 	padding: 10px 20px 65px 20px;
 	margin-right: 5px;
 	margin-top: -10px;	
-	width: 110px;
-	font-family: "arno pro", Georgia, serif;	
+	width: 110px;	
 	color: #666;
 	font-size: 13px;
 	border: none;
@@ -680,7 +678,6 @@ div.search {
 	}
 
 #home-top ul.tabs {
-	font-family: "arno pro", Georgia, serif;	
 	position: relative;
 	overflow: hidden;
 	width: 564px;
@@ -720,11 +717,11 @@ div.search {
 }
 
 #tabs #tabs-1 {
-	background: url(images/collegestation-night.jpg) left top;
+	background: url() left top;
 }
 
 #tabs #tabs-2 {
-	background: url(images/century-tree.jpg) left top;
+	background: url() left top;
 }
 
 .ui-tabs-panel p {
@@ -1155,6 +1152,7 @@ div.event dl dd.title-loc h4,
 div.event dl dd.title-loc p {
 	margin-left: 10px;
 	padding-right: 10px;
+	margin-bottom: 5px;
 }
 
 div.event dl dt.date {
