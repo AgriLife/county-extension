@@ -3,8 +3,8 @@
  * The aside widget area.
  *
  * @package WordPress
- * @subpackage Flexopotamus
- * @since Flexopotamus 1.0
+ * @subpackage county_ext
+ * @since county_ext 1.0
  */
 ?>
 
@@ -21,14 +21,14 @@
 		if ( ! dynamic_sidebar( 'aside-widget-area' ) ) : ?>
 
 				<li id="archives" class="widget-container">
-					<h3 class="widget-title"><?php _e( 'Archives', 'flexopotamus' ); ?></h3>
+					<h3 class="widget-title"><?php _e( 'Archives', 'county_ext' ); ?></h3>
 					<ul>
 						<?php wp_get_archives( 'type=monthly' ); ?>
 					</ul>
 				</li>
 
 				<li id="archives" class="widget-container">
-					<h3 class="widget-title"><?php _e( 'Recent Posts', 'flexopotamus' ); ?></h3>
+					<h3 class="widget-title"><?php _e( 'Recent Posts', 'county_ext' ); ?></h3>
 					<ul>
 						<?php wp_get_archives( 'type=postbypost' ); ?>
 					</ul>

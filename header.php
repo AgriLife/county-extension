@@ -12,7 +12,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">	
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -158,8 +158,7 @@
 				      </ul>
 				    </div>
 				  </li>
-				</ul>
-			</ul>				
+				</ul>				
 
 			</div><!-- .wrap -->
 		</div><!-- .contents -->	
@@ -178,14 +177,14 @@
 				<div id="state-regions"><a href="">Event Map</a></div>				
 
 			</div><!-- #branding -->
-	</div><!-- #header -->	
-			<nav id="access" role="navigation">
+	</div><!-- #header -->		
+			<nav id="access" role="navigation">	
+				<div class="search">
+				<?php get_search_form(); ?>
+				</div><!-- end .search -->		
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'county_ext' ); ?>"><?php _e( 'Skip to content', 'county_ext' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
-				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-				<div class="search">
-				<?php get_search_form(); ?>
-				</div><!-- end .search -->				
+				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>			
 			</nav><!-- #access -->
 		
