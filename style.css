@@ -30,7 +30,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Cambria", Georgia, serif;
-	line-height: 1.5em;	
 	font-weight: normal;
 	clear: both;
 }
@@ -56,42 +55,6 @@ table {
 a img { border: none; }
 
 
-body,
-input,
-textarea,
-.page-title span,
-.pingback a.url {
-	font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-}
-
-h3#comments-title,
-h3#reply-title,
-#cancel-comment-reply-link,
-.form-allowed-tags,
-#site-info,
-#site-title,
-#wp-calendar,
-.comment-meta,
-.comment-body tr th,
-.comment-body thead th,
-.entry-content label,
-.entry-content tr th,
-.entry-content thead th,
-.entry-meta,
-.entry-title,
-.entry-utility,
-#respond label,
-.navigation,
-.page-title,
-.pingback p,
-.reply,
-.widget-title,
-.wp-caption-text
-{
-	font-family: "Cambria", Georgia, serif;
-}
-
-
 /* =Global Elements
 -------------------------------------------------------------- */
 
@@ -103,34 +66,19 @@ header, nav, section, aside, article, footer, figure {
 
 body {
 	background: #EAE8D9 url(images/tan-background.png) top left;
+	font: 14px "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	line-height: 1.6em;	
+	color: #666;
 }
 
 .wrap {
 	position: relative;
-	margin: 0 auto;
-	padding: 0;	
-	max-width: 975px;	
+	margin: 0 auto;	
 }
 
 #wrapper {
 //	background: url(images/grid-975x10x5.png) repeat-y left top;
 	margin: 0 auto;	
-//	max-width: 975px;
-}
-
-body,
-input,
-textarea {
-	color: #666;
-	font-size: 14px;
-	line-height: 22px;
-}
-hr {
-	background-color: #E7E7E7;
-	border:0;
-	height: 1px;
-	margin-bottom: 18px;
-	clear:both;
 }
 
 /* Text elements */
@@ -196,7 +144,6 @@ blockquote i {
 pre {
 	background: #222;
 	color: #fff;
-	line-height: 18px;
 	margin-bottom: 18px;
 	padding: 1.5em;
 	overflow: scroll;
@@ -210,7 +157,6 @@ abbr {
 sup,
 sub {
 	height: 0;
-	line-height: 1;
 	vertical-align: baseline;
 	position: relative;
 }
@@ -312,7 +258,6 @@ a:hover {
 
 #extension-section-nav #drop-nav {
 	position: relative;
-//  width: 975px;
 	margin: 0 auto 0;
 }
 
@@ -329,7 +274,7 @@ a:hover {
 #extension-section-nav #drop-nav ul li a {
 	position: relative;
 	z-index: 2;	
-	font: 14px "cambria", Georgia, serif;
+	font: 12px "cambria", Georgia, serif;
 	padding: 15px 12px 9px 13px;
 	background: #004b69;
 	color: #fff;
@@ -355,9 +300,6 @@ a:hover {
 #extension-section-nav #drop-nav ul li a[href*='extension'] {
 	position: relative;
 	z-index: 2;
-	padding-right: 35px;
-	margin-right: 5px;
-	background: transparent url(images/ext-arrow.png) no-repeat right 60%;
 }
 
 #extension-section  {
@@ -370,7 +312,6 @@ a:hover {
 #extension-section .flow {
 	position: relative;	 
 	overflow: hidden;
-//	width: 975px;
 	margin: 0 auto;	
 }
 
@@ -470,15 +411,12 @@ a:hover {
 	overflow: hidden;
 }
 #site-title {
-//	width: 700px;
 	float: left; 
 	margin-top: 15px;
 }
 
 #site-title a {
-	font: 36px 'arno pro', georgia, serif;
 	border: none;
-	line-height: 50px;
 	color: #004b69;
 	margin-left: 10px;
 	padding: 20px 0;
@@ -494,10 +432,9 @@ a:hover {
 #state-regions a {
 	float: right;
 	background: url(images/tx-state-regions.png) no-repeat right 7px;
-	padding: 10px 20px 65px 20px;
+	padding: 10px 20px 50px 20px;
 	margin-right: 5px;
 	margin-top: -10px;	
-//	width: 110px;	
 	color: #666;
 	font-size: 13px;
 	border: none;
@@ -522,7 +459,6 @@ a:hover {
 div.menu {
 	overflow: hidden;
 	display: block;	
-	width: 100%;	
 	padding: 15px 0;
 	margin: 5px 10px 30px 10px;	
 	border-top: 1px dashed #b2c4c4;
@@ -545,12 +481,6 @@ div.menu li {
 #access a {
 	font-size: 18px;
 	border: none;
-}
-
-div.search {
-	position: absolute;
-	top: 17px;
-	right: 20px;
 }
 
 .search input[type=submit] {
@@ -620,19 +550,9 @@ div.search {
 
 /***** Home Top ********************/
 
-#home-bg {
-//	width: 575px;
-	float: left;
-//	padding-right: 9px;
-//	border-right: 1px dashed #b2c4c4;
-	position: relative;	
-	}
-
 #home-top {
 	position: relative;
 	z-index: 4;
-	float: left;
-//	width: 575px;
 	margin: 0 auto 0;
 	padding: 0 0 0 10px;
 	}
@@ -679,7 +599,6 @@ div.search {
 #home-top ul.tabs {
 	position: relative;
 	overflow: hidden;
-//	width: 564px;
 }
 
 #home-top #tabs ul li {
@@ -689,7 +608,6 @@ div.search {
 #home-top #tabs ul li a {
 	background: #c3af7b;
 	color: #004b69;
-//	width: 148px;
 	display: block;
 	padding: 20px 20px;
 	border: none;
@@ -711,8 +629,6 @@ div.search {
 
 .ui-tabs-panel {
 	background: #fff;
-	height: 260px;
-//	width: 564px;
 }
 
 #tabs #tabs-1 {
@@ -727,7 +643,6 @@ div.search {
 	position: absolute;
 	bottom: 50px;
 	padding: 20px;
-//	width: 524px;
 	background: rgba(4,4,4,0.6);
 	color: #fff;
 }
@@ -735,13 +650,11 @@ div.search {
 /***** Home Middle ********************/
 
 #home-middle-bg {
-//	width: 575px;
 	float: left;
 	overflow: hidden;	
 	}
 
 #home-middle {
-//	width: 575px;
 	margin: 25px auto 0;
 	padding: 0;
 	overflow: hidden;
@@ -826,14 +739,12 @@ div.search {
 
 .home-middle-1 {
 	float: left;
-//	width: 575px;
 	margin: 0;
 	padding: 0 0 20px 0;
 	}
 	
 .home-middle-2 {
 	float: left;
-//	width: 390px;
 	margin: 0;
 	padding: 0;
 	padding-bottom: 20px;
@@ -843,7 +754,6 @@ div.search {
 .home-middle-3 {
 	float: left;
 	clear: right;
-//	width: 185px;
 	margin: 0;
 	padding: 0;
 	padding-bottom: 20px;
@@ -854,9 +764,11 @@ div.search {
 -------------------------------------------------------------- */
 
 #wrap, #container {
-	float: left;
-//	width: 575px;	
 	padding-left: 10px;
+}
+
+#content {
+	padding-right: 10px;
 }
 
 .hentry {
@@ -870,7 +782,6 @@ div.search {
 
 aside {
 	float: right;
-//	width: 380px;
 }
 
 aside h3.widget-title, aside h3 {
@@ -941,7 +852,6 @@ div.event dl dd.title-loc {
 
 div.event dl dd.title-loc h4 {
 	font-size: 22px;
-	line-height: 24px;
 }
 
 div.event dl dd.title-loc h4,
@@ -1033,10 +943,8 @@ div.event.last dl {
 	margin-left: 20px;
 }
 
-#content .wp-caption {
-//	max-width: 100%;	
+#content .wp-caption {	
 	background: #f1f1f1;
-	line-height: 18px;
 	text-align: center;
 	margin-bottom: 20px;
 	padding: 4px;
@@ -1140,7 +1048,6 @@ h3#comments-title {
 }
 .commentlist li.comment {
 	border-bottom: 1px solid #e7e7e7;
-	line-height: 24px;
 	margin: 0 0 24px 0;
 	padding: 0 0 0 56px;
 	position: relative;
@@ -1229,7 +1136,6 @@ a.comment-edit-link:hover {
 #comments .pingback p {
 	color: #888;
 	font-size: 12px;
-	line-height: 18px;
 	display:block;
 	margin: 0;
 }
@@ -1256,7 +1162,6 @@ input[type=submit] {
 	margin-bottom: 1em;
 }
 .form-allowed-tags {
-	line-height: 1em;
 }
 .children #respond {
 	margin: 0 48px 0 0;
@@ -1272,7 +1177,6 @@ h3#reply-title {
 }
 #cancel-comment-reply-link {
 	font-size: 12px;
-	line-height: 18px;
 	font-weight: normal;
 }
 #respond .required {
@@ -1293,7 +1197,6 @@ h3#reply-title {
 #respond .form-allowed-tags {
 	color: #888;
 	font-size: 12px;
-	line-height: 18px;
 }
 #respond .form-allowed-tags code {
 	font-size: 11px;
@@ -1341,7 +1244,6 @@ h3#reply-title {
 	font-size: 11px;
 }
 #wp_tag_cloud div {
-	line-height: 1.6em;
 }
 #wp-calendar {
 	width:100%;
@@ -1436,7 +1338,6 @@ h3#reply-title {
 	display:inline-block;
 	text-decoration: none;
 	padding-left: 20px;
-	line-height: 16px;
 	border: none;	
 }
 #site-generator a:hover {
@@ -1471,61 +1372,29 @@ code {
 @media all and (max-width: 640px) {
 	
 	body {  
-	    font-size: 150%;
+	    font-size: 140%; 
 	}
 	
-	#wrap, #container {
-		width: 100%;
-	    line-height: 1.75em;
-		padding: 0 30px;
+	#site-title a {
+		font: 18px 'arno pro', georgia, serif;
 	}
-	
-	#content, #home-bg {
+		
+	#content {
 		width: 100%;	
 		border-right: none;
 		margin-left: 0;
 	}	
-}
-
-
-/* iPad width */
-@media all and (max-width: 1024px) {
-	body {  
-	    font-size: 105%;
-	}
-	
-	#wrap, #container {
-	    line-height: 1.4em;
-	}
-	
-	#content, #home-bg {
-		width: 100%;	
-		border-right: none;
-		margin-left: 0;
-	}
-
-	body #aside #aside-widget-area-2 {
-		border-left: none;
-	}	
-	
-	body #aside #aside-widget-area-2 .widget-area {
-		padding-left: 0;	
-	}  	
-
 }
 
 /* Smart Phones */
 @media screen and (max-width: 420px) {
 body {  
-    font-size: 85%;
     background: none;
 }
 	#wrap, #container {
-	    width: 100%;
 	    float: left;
-	    line-height: 1.4em;
 	}
-	
+		
 	#content {
 		border-left: none;
 		margin-left: 0;
@@ -1534,17 +1403,14 @@ body {
 	 
 	aside {
 		clear: left;
-		width: 100%;
 	}
 	
 	#aside #aside-widget-area-1 {
 		float: left;
-		width: 100%
 	}
 
 	#aside #aside-widget-area-2 {
 		float: left;
-		width: 100%
 	}      
 }
 
@@ -1579,14 +1445,12 @@ img,video,object {
 		float: none;
 		margin: 0;
 		padding:0;
-		line-height: 1.4em;
 	}
 	#site-title {
 		font-size: 13pt;
 	}
 	.entry-content {
 		font-size: 14pt;
-		line-height: 1.6em;
 	}
 	.entry-title {
 		font-size: 21pt;
@@ -1643,33 +1507,40 @@ img,video,object {
 
 @media screen and (min-width: 960px) {
 
-	#wrapper, #extension-section-nav #drop-nav, #extension-section .flow  {
+	#wrapper, #extension-section-nav #drop-nav, #extension-section .flow   {
 		max-width: 975px;
 	}
 
+	#extension-section-nav #drop-nav ul li a[href*='extension'] {
+		padding-right: 35px;
+		margin-right: 5px;
+		background: transparent url(images/ext-arrow.png) no-repeat right 60%;
+	}
+	
 	#site-title {
 		width: 700px;
 	}
-
+	
+	#site-title a {
+		font: 36px 'arno pro', georgia, serif;
+	}
+	
+	div.search {
+		position: absolute;
+		top: 17px;
+		right: 20px;
+	}
+	
 	#state-regions a {	
 		width: 110px;	
 	}
 
-	#home-bg, #home-top, #home-middle-bg, #home-middle, .home-middle-1, #wrap, #container  {
+	#home-middle-bg, #home-middle, .home-middle-1, #wrap, #container  {
 		width: 575px;
 	}
-
-	#home-top ul.tabs, .ui-tabs-panel {
-		width: 564px;
-	}	
-
-	#home-top #tabs ul li a {
-		width: 148px;
-	}
-
-	.ui-tabs-panel p {
-
-		width: 524px;
+	
+	#home-top,	#home-top ul.tabs, .ui-tabs-panel {
+		width: 955px;
 	}
 
 	.home-middle-2 {
@@ -1679,7 +1550,11 @@ img,video,object {
 	.home-middle-3 {
 		width: 185px;
 	}
-
+	
+	#wrap, #container {
+		float: left;
+	}
+	
 	aside {
 		width: 380px;
 	}

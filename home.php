@@ -1,19 +1,14 @@
 <?php get_header(); ?>
-
-
-<div id="home-bg">
-	
-	<div id="home-top">
+<div id="home-top">
 		<div id="tabs">
 
 			<div id="tabs-1">
-				<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.</p>
+
 			</div>
 			<div id="tabs-2">
-				<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis.</p>
+
 			</div>
 			<div id="tabs-3">
-				<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti.</p>
 			</div>
 			<ul class="tabs">
 				<li><a href="#tabs-1">Headline 1</a></li>
@@ -55,7 +50,6 @@
 
     </div><!-- end #home-middle -->
 </div><!-- end #home-middle-bg -->
-</div><!-- end #home-bg -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
