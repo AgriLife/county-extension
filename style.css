@@ -8,6 +8,8 @@
 
 /* Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
+/* =Global Elements
+-------------------------------------------------------------- */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,14 +26,43 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 	background: transparent;
 }
+
 body {
-	line-height: 1;
+	background: #EAE8D9 url(images/tan-background.png) top left;
+	font: 62.5% "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+	line-height: 1.9em;
+	color: #666;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Cambria", Georgia, serif;
 	font-weight: normal;
+	line-height: 1.2em;
 	clear: both;
+}
+
+h1 {
+	font-size: 2.8em;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+h3 {
+	font-size: 2.2em;
+}
+
+h4 {
+	font-size: 1.9em;
+}
+
+h5 {
+	font-size: 1.6em;
+}
+
+h6 {
+	font-size: 1.3em;
 }
 
 ol, ul {
@@ -52,23 +83,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a, input {
+	outline: none;
+}
+
 a img { border: none; }
-
-
-/* =Global Elements
--------------------------------------------------------------- */
-
-/* Main global 'theme' and typographic styles  */
 
 header, nav, section, aside, article, footer, figure {
 	display: block;
-}
-
-body {
-	background: #EAE8D9 url(images/tan-background.png) top left;
-	font: 14px "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	line-height: 1.6em;	
-	color: #666;
 }
 
 .wrap {
@@ -83,15 +106,16 @@ body {
 
 /* Text elements */
 p {
-	margin-bottom: 18px;
+	margin-bottom: 1.8em;
+	font-size: 1.4em;
 }
 ul {
 	list-style: none;
-	margin: 0 0 18px 1.5em;
+	margin: 0 0 1.8em 1.5em;
 }
 ol {
 	list-style: decimal;
-	margin: 0 0 18px 1.5em;
+	margin: 0 0 1.8em 1.5em;
 }
 ol ol {
 	list-style:upper-alpha;
@@ -108,43 +132,43 @@ ul ol,
 ol ul {
 	margin-bottom:0;
 }
-dl {
-	margin:0 0 24px 0;
+dl, dd  {
+	margin:0 0 1.8em 0;
 }
 dt {
 	font-weight: bold;
 }
-dd {
-	margin-bottom: 18px;
-}
+
 strong {
 	font-weight: bold;
 }
+
 cite,
 em,
 i {
 	font-style: italic;
 }
-big {
-	font-size: 131.25%;
-}
+
 ins {
 	background: #ffc;
 	text-decoration: none;
 }
+
 blockquote {
 	font-style: italic;
 	padding: 0 3em;
 }
+
 blockquote cite,
 blockquote em,
 blockquote i {
 	font-style: normal;
 }
+
 pre {
 	background: #222;
 	color: #fff;
-	margin-bottom: 18px;
+	margin-bottom: 1.8em;
 	padding: 1.5em;
 	overflow: scroll;
 }
@@ -160,12 +184,15 @@ sub {
 	vertical-align: baseline;
 	position: relative;
 }
+
 sup {
 	bottom: 1ex;
 }
+
 sub {
 	top: .5ex;
 }
+
 input[type="text"],
 textarea {
 	padding: 2px;
@@ -175,6 +202,7 @@ textarea {
 	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 }
+
 a:link,
 a:visited {
 	color:#0082b6;
@@ -197,17 +225,19 @@ a:hover {
 	-moz-box-shodow: 1px 1px 1px #d8d3ae;
 	box-shodow: 1px 1px 1px #d8d3ae;	
 	border: 1px solid #0c85bf;
-	padding: 3px 6px;
-	font-size: 13px;
+	padding: 0.5em 0.6em;
+	font-size: 1.3em;
 	color: #fff;
 	background: #0094d0;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00a6ea), to(#0082b7));
+	background: -moz-linear-gradient(top, #00a6ea, #0082b7);
 }
 
 .btn a:hover, button.btn:hover {
 	cursor: pointer;	
 	background: #0082b7;	
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0082b7), to(#0082b7));
+	background: -moz-linear-gradient(top, #0082b7, #0082b7);	
 }
 
 .btn a:active, button.btn:active {
@@ -217,6 +247,7 @@ a:hover {
 	box-shodow: 1px 1px 0 #e9e6d1;	
 	background: #0082b7;	
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0082b7), to(#00a6ea));
+	background: -moz-linear-gradient(top, #0082b7, #00a6ea);	
 }
 
 #extension-section .btn a, button.btn {
@@ -284,17 +315,19 @@ a:hover {
 #extension-section-nav #drop-nav ul li a[href*='ask'] {
 	position: relative;
 	z-index: 2;
-	padding-bottom: 12px;
+	padding-bottom: .85em;
 	background: #0095d0;
 	-webkit-box-shadow: 0 1px 2px rgba(30,30,30,.4);
 	-moz-box-shodow: 0 1px 2px rgba(30,30,30,.4);
 	box-shodow: 0 1px 2px rgba(30,30,30,.4);	
 	border: 1px solid rgba(30,30,30,.4);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00a6ea), to(#0082b7));		
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00a6ea), to(#0082b7));
+	background: -moz-linear-gradient(top, #00a6ea, #0082b7);			
 }
 
 #extension-section-nav #drop-nav ul li a[href*='ask']:hover {
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0095d2), to(#0082b7));	
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0095d2), to(#0082b7));
+	background: -moz-linear-gradient(top, #0095d2, #0082b7);		
 }
 
 #extension-section-nav #drop-nav ul li a[href*='extension'] {
@@ -432,7 +465,7 @@ a:hover {
 #state-regions a {
 	float: right;
 	background: url(images/tx-state-regions.png) no-repeat right 7px;
-	padding: 10px 20px 50px 20px;
+	padding: 1em 2em 5em 1em;
 	margin-right: 5px;
 	margin-top: -10px;	
 	color: #666;
@@ -479,7 +512,7 @@ div.menu li {
 }
 
 #access a {
-	font-size: 18px;
+	font-size: 1.8em;
 	border: none;
 }
 
@@ -495,7 +528,8 @@ div.menu li {
 	font-size: 14px;
 	color: #806e38;
 	background: #c7bc7f;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ded8b4), to(#c7bc7f));		
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ded8b4), to(#c7bc7f));
+	background: -moz-linear-gradient(top, #ded8b4, #c7bc7f);		
 }
 
 .search input[type=submit]:hover {
@@ -505,47 +539,15 @@ div.menu li {
 	-moz-box-shodow: 1px 1px 1px #f0eedd;
 	box-shodow: 1px 1px 1px #f0eedd;	
 	background: #c7bc7f;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cfc591), to(#c7bc7f));	
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cfc591), to(#c7bc7f));
+	background: -moz-linear-gradient(top, #cfc591, #c7bc7f);
 }
 
 .search input[type=submit]:active {
 	cursor: pointer;	
 	background: #c7bc7f;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c7bc7f), to(#cfc591));	
-}
-
-#access ul ul {
-
-}
-#access ul ul li {
-	
-}
-#access ul ul ul {
-
-}
-#access ul ul a {
-
-}
-#access li:hover > a,
-#access ul ul :hover > a {
-
-}
-#access ul li:hover > ul {
-
-}
-#access ul li.current_page_item > a,
-#access ul li.current-menu-ancestor > a,
-#access ul li.current-menu-item > a,
-#access ul li.current-menu-parent > a {
-
-}
-
-* html #access ul li.current_page_item a,
-* html #access ul li.current-menu-ancestor a,
-* html #access ul li.current-menu-item a,
-* html #access ul li.current-menu-parent a,
-* html #access ul li a:hover {
-
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c7bc7f), to(#cfc591));
+	background: -moz-linear-gradient(top, #c7bc7f, #cfc591);		
 }
 
 /***** Home Top ********************/
@@ -787,7 +789,7 @@ aside {
 aside h3.widget-title, aside h3 {
 	margin-bottom: 10px;
 	margin-top: 5px;
-	font-size: 12px;
+	font-size: 1.2em;
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -822,6 +824,7 @@ aside #event-bg {
 
 div.event dl {
 	position: relative;
+	overflow: hidden;
 	margin: 0;
 	padding: 25px 0 5px 0;
 	border-top: 1px solid #f0eede;
@@ -829,13 +832,15 @@ div.event dl {
 }
 
 div.event dt.date {
-	position: absolute;
-	font-size: 14px;
+	position: relative;
+	font: 1.3em georgia, serif;
 	color: #b19e56;
 	text-shadow: 0 1px 0 #fff;
 	background: #f0eee3;
 	background: rgba(255,255,255,.55);
-	padding: 10px 15px 15px 15px;
+	padding: 1.3em 0;
+	margin-right: 3%;
+	width: 5em;
 	letter-spacing: 1px;
 	border-top: 1px solid #fff;		
 	-webkit-box-shadow: 0 1px 2px #d8d3ae;
@@ -845,20 +850,20 @@ div.event dt.date {
 }
 
 div.event dl dd.title-loc {
-	margin-left: 60px;
-	margin-right: 65px;	
-	margin-bottom: 10px;
+	margin-right: .5em;	
+	margin-bottom: 1em;
+	float: left;
+	width: 60%;
 }
 
 div.event dl dd.title-loc h4 {
-	font-size: 22px;
+	font-size: 2.2em;
 }
 
 div.event dl dd.title-loc h4,
 div.event dl dd.title-loc p {
-	margin-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 5px;
+	padding-right: 1em;
+	margin-bottom: 0.5em;
 }
 
 div.event dl dt.date {
@@ -867,8 +872,8 @@ div.event dl dt.date {
 
 div.event dl dt.date strong {
 	display: block;	
-	font-size: 24px;
-	letter-spacing: -1px;
+	font-size: 2em;
+	margin-top: -.1em;
 }
 
 div.event dd.sign-up a {
@@ -1368,58 +1373,6 @@ code {
 	-webkit-text-size-adjust: none;
 }
 
-/* mobile width */
-@media all and (max-width: 640px) {
-	
-	body {  
-	    font-size: 140%; 
-	}
-	
-	#site-title a {
-		font: 18px 'arno pro', georgia, serif;
-	}
-		
-	#content {
-		width: 100%;	
-		border-right: none;
-		margin-left: 0;
-	}	
-}
-
-/* Smart Phones */
-@media screen and (max-width: 420px) {
-body {  
-    background: none;
-}
-	#wrap, #container {
-	    float: left;
-	}
-		
-	#content {
-		border-left: none;
-		margin-left: 0;
-		padding-left: 0;
-	}	
-	 
-	aside {
-		clear: left;
-	}
-	
-	#aside #aside-widget-area-1 {
-		float: left;
-	}
-
-	#aside #aside-widget-area-2 {
-		float: left;
-	}      
-}
-
-img,video,object {
-    max-width: 100%;
-}
-
-
-
 /* =Print Style
 -------------------------------------------------------------- */
 
@@ -1510,7 +1463,11 @@ img,video,object {
 	#wrapper, #extension-section-nav #drop-nav, #extension-section .flow   {
 		max-width: 975px;
 	}
-
+	
+	#extension-section-nav #drop-nav ul li a {
+		font-size: 14px;
+	}
+	
 	#extension-section-nav #drop-nav ul li a[href*='extension'] {
 		padding-right: 35px;
 		margin-right: 5px;
@@ -1558,4 +1515,52 @@ img,video,object {
 	aside {
 		width: 380px;
 	}
+}
+
+@media all and (max-width: 960px) {
+	
+	body {  
+	    font-size: 80%; 
+		line-height: 2.1em;
+		margin: 0 5%;
+	}
+}
+
+/* mobile width */
+@media all and (max-width: 640px) {
+
+	
+	#site-title a {
+		font: 18px 'arno pro', georgia, serif;
+	}
+		
+	#content {
+		width: 100%;	
+		border-right: none;
+		margin-left: 0;
+	}	
+}
+
+/* Smart Phones */
+@media screen and (max-width: 420px) {
+body {  
+    background: none;
+}
+	#wrap, #container {
+	    float: left;
+	}
+		
+	#content {
+		border-left: none;
+		margin-left: 0;
+		padding-left: 0;
+	}	
+	 
+	aside {
+		clear: left;
+	} 
+}
+
+img,video,object {
+    max-width: 100%;
 }
