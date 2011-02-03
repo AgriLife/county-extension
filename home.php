@@ -1,21 +1,21 @@
 <?php get_header(); ?>
 <div id="home-top">
-		<div id="tabs">
-
-			<div id="tabs-1">
-
-			</div>
-			<div id="tabs-2">
-
-			</div>
-			<div id="tabs-3">
-			</div>
-			<ul class="tabs">
-				<li><a href="#tabs-1">Headline 1</a></li>
-				<li><a href="#tabs-2">Headline 2</a></li>
-				<li><a href="#tabs-3">Headline 3</a></li>
-			</ul>			
+	<?php $my_query = new WP_Query('meta_key=featured-homepage&meta_value=checkbox_on&showposts=1');
+	echo '<div id="big-feature">';
+	while ($my_query->have_posts()) : $my_query->the_post();
+	$do_not_duplicate[] = $post->ID;
+	global $post;
+	$feature_title = get_post_meta($post->ID,'feature-title',true); ?>
+		<a href="<?php the_permalink();?>"><?php the_post_thumbnail('featured');?></a>
+		<div class="feature-detail">
+			<h2><a href="<?php the_permalink();?>"><?php if($feature_title !== '') { echo $feature_title; }else{ echo get_the_title(); } ?></a></h2>
+			<p id="feature-meta">
+				<span class="feature-comments"><a href="<?php the_permalink();?>#reply-title"><?php comments_number('Be the first to Comment','One Comment','% Comments'); ?></a></span>
+				<span class="feature-more"><a href="<?php the_permalink();?>">Read Post</a></span>
+			</p>
 		</div>
+		</div>					
+	<?php endwhile;  wp_reset_query; ?>
 	</div><!-- end #home-top -->
 
 <div id="home-middle-bg">

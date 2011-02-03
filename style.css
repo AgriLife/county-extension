@@ -779,6 +779,11 @@ div.menu li {
 	border-bottom: 1px solid #ddd;	
 }
 
+.entry-meta {
+	font-size: 1.3em;
+	margin: 15px 0 10px;
+}
+
 /* Aside
 -------------------------------------------------------------- */
 

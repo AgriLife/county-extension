@@ -46,7 +46,8 @@ function county_ext_setup() {
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
-
+	// Add new image sizes
+	add_image_size('featured',960,9999);
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
@@ -67,18 +68,7 @@ function county_ext_setup() {
 	// This theme allows users to set a custom background
 	add_custom_background();
 	
-	
-	/* Show default content when it doesn't exist */
 
-	add_action('the_content', 'defaultcontent');
-
-	function defaultcontent() {
-	global $post;
-		if ( empty($post->post_content) ) {
-	    	// If this post does not have any content
-		 		include( STYLESHEETPATH . '/structure/default_content.php'); 
-		}
-	}
 		//Add jquery to theme
 		function load_tabs_js() {
 		        // instruction to only load if it is not the admin area
@@ -93,6 +83,76 @@ function county_ext_setup() {
 		add_action('init', 'load_tabs_js');
 }	
 endif;
+
+/**
+**
+** Add extra fields for the featured homepage section
+**
+**/
+/* Define the custom box */
+
+// WP 3.0+
+add_action('add_meta_boxes', 'create_featured_post_meta_box');
+
+// backwards compatible
+// add_action('admin_init', 'create_featured_post_meta_box', 1);
+
+/* Do something with the data entered */
+add_action('save_post', 'save_feature_homapage_postdata');
+
+/* Adds a box to the main column on the Post and Page edit screens */
+function create_featured_post_meta_box() {
+    add_meta_box( 'feature-homepage', __( 'Featured on Homepage?', 'feature-homepage' ), 
+                'feature_homepage_inner_custom_box', 'post', 'side' );
+    add_meta_box( 'feature-homepage', __( 'Featured on Homepage?', 'feature-homepage' ), 
+                'feature_homepage_inner_custom_box', 'page', 'side' );
+}
+
+/* Prints the box content */
+function feature_homepage_inner_custom_box() {
+
+  // Use nonce for verification
+  wp_nonce_field( plugin_basename(__FILE__), 'myplugin_noncename' );
+
+  // The actual fields for data entry
+  echo '<label for="feature-homapage">' . __("feature", 'feature-homepage' ) . '</label> ';
+  echo '<input class="checkbox" type="checkbox" id="feature-home" name="feature-home" value="true">';
+}
+
+/* When the post is saved, saves our custom data */
+function save_feature_homapage_postdata( $post_id ) {
+
+  // verify this came from the our screen and with proper authorization,
+  // because save_post can be triggered at other times
+
+  if ( !wp_verify_nonce( $_POST['myplugin_noncename'], plugin_basename(__FILE__) )) {
+    return $post_id;
+  }
+
+  // verify if this is an auto save routine. If it is our form has not been submitted, so we dont want
+  // to do anything
+  if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
+    return $post_id;
+
+  
+  // Check permissions
+  if ( 'page' == $_POST['post_type'] ) {
+    if ( !current_user_can( 'edit_page', $post_id ) )
+      return $post_id;
+  } else {
+    if ( !current_user_can( 'edit_post', $post_id ) )
+      return $post_id;
+  }
+
+  // OK, we're authenticated: we need to find and save the data
+
+  $mydata = $_POST['feature-homepage'];
+
+  // Do something with $mydata 
+
+
+   return $mydata;
+}
 
 /**
  * Makes some changes to the <title> tag, by filtering the output of wp_title().
