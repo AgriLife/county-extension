@@ -10,7 +10,7 @@
 <aside id="aside">
 	
 	<div id="event-bg">
-	<h3>Events this Month</h3>
+	<h3>Upcoming Events</h3>
     <div class="event">
            <dl class="first">
 				<dt class="date">JAN<strong>13</strong></dt>

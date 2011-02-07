@@ -174,7 +174,7 @@
 					</span>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-				<div id="state-regions"><a href="">Event Map</a></div>				
+				<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>				
 
 			</div><!-- #branding -->
 	</div><!-- #header -->		

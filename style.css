@@ -109,7 +109,7 @@ p {
 	margin-bottom: 1.8em;
 	font-size: 1.4em;
 }
-ul {
+ul {	
 	list-style: none;
 	margin: 0 0 1.8em 1.5em;
 }
@@ -195,7 +195,7 @@ sub {
 
 input[type="text"],
 textarea {
-	padding: 2px;
+	padding: 5px;
 	background: #f9f9f9;
 	border: 1px solid #ccc;
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
@@ -465,9 +465,8 @@ a:hover {
 #state-regions a {
 	float: right;
 	background: url(images/tx-state-regions.png) no-repeat right 7px;
-	padding: 1em 2em 5em 1em;
-	margin-right: 5px;
-	margin-top: -10px;	
+	padding: 1em 2.7em 1em 1em;
+	margin: -10px 0 0 10px;	
 	color: #666;
 	font-size: 13px;
 	border: none;
@@ -555,8 +554,6 @@ div.menu li {
 #home-top {
 	position: relative;
 	z-index: 4;
-	margin: 0 auto 0;
-	padding: 0 0 0 10px;
 	}
 
 #home-top ul {
@@ -1481,10 +1478,15 @@ code {
 	
 	#site-title {
 		width: 700px;
+		margin-top: 0;
+		padding: 0 0 60px 0;
 	}
 	
 	#site-title a {
+		background: url(images/county-shape.png) no-repeat -10px top;
 		font: 36px 'arno pro', georgia, serif;
+		margin-left: 10px;
+		padding: 20px 0 60px 95px;		
 	}
 	
 	div.search {
@@ -1502,15 +1504,19 @@ code {
 	}
 	
 	#home-top,	#home-top ul.tabs, .ui-tabs-panel {
-		width: 955px;
+		width: 975px;
 	}
-
+	
+	#home-top {
+		margin-top: 350px;
+	}
+	
 	.home-middle-2 {
-		width: 390px;	
+		width: 575px;	
 	}
 
 	.home-middle-3 {
-		width: 185px;
+		width: 575px;
 	}
 	
 	#wrap, #container {
