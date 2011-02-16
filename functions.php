@@ -69,90 +69,35 @@ function county_ext_setup() {
 	add_custom_background();
 	
 
-		//Add jquery to theme
-		function load_tabs_js() {
-		        // instruction to only load if it is not the admin area
-			if ( !is_admin() ) { 
-			// register script location with wp_register_script	
-		   	wp_register_script('my_jquery',
-		       	get_bloginfo('stylesheet_directory') . '/js/my_jquery.js', array('jquery-ui-tabs'), '1.0');	
-		       // enqueue the custom jquery js
-		   	wp_enqueue_script('my_jquery');	
-			}	         
-		}    
-		add_action('init', 'load_tabs_js');
+	// load Slideshow scripts
+	function load_js() {
+	        // instruction to only load if it is not the admin area
+		if ( !is_admin() ) { 
+		// register script location with wp_register_script	
+	   	wp_register_script('my_jquery',
+	       	get_bloginfo('stylesheet_directory') . '/js/my_jquery.js', array('jquery'));	
+	       // enqueue the custom jquery js
+	   	wp_enqueue_script('my_jquery');	
+		}	         
+	}    
+	add_action('init', 'load_js');	
+	
+	function load_cycle_js() {
+	        // instruction to only load if it is not the admin area
+		if ( !is_admin() ) { 
+		// register script location, dependencies and version with wp_register_script	
+	   	wp_register_script('cycle',
+	       	get_bloginfo('stylesheet_directory') . '/js/jquery.cycle.all.min.js',
+	       array('jquery'),
+	       '1.4.2' );
+	       // enqueue the jQuery scrollTo script
+	   	wp_enqueue_script('cycle');	
+		}	         
+	}    
+	add_action('init', 'load_cycle_js');
 }	
 endif;
 
-/**
-**
-** Add extra fields for the featured homepage section
-**
-**/
-/* Define the custom box */
-
-// WP 3.0+
-add_action('add_meta_boxes', 'create_featured_post_meta_box');
-
-// backwards compatible
-// add_action('admin_init', 'create_featured_post_meta_box', 1);
-
-/* Do something with the data entered */
-add_action('save_post', 'save_feature_homapage_postdata');
-
-/* Adds a box to the main column on the Post and Page edit screens */
-function create_featured_post_meta_box() {
-    add_meta_box( 'feature-homepage', __( 'Featured on Homepage?', 'feature-homepage' ), 
-                'feature_homepage_inner_custom_box', 'post', 'side' );
-    add_meta_box( 'feature-homepage', __( 'Featured on Homepage?', 'feature-homepage' ), 
-                'feature_homepage_inner_custom_box', 'page', 'side' );
-}
-
-/* Prints the box content */
-function feature_homepage_inner_custom_box() {
-
-  // Use nonce for verification
-  wp_nonce_field( plugin_basename(__FILE__), 'myplugin_noncename' );
-
-  // The actual fields for data entry
-  echo '<label for="feature-homapage">' . __("feature", 'feature-homepage' ) . '</label> ';
-  echo '<input class="checkbox" type="checkbox" id="feature-home" name="feature-home" value="true">';
-}
-
-/* When the post is saved, saves our custom data */
-function save_feature_homapage_postdata( $post_id ) {
-
-  // verify this came from the our screen and with proper authorization,
-  // because save_post can be triggered at other times
-
-  if ( !wp_verify_nonce( $_POST['myplugin_noncename'], plugin_basename(__FILE__) )) {
-    return $post_id;
-  }
-
-  // verify if this is an auto save routine. If it is our form has not been submitted, so we dont want
-  // to do anything
-  if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
-    return $post_id;
-
-  
-  // Check permissions
-  if ( 'page' == $_POST['post_type'] ) {
-    if ( !current_user_can( 'edit_page', $post_id ) )
-      return $post_id;
-  } else {
-    if ( !current_user_can( 'edit_post', $post_id ) )
-      return $post_id;
-  }
-
-  // OK, we're authenticated: we need to find and save the data
-
-  $mydata = $_POST['feature-homepage'];
-
-  // Do something with $mydata 
-
-
-   return $mydata;
-}
 
 /**
  * Makes some changes to the <title> tag, by filtering the output of wp_title().

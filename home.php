@@ -1,21 +1,25 @@
 <?php get_header(); ?>
-<div id="home-top">
-	<?php $my_query = new WP_Query('meta_key=featured-homepage&meta_value=checkbox_on&showposts=1');
+<div id="home-left">
+	<div id="home-top">		
+		<?php $my_query = new WP_Query('meta_key=feature-homepage&meta_value=checkbox_on&showposts=3&post_type=any');
 	echo '<div id="big-feature">';
-	while ($my_query->have_posts()) : $my_query->the_post();
-	$do_not_duplicate[] = $post->ID;
-	global $post;
-	$feature_title = get_post_meta($post->ID,'feature-title',true); ?>
-		<a href="<?php the_permalink();?>"><?php the_post_thumbnail('featured');?></a>
-		<div class="feature-detail">
-			<h2><a href="<?php the_permalink();?>"><?php if($feature_title !== '') { echo $feature_title; }else{ echo get_the_title(); } ?></a></h2>
-			<p id="feature-meta">
-				<span class="feature-comments"><a href="<?php the_permalink();?>#reply-title"><?php comments_number('Be the first to Comment','One Comment','% Comments'); ?></a></span>
-				<span class="feature-more"><a href="<?php the_permalink();?>">Read Post</a></span>
-			</p>
-		</div>
-		</div>					
-	<?php endwhile;  wp_reset_query; ?>
+		$count = 0;	
+  		while ($my_query->have_posts()) : $my_query->the_post();
+  		global $post;
+ 		$count++;
+  		$feature_title = get_post_meta($post->ID,'feature-title',true);?>
+		<div class="feature-item-<?php echo $count;?>">			
+			<a href="<?php the_permalink();?>"><?php the_post_thumbnail('featured');?></a>
+			<div class="feature-detail">
+				<h2><a href="<?php the_permalink();?>"><?php if($feature_title !== '') { echo $feature_title; }else{ echo get_the_title(); } ?></a></h2>
+			</div><!-- end .feature-detail -->
+		</div><!-- end .feature-item -->						
+		<?php endwhile;  wp_reset_query; ?>
+		</div><!-- end #big-feature -->	
+		<div id="slideshow-nav">
+		<a href="#" class="slidePrev"></a> <a href="#" class="slideNext"></a>
+		</div><!-- #slideshow-nav -->
+		<div id="slidePager"></div>											
 	</div><!-- end #home-top -->
 
 <div id="home-middle-bg">
@@ -50,6 +54,6 @@
 
     </div><!-- end #home-middle -->
 </div><!-- end #home-middle-bg -->
-
+</div><!-- end #home-left -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

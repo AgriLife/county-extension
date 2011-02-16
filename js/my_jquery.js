@@ -1,11 +1,19 @@
 jQuery(document).ready(function($) {
 
 	// remove all height attributes from images for flexibility	
-	$('img').removeAttr('height');
+	$('.post img').removeAttr('height');	
 	
-	$(function() {
-		$( "#tabs" ).tabs();
-	});
+    if ($('#big-feature').length > 0) {
+        $('#big-feature').cycle({ 
+			fx:     'scrollHorz', 
+			speed:  300,						 
+			timeout: 7000, 
+			pause:  1,			
+            next:   '.slideNext', 
+            prev:   '.slidePrev',
+			pager: 	'#slidePager',
+        });
+    }
 
     var Revealer = function(relativeParent,absoluteChild,speed) {
         var revealHeight = absoluteChild.height();

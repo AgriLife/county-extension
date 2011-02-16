@@ -53,9 +53,9 @@
 <div id="extension-section">
 	<div class="flow">
 		<div class="contents">
-			<div class="wrap">
+			<div class="wrap gform_wrapper">
 
-	            <form action="" method="" accept-charset="utf-8">
+	            <form id='gform_1' action="" method="post" enctype='multipart/form-data' accept-charset="utf-8">
 	                <fieldset class="first">
 	                    <div class="container">
 	                        <label for="name">
@@ -90,74 +90,22 @@
 	            </form>
 				
 			<ul id="quick-links">	
-				 <li><a class="sub" href="http://agrilifeextension.tamu.edu/programs/index.php" title=""><span>Programs</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://agrilifeextension.tamu.edu/programs/index.php" title="">Programs Overview</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/programs/index/index.php" title="">Program Index</a></li>
-				      </ul>
-				    </div>
+				 <li><a href="" title=""></a></li>
+				  <li><a href="" title="">4h and youth</a>
 				  </li>
-				  <li><a class="sub" href="http://agrilifeextension.tamu.edu/events/index.php" title=""><span>Resources</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://agrilifeextension.tamu.edu/extresources/index.php" title="">Resources Overview</a></li>
-				        <li><a href="http://extension.org/ask">Ask an Expert</a></li>
-				        <li><a href="http://agrilifebookstore.org">AgriLife Bookstore</a></li>
-				        <li><a href="http://youtube.com/agrilifevideo">AgriLife YouTube Videos</a></li>
-				        <li><a href="http://flickr.com/photos/agrilife">AgriLife Flickr Photos</a></li>
-				      </ul>
-				    </div>
+				  <li><a href="" title="">Lawn and Gardening</a>
 				  </li>
-				  <li><a class="sub" href="http://agrilifeextension.tamu.edu/programs/index.php" title=""><span>Services</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://agrilifeextension.tamu.edu/programs/continuinged/index.php" title="">Certification and Continuing Education</a></li>
-				        <li><a href="http://cnrit.tamu.edu/ganlab/GANlab_webpage.htm">Grazingland Animal Nutrition Laboratory</a></li>
-				        <li><a href="http://soiltesting.tamu.edu">Soil, Water, and Forage Testing Laboratory</a></li>
-				        <li><a href="http://plantclinic.tamu.edu">Texas Plant Disease Diagnostic Laboratory</a></li>
-				        <li><a href="http://ws.tamu.edu">Wildlife Services</a></li>
-				      </ul>
-				    </div>
+				  <li><a href="" title="">Livestock</a>
 				  </li>
-				  <li><a class="sub" href="http://agrilifeextension.tamu.edu/events/index.php" title=""><span>Events</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://agrilifeextension.tamu.edu/events/index.php" title="">Events Overview</a></li>
-				      </ul>
-				    </div>
+				  <li><a href="" title="">Health and saftey</a>
 				  </li>
-				  <li><a class="sub" href="http://agrilifeextension.tamu.edu/contact/index.php" title=""><span>Contacts</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://county-tx.tamu.edu/">County Offices</a></li>
-				        <li><a href="http://agdirectory.tamu.edu/">Employee Directory</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/contact/index.php" title="">FAQs</a></li>
-				        <li><a href="http://agnews.tamu.edu/contact/">Media Relations</a></li>
-				      </ul>
-				    </div>
+				  <li><a href="" title=""><span>Crops</span></a>
 				  </li>
-				  <li><a class="sub" href="http://agrilifeextension.tamu.edu/about/index.php" title=""><span>About</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://agrilifeextension.tamu.edu/about/index.php" title="">Mission/Overview</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/about/leadership/index.php" title="">Administrative Leadership</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/about/strategyimpact/index.php" title="">Strategic Plan &amp; Impacts</a></li>
-				        <li><a class="sub" href="http://agrilifeextension.tamu.edu/careers/index.php" title="">Careers</a></li>
-				        <li><a href="http://tamus.edu">Texas A&amp;M System</a></li>
-				      </ul>
-				    </div>
+				  <li><a href="" title="">Insects and pest management</a></li>
+				  <li><a href="" title="">Finance</a>
 				  </li>
-				  <li><a class="sub" href="http://agrilifeextension.tamu.edu/volunteer/index.php" title=""><span>Volunteer</span></a>
-				    <div class="sub">
-				      <ul>
-				        <li><a href="http://agrilifeextension.tamu.edu/volunteer/index.php" title="">Be an Extension Volunteer</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/volunteer/community/index.php" title="">Community Involvement</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/volunteer/programs/index.php" title="">Volunteer Programs</a></li>
-				        <li><a href="http://agrilifeextension.tamu.edu/volunteer/partner/index.php" title="">Partner with Extension</a></li>
-				      </ul>
-				    </div>
-				  </li>
+				  <li><a href="" title="">Family and home</a></li>		
+				  <li><a href="" title="">Educational programs</a></li>							
 				</ul>				
 
 			</div><!-- .wrap -->
@@ -169,9 +117,7 @@
 	<div id="header">
 			<div id="branding" role="banner">
 				<h1 id="site-title">
-					<span>
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					</span>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><em>Brazos County</em></a>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 				<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>				
