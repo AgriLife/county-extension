@@ -445,7 +445,6 @@ a:hover {
 #site-title {
 	float: left; 
 	margin-top: 15px;
-	height: 110px;
 }
 
 #site-title a {
@@ -458,10 +457,10 @@ a:hover {
 #site-title a em {
 	display: block;
 	overflow: hidden;
-	font-size: 1.7em;
+	font-size: 1.1em;
 	font-style: normal;
 	font-weight: 400;
-	padding-left: 5px;
+	padding-left: 7px;
 }
 
 #site-title a:hover {
@@ -1391,6 +1390,7 @@ code {
 		width: 700px;
 		margin-top: 0;
 		padding: 0;
+		height: 110px;	
 	}
 	
 	#site-title a {
@@ -1403,6 +1403,10 @@ code {
 	#site-title a em {
 		margin-left: 97px;
 		margin-top: -10px;
+		font-size: 1.7em;
+		font-style: normal;
+		font-weight: 400;
+		padding-left: 5px;		
 	}
 		
 	div.search {
@@ -1559,7 +1563,7 @@ code {
 	aside #books-bg ul.books {
 		padding-left: 0;
 		margin-left: 0;
-		padding-top: 5px;
+		padding-top: 7px;
 		position: relative;
 		display: block;		
 	}
@@ -1584,7 +1588,7 @@ code {
 		z-index: 6;
 		top: -15px;
 		left: 40px;
-		padding: 10px 10px 14px 10px;
+		padding: 13px 10px 16px 10px;
 		color: #8C2B17;
 		font: 1.1em georgia;
 	}

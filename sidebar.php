@@ -35,12 +35,12 @@
 	</div>	
 	<div id="event-bg">
 	<h3>Upcoming Events</h3>
-    <div class="event">
+    <div class="event vevent">
            <dl class="first">
-				<dt class="date">JAN<strong>13</strong></dt>
+				<dt class="date dtstart">JAN<strong>13</strong></dt>
 				<dd class="title-loc">
-				<h4>Waco 2011 Master Marketer Program</h4>
-                   <p><a href="">Texas Farm Bureau Conference Center 7410 Fish Pond Rd.</a> - <span>Waco, Texas</span></p>
+				<h4 class="summary">Waco 2011 Master Marketer Program</h4>
+                   <p ><a href="">Texas Farm Bureau Conference Center 7410 Fish Pond Rd.</a> - <span class="location">Waco, Texas</span></p>
                </dd>
 				<dd class="sign-up btn"><a href="">Sign Up</a></dd>
            </dl>
