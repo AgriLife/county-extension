@@ -717,7 +717,7 @@ div.menu li {
 	overflow: hidden;
 	background: #e5e0c5;		
 	background: rgba(217, 208, 173, 0.5);	
-	padding: 10px 0;
+	padding: 10px;
 	margin-right: 10px;
 	margin-bottom: 20px;		
 }
@@ -1557,6 +1557,9 @@ code {
 	}
 	
 	aside #books-bg ul.books {
+		padding-left: 0;
+		margin-left: 0;
+		padding-top: 5px;
 		position: relative;
 		display: block;		
 	}
@@ -1632,7 +1635,7 @@ code {
 	}
 		
 	aside h3.widget-title, aside h3 {
-		font: 16px 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+		font: 14px 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	}	
 
 	div.event dd.sign-up a:active {
