@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
 	// remove all height attributes from images for flexibility	
-	$('.post img').removeAttr('height');	
+	$('#container img').removeAttr('height');	
 	
     if ($('#big-feature').length > 0) {
         $('#big-feature').cycle({ 
