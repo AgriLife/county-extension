@@ -46,34 +46,34 @@
            </dl>
    </div><!-- // event -->
 
-   <div class="event">
+   <div class="event vevent">
 			<dl>
-				<dt class="date">JAN<strong>25</strong></dt>
+				<dt class="date dtstart">JAN<strong>25</strong></dt>
            		<dd class="title-loc">
-				<h4>Prospective Wine Grower Workshop</h4>
-					<p><a href="">1229 N. U.S. Hwy 281, Stephenville</a> - <span>Stephenville, Texas</span></p>
+				<h4 class="summary">Prospective Wine Grower Workshop</h4>
+					<p><a href="">1229 N. U.S. Hwy 281, Stephenville</a> - <span class="location">Stephenville, Texas</span></p>
            		</dd>
 				<dd class="sign-up btn"><a href="">Sign Up</a></dd>
 			</dl>
 	</div><!-- // event -->
 	
-   <div class="event">
+   <div class="event vevent">
 			<dl>
-				<dt class="date">FEB<strong>1</strong></dt>
+				<dt class="date dtstart">FEB<strong>1</strong></dt>
            		<dd class="title-loc">
-				<h4>School IPM Coordinator Training</h4>
-					<p><a href="">Texas AgriLife Research &amp; Extension Center 6500 Amarillo Blvd. W.</a> - <span>Amarillo, Texas</span></p>
+				<h4 class="summary">School IPM Coordinator Training</h4>
+					<p><a href="">Texas AgriLife Research &amp; Extension Center 6500 Amarillo Blvd. W.</a> - <span class="location">Amarillo, Texas</span></p>
            		</dd>
 				<dd class="sign-up btn"><a href="">Sign Up</a></dd>
 			</dl>
 	</div><!-- // end event -->
 	
-   <div class="event last">
+   <div class="event vevent last">
 			<dl>
-				<dt class="date">FEB<strong>1</strong></dt>
+				<dt class="date dtstart">FEB<strong>1</strong></dt>
            		<dd class="title-loc">
-				<h4>Structural Pest Control Pest Category Training</h4>
-                   <p><a href="">2210 S. FM 973</a> - <span>Austin, Texas</span></p>
+				<h4 class="summary">Structural Pest Control Pest Category Training</h4>
+                   <p><a href="">2210 S. FM 973</a> - <span class="location">Austin, Texas</span></p>
            		</dd>
 				<dd class="sign-up btn"><a href="">Sign Up</a></dd>
 			</dl>
