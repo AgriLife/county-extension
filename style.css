@@ -31,7 +31,7 @@ body {
 	background: #EAE8D9 url(images/tan-background.png) top left;
 	font: 62.5% "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 	line-height: 1.9em;
-	color: #666;
+	color: #666;	
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -281,9 +281,9 @@ a:hover {
 	left: 0;
 	width: 100%;
 	background: #004b69;
-	padding: 2px 0 5px 0;
 	color: #fff;
 	border-bottom: 1px dashed #005e88;
+	border-top: 1px solid #12a2e8;	
 }
 
 #extension-section-nav #drop-nav {
@@ -298,15 +298,18 @@ a:hover {
 
 #extension-section-nav #drop-nav ul li {
 	float: left;
-	padding: 2px 0;	
+	padding: 0 0 2px 0;	
+}
+
+#extension-section-nav #drop-nav ul li.ask {
+	padding: 7px 0 1px 0;
 }
 
 #extension-section-nav #drop-nav ul li a {
 	position: relative;
 	z-index: 2;	
 	font: 12px "cambria", Georgia, serif;
-	padding: 15px 12px 9px 13px;
-	background: #004b69;
+	padding: 2em 12px 9px 13px;
 	color: #fff;
 	border: none;
 }
@@ -314,7 +317,8 @@ a:hover {
 #extension-section-nav #drop-nav ul li a[href*='ask'] {
 	position: relative;
 	z-index: 2;
-	padding-bottom: .85em;
+	padding-bottom: .5em;
+	font-size: 1.3em;		
 	background: #0095d0;
 	-webkit-box-shadow: 0 1px 2px rgba(30,30,30,.4);
 	-moz-box-shodow: 0 1px 2px rgba(30,30,30,.4);
@@ -332,6 +336,12 @@ a:hover {
 #extension-section-nav #drop-nav ul li a[href*='extension'] {
 	position: relative;
 	z-index: 2;
+}
+
+#extension-section-nav #drop-nav ul li.right-align {
+	float: right;
+	font: italic 1.4em 'Cambria', georgia, serif;
+	padding-top: 7px;
 }
 
 #extension-section  {
@@ -526,9 +536,9 @@ div.menu li {
 .search input[type=submit] {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	border-radius: 3px;	
+	border-radius: 3px;
+	-moz-box-shadow: 1px 1px 1px #d8d3ae;		
 	-webkit-box-shadow: 1px 1px 1px #d8d3ae;
-	-moz-box-shodow: 1px 1px 1px #d8d3ae;
 	box-shodow: 1px 1px 1px #d8d3ae;	
 	border: 1px solid #c7bc7f;
 	padding: 3px 8px;
@@ -543,7 +553,7 @@ div.menu li {
 	cursor: pointer;
 	border: 1px solid #bba563;	
 	-webkit-box-shadow: 1px 1px 1px #f0eedd;
-	-moz-box-shodow: 1px 1px 1px #f0eedd;
+	-moz-box-shadow: 1px 1px 1px #f0eedd;
 	box-shodow: 1px 1px 1px #f0eedd;	
 	background: #c7bc7f;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cfc591), to(#c7bc7f));
@@ -770,7 +780,7 @@ div.event dt.date {
 	letter-spacing: 1px;
 	border-top: 1px solid #fff;		
 	-webkit-box-shadow: 0 1px 2px #d8d3ae;
-	-moz-box-shodow: 0 1px 2px #d8d3ae;
+	-moz-box-shadow: 0 1px 2px #d8d3ae;
 	box-shodow: 0 1px 2px #d8d3ae;		
 	float: left;
 }
@@ -1381,9 +1391,14 @@ code {
 	}
 	
 	#extension-section-nav #drop-nav ul li a[href*='extension'] {
-		padding-right: 35px;
-		margin-right: 5px;
-		background: transparent url(images/ext-arrow.png) no-repeat right 60%;
+		padding: 0 0 12px 40px;
+		margin: 0;
+		margin-left: 10px;
+		display: block;
+		float: right;
+		width: 130px;
+		text-indent: -999em;
+		background: transparent url(images/ext-logo-arrow.png) no-repeat right 60%;
 	}
 	
 	#site-title {
@@ -1624,7 +1639,7 @@ code {
 		cursor: pointer;
 		border: 1px solid #bba563;	
 		-webkit-box-shadow: none;
-		-moz-box-shodow: none;
+		-moz-box-shadow: none;
 		box-shodow: none;	
 		background: #c7bc7f;
 		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cfc591), to(#c7bc7f));
@@ -1665,26 +1680,6 @@ code {
 	.contact,
 	.agrilife-bookstore {
 		padding: 0 10px;
-	}
-
-	.about {
-
-	}
-
-	.popular-links {
-
-	}
-
-	.texas-a-m {
-
-	}
-
-	.contact {
-
-	}
-
-	.agrilife-bookstore {
-
 	}
 
 	#footer .wrap h4 {

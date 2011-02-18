@@ -66,7 +66,7 @@
 				<ul>
 					<li><a href="">View Larger Map</a></li>
 					<li>Texas A&amp;M AgriLife</li>
-					<li>Jack K. Williams</br> Administration Building</br> 2142 TAMU</br> College Station, TX 77843</li>
+					<li>Jack K. Williams Administration Building 2142 TAMU College Station, TX 77843</li>
 					<li>Phone: (979) 845-4747</li>					
 					<li>Fax: (979) 845-4242</li>
 					<li><a href="">Email Our Team</a></li>					

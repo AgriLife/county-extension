@@ -45,8 +45,10 @@
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>
-			<li><a class="ext-link" href="/ask/">Ask a Question</a></li>
-			<li><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>					
+			<li class='ask'><a class="ext-link" href="/ask/">Ask a Question</a></li>
+			<li><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>	
+			<li class="right-align"><strong>Growing Smarter Solutions</strong> Through Lifelong Education</li>			
+		</ul>				
 	</div><!-- #drop-nav -->	
 </div><!-- #extension-section-nav -->
 	
@@ -55,7 +57,7 @@
 		<div class="contents">
 			<div class="wrap gform_wrapper">
 
-	            <form id='gform_1' action="" method="post" enctype='multipart/form-data' accept-charset="utf-8">
+	            <form id='gform_1' action="/" method="post" enctype='multipart/form-data' accept-charset="utf-8">
 	                <fieldset class="first">
 	                    <div class="container">
 	                        <label for="name">
