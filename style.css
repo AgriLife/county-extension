@@ -1571,11 +1571,11 @@ code {
 		float: left;
 	}
 	
-	aside {
+	#aside {
 		width: 380px;
 	}
 	
-	aside #books-bg ul.books {
+	#aside #books-bg ul.books {
 		padding-left: 0;
 		margin-left: 0;
 		padding-top: 7px;
@@ -1583,21 +1583,21 @@ code {
 		display: block;		
 	}
 	
-	aside #books-bg ul.books li {
+	#aside #books-bg ul.books li {
 		position: relative;
 		display: block;		
 		width: 50%;
 		float: left;
 	}
 	
-	aside #books-bg ul.books li dt.book-title {
+	#aside #books-bg ul.books li dt.book-title {
 		float: right;
 		width: 55%;
 		padding-top: 25px;
 		line-height: 1em;
 	}
 		
-	aside #books-bg ul.books li dd.price {
+	#aside #books-bg ul.books li dd.price {
 		position: absolute;
 		background: url(images/price-circle.png) no-repeat 40% 50%;
 		z-index: 6;
@@ -1608,24 +1608,24 @@ code {
 		font: 1.1em georgia;
 	}
 
-	aside #books-bg ul.books li dd.price em {
+	#aside #books-bg ul.books li dd.price em {
 		font-size: .75em;
 		font-style: normal;
 	}
 
-	aside #books-bg ul.books li dd.price span {
+	#aside #books-bg ul.books li dd.price span {
 		font-size: .5em;
 		vertical-align:	super;	
 	}
 					
-	aside #books-bg ul.books li p.btn {
+	#aside #books-bg ul.books li p.btn {
 		position: absolute;
 		z-index: 5;
-		bottom: 2px;
+		bottom: 6px;
 		right: 55px;
 	}
 		
-	aside #books-bg ul.books li p.btn a {
+	#aside #books-bg ul.books li p.btn a {
 		padding: 4px 12px;
 		font-size: 10px;
 		color: #806E38;
@@ -1635,7 +1635,7 @@ code {
 		background: -moz-linear-gradient(top, #ded8b4, #c7bc7f);		
 	}
 
-	aside #books-bg ul.books li p.btn a:hover {
+	#aside #books-bg ul.books li p.btn a:hover {
 		cursor: pointer;
 		border: 1px solid #bba563;	
 		-webkit-box-shadow: none;
@@ -1646,14 +1646,14 @@ code {
 		background: -moz-linear-gradient(top, #cfc591, #c7bc7f);
 	}
 
-	aside #books-bg ul.books li p.btn a:active {
+	#aside #books-bg ul.books li p.btn a:active {
 		cursor: pointer;	
 		background: #c7bc7f;
 		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c7bc7f), to(#cfc591));
 		background: -moz-linear-gradient(top, #c7bc7f, #cfc591);		
 	}
 		
-	aside h3.widget-title, aside h3 {
+	#aside h3.widget-title, aside h3 {
 		font: 14px 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	}	
 
