@@ -23,7 +23,7 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?1" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?2" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -45,9 +45,9 @@
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>
-			<li class='ask'><a class="ext-link" href="/ask/">Ask a Question</a></li>
+			<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
 			<li><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>	
-			<li class="right-align"><strong>Growing Smarter Solutions</strong> Through Lifelong Education</li>			
+		<!-- 	<li class="right-align"><strong>Growing Smarter Solutions</strong> Through Lifelong Education</li>	 -->		
 		</ul>				
 	</div><!-- #drop-nav -->	
 </div><!-- #extension-section-nav -->
@@ -122,7 +122,7 @@
 						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><em>Brazos County</em></a>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-				<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>				
+			<!--	<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>	 -->			
 
 			</div><!-- #branding -->
 	</div><!-- #header -->		

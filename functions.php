@@ -590,3 +590,10 @@ wp_create_nonce( 'tf-events-nonce' ) . '" />';
 </div>
 <?php
 }
+
+//add admin css to theme
+if ( is_admin() ) { 
+    $theme  = get_theme( get_current_theme() );
+    wp_register_style( 'admin-style', get_bloginfo( 'stylesheet_directory' ), false, $theme['Version'] );
+    wp_enqueue_style( 'admin-style' );
+}

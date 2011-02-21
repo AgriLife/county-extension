@@ -317,7 +317,7 @@ a:hover {
 #extension-section-nav #drop-nav ul li a[href*='ask'] {
 	position: relative;
 	z-index: 2;
-	padding-bottom: .5em;
+	padding-bottom: .4em;
 	font-size: 1.3em;		
 	background: #0095d0;
 	-webkit-box-shadow: 0 1px 2px rgba(30,30,30,.4);
@@ -449,7 +449,7 @@ a:hover {
 
 #header {
 	margin-top: 15px;
-	padding: 30px 0 0 0;
+	padding: 40px 0 0 0;
 	overflow: hidden;
 }
 #site-title {
@@ -1410,15 +1410,15 @@ code {
 	
 	#site-title a {
 		background: url(images/county-shape.png) no-repeat -5px top;
-		font: 36px 'arno pro', georgia, serif;
+		font: 32px 'arno pro', georgia, serif;
 		margin-left: 10px;
-		padding: 20px 0 60px 95px;
+		padding: 20px 0 60px 95px;	
 	}
 
 	#site-title a em {
 		margin-left: 97px;
 		margin-top: -10px;
-		font-size: 1.7em;
+		font-size: 1.6em;
 		font-style: normal;
 		font-weight: 400;
 		padding-left: 5px;		
@@ -2135,3 +2135,18 @@ ul.top_label .clear-multi {overflow:hidden; clear:both}
 .gform_wrapper .gfield_checkbox li input[type=checkbox], .gform_wrapper .gfield_radio li input[type=radio], .gform_wrapper .gfield_checkbox li input {*margin-top:0}
 .gform_wrapper .ginput_complex .ginput_left select, .gform_wrapper .ginput_complex .ginput_right select {padding: 2px 0 2px 0\9 }
 .gform_wrapper .gfield_checkbox li label, .gform_wrapper .gfield_radio li label {display:inline-block\9; margin: 2px 0 0 6px\9; }
+
+/* Columns CPT Events */
+
+#tf_col_ev_date, th#tf_col_ev_cat {width:150px}
+td.tf_col_ev_date em {color:gray;}
+th#tf_col_ev_times {width:150px}
+th#tf_col_ev_thumb {width:100px}
+
+/* Metabox */
+
+body.wp-admin .tf-meta {  }
+body.wp-admin .tf-meta ul li { height: 20px; clear:both; margin: 0 0 15px 0;}
+body.wp-admin .tf-meta ul li label { width: 100px; display:block; float:left; padding-top:4px; }
+body.wp-admin .tf-meta ul li input { width:125px; display:block; float:left; }
+body.wp-admin .tf-meta ul li em { width: 200px; display:block; float:left; color:gray; margin-left:10px; padding-top: 4px }
