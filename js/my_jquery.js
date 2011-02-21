@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
     var contactForm = new Revealer(
         jQuery('#extension-section .flow'),               // the relatively positioned container
         jQuery('#extension-section .flow .contents'),     // the absolutely positioned child
-        300                                     // the speed of the animation
+        300  // the speed of the animation
     );
     
     jQuery('.ext-link').live('click',function(){
