@@ -23,7 +23,8 @@
 
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>?2" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<!--[if IE8 ]> <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/ie.css" /> <![endif]-->
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -47,7 +48,7 @@
 		<ul>
 			<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
 			<li><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>	
-		<!-- 	<li class="right-align"><strong>Growing Smarter Solutions</strong> Through Lifelong Education</li>	 -->		
+			<li class="right-align"><strong>Growing Smarter Solutions</strong> Through Lifelong Education</li>		
 		</ul>				
 	</div><!-- #drop-nav -->	
 </div><!-- #extension-section-nav -->

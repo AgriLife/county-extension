@@ -8,7 +8,31 @@
  */
 ?>
 <aside id="aside">
-
+	<div id="books-bg">
+	<h3>AgriLife Reading Materials</h3>		
+		<ul class="books">
+			<li>
+				<a href="">
+				<dl>
+					<dt class="book-title">Brush &amp; Weeds</dt>	
+						<dd class="book-cover"><img class="book" src="<?php bloginfo( 'template_directory' ); ?>/images/brush-weeds-cover.png" /></dd>
+					<!-- 	<dd class="price"><em>$</em>19<span>99</span></dd>	-->	
+				</dl>
+				</a>
+				<p class="buy btn"><a href="">Buy</a></p>					
+			</li>
+			<li>	
+				<a href="">
+				<dl>
+					<dt class="book-title">Rainwater Harvest</dt>	
+						<dd class="book-cover"><img class="book" src="<?php bloginfo( 'template_directory' ); ?>/images/rainwater-harvest-cover.png" /></dd>
+							<!-- 	<dd class="price"><em>$</em>26<span>99</span></dd>	-->							
+				</dl>
+				</a>
+				<p class="buy btn"><a href="">Buy</a></p>					
+			</li>
+		</ul>			
+	</div>
 	<div id="event-bg">
 	<h3>Upcoming Events</h3>
     <div class="event vevent">
@@ -56,31 +80,7 @@
 	</div><!-- // end event -->	
 	
 	</div><!-- // end event-bg -->	
-	<div id="books-bg">
-	<h3>AgriLife Reading Materials</h3>		
-		<ul class="books">
-			<li>
-				<a href="">
-				<dl>
-					<dt class="book-title">Brush &amp; Weeds</dt>	
-						<dd class="book-cover"><img class="book" src="<?php bloginfo( 'template_directory' ); ?>/images/brush-weeds-cover.png" /></dd>
-						<dd class="price"><em>$</em>19<span>99</span></dd>		
-				</dl>
-				</a>
-				<p class="buy btn"><a href="">Buy</a></p>					
-			</li>
-			<li>	
-				<a href="">
-				<dl>
-					<dt class="book-title">Rainwater Harvest</dt>	
-						<dd class="book-cover"><img class="book" src="<?php bloginfo( 'template_directory' ); ?>/images/rainwater-harvest-cover.png" /></dd>
-						<dd class="price"><em>$</em>26<span>99</span></dd>								
-				</dl>
-				</a>
-				<p class="buy btn"><a href="">Buy</a></p>					
-			</li>
-		</ul>			
-	</div>	
+
 	<div id="aside-widget-area-1">
 		<div id="primary" class="widget-area" role="complementary">
 			<ul class="xoxo">
