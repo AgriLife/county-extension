@@ -716,6 +716,7 @@ div.search input#s {
 	margin-bottom: 15px;
 	margin-top: 15px;
 	letter-spacing: 2px;
+	font-size: 1.3em;
 	text-transform: uppercase;
 }
 
@@ -761,7 +762,7 @@ div.event dl {
 
 div.event dt.date {
 	position: relative;
-	font: 1.3em georgia, serif;
+	font: 1em georgia, serif;
 	color: #b19e56;
 	text-shadow: 0 1px 0 #fff;
 	background: #f0eee3;
@@ -785,7 +786,7 @@ div.event dl dd.title-loc {
 }
 
 div.event dl dd.title-loc h4 {
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 
 div.event dl dd.title-loc h4,
@@ -808,6 +809,7 @@ div.event dd.sign-up a {
 	position: absolute;
 	right: 0;
 	top: 26px;
+	font-size: 1.1em;
 }
 
 div.event dl.first {
