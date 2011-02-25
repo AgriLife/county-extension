@@ -95,6 +95,7 @@ header, nav, section, aside, article, footer, figure {
 }
 
 .wrap {
+	overflow: hidden;
 	position: relative;
 	margin: 0 auto;	
 }
@@ -250,19 +251,22 @@ a:hover {
 }
 
 #extension-section .btn a, button.btn {
-	-webkit-box-shadow: 1px 1px 1px #09405a;
-	-moz-box-shodow: 1px 1px 1px #09405a;
-	box-shodow: 1px 1px 1px #09405a;	
+	-webkit-box-shadow: none;
+	-moz-box-shodow: none;
+	box-shodow: none;	
+	border: 1px solid #00648d;			
 }
 
 #extension-section .btn a:hover, button.btn:hover {		
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0082b7), to(#0082b7));
+	border: 1px solid #66a9d3;		
 }
 
 #extension-section .btn a:active, button.btn:active {
-	-webkit-box-shadow: 1px 1px 0 #0c6185;
-	-moz-box-shodow: 1px 1px 0 #0c6185;
-	box-shodow: 1px 1px 0 #0c6185;	
+	border: 1px solid #73beed;
+	-webkit-box-shadow: none;
+	-moz-box-shodow: none;
+	box-shodow: none;		
 }
 
 /* Text meant only for screen readers */
@@ -320,10 +324,6 @@ a:hover {
 	padding-bottom: .6em;
 	font-size: 1.3em;		
 	background: #0095d0;
-	-webkit-box-shadow: 0 1px 2px rgba(30,30,30,.4);
-	-moz-box-shodow: 0 1px 2px rgba(30,30,30,.4);
-	box-shodow: 0 1px 2px rgba(30,30,30,.4);	
-	border: 1px solid rgba(30,30,30,.4);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#00a6ea), to(#0082b7));
 	background: -moz-linear-gradient(top, #00a6ea, #0082b7);			
 }
@@ -343,7 +343,7 @@ a:hover {
 }
 
 #extension-section  {
-	background: #004b69 url(images/blue-texture.png) -10% 80%; 	
+	background: #004b69 url(images/blue-texture.png) -10% 80%; 
 	border-bottom: 2px solid #fff;	
 	color: #fff;
 	padding-top: 30px;
@@ -373,29 +373,12 @@ a:hover {
 	color: #fff;		
 }
 
-#extension-section .flow .contents ul#quick-links {
-	padding: 20px 0;
-	float: left;
-	width: 60%;	
-	margin-left: 10px;	
-}
-
-#extension-section .flow .contents ul#quick-links li {
-	float: left;
-	width: 230px;
-	margin-right: 30px;		
-}
-
-#extension-section .flow .contents ul#quick-links li ul li {
-	float: none;		
-}
-
-#extension-section .flow .contents form {
+#extension-section .flow .contents .gform_wrapper {
 	position: relative;
-	padding: 25px 0;
-	margin-right: 20px;
+	padding: 23px 5px 5px 5px;
 	float: left;
-	width: 32%;		
+	width: 164px;
+	background: #0084b9;		
 }
 
 #extension-section .flow .contents form label {
@@ -405,16 +388,35 @@ a:hover {
 }
 
 #extension-section .flow .contents form input {
-	margin-bottom: 10px;	
+	margin-bottom: 8px;	
 }
 
 #extension-section .flow .contents form button[type=reset] {	
 	border: 1px solid #1073a0;
 	color: #ccc;
-	background: #1073a0;	
+	background: #1073a0;
+	padding: 2px 5px;	
+}
+
+#extension-section .flow .contents form button[type=submit] {	
+	padding: 2px 12px;	
 }
 
 #extension-section .flow .contents form input,
+#extension-section .flow .contents form textarea {
+	background: #003950;
+	font-size: 12px;
+	color: #fff;
+	border: 1px solid #034b6b;	
+	padding: 2px 3px;
+	width: 154px;	
+	-moz-transition: background-color .15s linear;	
+	-webkit-transition: background-color .15s linear;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;	
+}
+
 #extension-section .flow .contents form textarea {
 	background: #003950;
 	color: #fff;
@@ -426,10 +428,7 @@ a:hover {
 
 #extension-section .flow .contents form input:hover,
 #extension-section .flow .contents form textarea:hover {
-	background: #002736;
-	-webkit-box-shadow: 0 0 7px #12a6ed;
-	-moz-box-shadow: 0 0 7px #12a6ed;
-	box-shadow: 0 0 7px #12a6ed;			
+	background: #002736;			
 }
 
 #extension-section .flow .contents form input:focus,
@@ -438,6 +437,75 @@ a:hover {
 	-webkit-box-shadow: 0 0 10px #12a6ed;
 	-moz-box-shadow: 0 0 10px #12a6ed;
 	box-shadow: 0 0 10px #12a6ed;			
+}
+
+#extension-section .flow .contents #top-level-nav {
+	float: right;
+	width: 760px;
+	margin: 35px 0 0 20px;
+	overflow: hidden; 
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav {
+	float: left;
+	width: 169px;
+	margin-left: 20px;
+	margin-bottom: 50px;
+	padding: 3px;
+	background: #3486ab;
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav:hover {
+	background: #3c8fb5;
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav h2 {
+	font: 12px 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	text-transform: uppercase;
+	padding: 7px 0 7px 38px;
+	color: #add8eb;
+	background: #1f7298 url(images/top-level-arrow.png) no-repeat left top;	
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav:hover h2 {
+	color: #fff;
+	background-position: left -31px;	
+}
+
+#extension-section .flow .contents #top-level-nav .business-nav {
+	margin-left: 0; 
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav .tags ul {
+	margin: 5px 0;
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav .tags ul li {
+	display: inline;
+	font-size: 11px;
+	margin: 0;
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav .tags ul li a {
+	display: inline;
+	float: left;
+	font-size: 11px;
+	padding: 2px;
+	color: #eee;
+	margin: 0 0 3px 3px;
+	background: #4095bb;
+	border: none;
+	-webkit-transition: background .1s ease-in;	
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav:hover .tags ul li a {
+	background: #4da1c7;
+}
+
+#extension-section .flow .contents #top-level-nav .top-level-nav:hover .tags ul li a:hover {
+	background: #6cbbdf;
+	color: #fff;	
+	border: none;	
 }
 
 /* =Header
@@ -713,10 +781,9 @@ div.search input#s {
 }
 
 #aside h3.widget-title, aside h3 {
-	margin-bottom: 15px;
-	margin-top: 15px;
-	letter-spacing: 2px;
-	font-size: 1.3em;
+	padding: 5px 10px;
+	background: #d7d1ab;
+	font-size: 1.2em;
 	text-transform: uppercase;
 }
 
@@ -1248,7 +1315,6 @@ h3#reply-title {
 
 #footer {
 	clear: both;
-	background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
 }
 
 #footer .wrap {	
@@ -1718,7 +1784,11 @@ code {
 	.agrilife-bookstore {
 		padding: 0 10px;
 	}
-
+	
+	#footer {
+		background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
+	}
+	
 	#footer .wrap h4 {
 		margin-bottom: 25px;
 		font-size: 1.3em;

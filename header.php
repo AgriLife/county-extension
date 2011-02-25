@@ -56,21 +56,15 @@
 <div id="extension-section">
 	<div class="flow">
 		<div class="contents">
-			<div class="wrap gform_wrapper">
-
-	            <form id='gform_1' action="/" method="post" enctype='multipart/form-data' accept-charset="utf-8">
+			<div class="wrap">
+			<div class="gform_wrapper">
+	            <form id='gform_1' action="" method="" enctype='multipart/form-data' accept-charset="utf-8">
 	                <fieldset class="first">
 	                    <div class="container">
-	                        <label for="name">
-	                            Your name
-	                        </label>
-	                        <input type="text" name="name" id="name" value="">
+	                        <input type="text" name="name" id="name" placeholder="Your Name" value="">
 	                    </div>
 	                    <div class="container">
-	                        <label for="email">
-	                            Your email address
-	                        </label>
-	                        <input type="text" name="email" id="email" value="">
+	                        <input type="text" name="email" id="email" placeholder="Your eMail" value="">
 	                    </div>
 	                    <div class="container">
 
@@ -78,10 +72,7 @@
 	                </fieldset><!-- /.first -->
 	                <fieldset class="second">
 	                    <div class="container">
-	                        <label for="message">
-	                            Your Question
-	                        </label>
-	                        <textarea name="message" id="message" rows="7" cols="35"></textarea>
+	                        <textarea name="message" placeholder="Your Question" id="message" rows="2" cols="25"> </textarea>
 	                    </div>
 
 	                </fieldset><!-- /.second -->
@@ -91,25 +82,77 @@
 	                    <input type="hidden" name="sent" value="true">
 	                </div><!-- /.button-container -->
 	            </form>
-				
-			<ul id="quick-links">	
-				 <li><a href="" title=""></a></li>
-				  <li><a href="" title="">4h and youth</a>
-				  </li>
-				  <li><a href="" title="">Lawn and Gardening</a>
-				  </li>
-				  <li><a href="" title="">Livestock</a>
-				  </li>
-				  <li><a href="" title="">Health and saftey</a>
-				  </li>
-				  <li><a href="" title=""><span>Crops</span></a>
-				  </li>
-				  <li><a href="" title="">Insects and pest management</a></li>
-				  <li><a href="" title="">Finance</a>
-				  </li>
-				  <li><a href="" title="">Family and home</a></li>		
-				  <li><a href="" title="">Educational programs</a></li>							
-				</ul>				
+			</div><!-- .gform_wrapper -->	
+			<div id="top-level-nav">
+				<div class="top-level-nav business-nav">
+					<h2>Business</h2>
+						<?php
+							$tags = get_tags();
+							$html = '<div class="tags">';
+							$html .= '<ul>';
+							foreach ($tags as $tag){
+								$tag_link = get_tag_link($tag->term_id);
+
+								$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+								$html .= "{$tag->name}</a></li>";
+							}
+							$html .= '</ul><!-- .tags -->';							
+							$html .= '</div><!-- .tags -->';
+							echo $html;
+						?>	
+				</div>	
+				<div class="top-level-nav home-nav">
+					<h2>Home</h2>
+					<?php
+						$tags = get_tags();
+						$html = '<div class="tags">';
+						$html .= '<ul>';
+						foreach ($tags as $tag){
+							$tag_link = get_tag_link($tag->term_id);
+
+							$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+							$html .= "{$tag->name}</a></li>";
+						}
+						$html .= '</ul><!-- .tags -->';							
+						$html .= '</div><!-- .tags -->';
+						echo $html;
+					?>					
+				</div>				
+				<div class="top-level-nav government-nav">
+					<h2>Government</h2>
+					<?php
+						$tags = get_tags();
+						$html = '<div class="tags">';
+						$html .= '<ul>';
+						foreach ($tags as $tag){
+							$tag_link = get_tag_link($tag->term_id);
+
+							$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+							$html .= "{$tag->name}</a></li>";
+						}
+						$html .= '</ul><!-- .tags -->';							
+						$html .= '</div><!-- .tags -->';
+						echo $html;
+					?>					
+				</div>				
+				<div class="top-level-nav k-12-schools-nav">
+					<h2>K-12 Schools</h2>
+					<?php
+						$tags = get_tags();
+						$html = '<div class="tags">';
+						$html .= '<ul>';
+						foreach ($tags as $tag){
+							$tag_link = get_tag_link($tag->term_id);
+
+							$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+							$html .= "{$tag->name}</a></li>";
+						}
+						$html .= '</ul><!-- .tags -->';							
+						$html .= '</div><!-- .tags -->';
+						echo $html;
+					?>					
+				</div>									
+			</div><!-- #top-level-nav -->				
 
 			</div><!-- .wrap -->
 		</div><!-- .contents -->	
