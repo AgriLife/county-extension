@@ -24,7 +24,7 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<!--[if IE8 ]> <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/ie.css" /> <![endif]-->
+
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -46,9 +46,9 @@
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>
-			<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
-			<li><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>	
-			<li class="right-align"><strong>Growing Smarter Solutions</strong> Through Lifelong Education</li>		
+			<!--<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>-->
+			<!--<li class='explore right-align'><a class="ext-link" href="/explore/">Explore</a></li>-->				
+			<li class="tx-ext-item"><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>	
 		</ul>				
 	</div><!-- #drop-nav -->	
 </div><!-- #extension-section-nav -->
@@ -84,73 +84,25 @@
 	            </form>
 			</div><!-- .gform_wrapper -->	
 			<div id="top-level-nav">
+				
+				<div id="ext-intro">
+					<p>Texas AgriLife Extension Service offers practical, how-to education based on university research. <a href="http://agrilifeextension.tamu.edu/">More &rarr;</a><p>
+				</div>
 				<div class="top-level-nav business-nav">
-					<h2>Business</h2>
-						<?php
-							$tags = get_tags();
-							$html = '<div class="tags">';
-							$html .= '<ul>';
-							foreach ($tags as $tag){
-								$tag_link = get_tag_link($tag->term_id);
-
-								$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-								$html .= "{$tag->name}</a></li>";
-							}
-							$html .= '</ul><!-- .tags -->';							
-							$html .= '</div><!-- .tags -->';
-							echo $html;
-						?>	
+					<h2>Programs</h2>
+						<div class="tags"><ul><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li></ul><!-- .tags --></div><!-- .tags -->
 				</div>	
 				<div class="top-level-nav home-nav">
-					<h2>Home</h2>
-					<?php
-						$tags = get_tags();
-						$html = '<div class="tags">';
-						$html .= '<ul>';
-						foreach ($tags as $tag){
-							$tag_link = get_tag_link($tag->term_id);
-
-							$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-							$html .= "{$tag->name}</a></li>";
-						}
-						$html .= '</ul><!-- .tags -->';							
-						$html .= '</div><!-- .tags -->';
-						echo $html;
-					?>					
+					<h2>Resources</h2>
+						<div class="tags"><ul><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li></ul><!-- .tags --></div><!-- .tags -->				
 				</div>				
 				<div class="top-level-nav government-nav">
-					<h2>Government</h2>
-					<?php
-						$tags = get_tags();
-						$html = '<div class="tags">';
-						$html .= '<ul>';
-						foreach ($tags as $tag){
-							$tag_link = get_tag_link($tag->term_id);
-
-							$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-							$html .= "{$tag->name}</a></li>";
-						}
-						$html .= '</ul><!-- .tags -->';							
-						$html .= '</div><!-- .tags -->';
-						echo $html;
-					?>					
+					<h2>Services</h2>
+						<div class="tags"><ul><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li></ul><!-- .tags --></div><!-- .tags -->			
 				</div>				
 				<div class="top-level-nav k-12-schools-nav">
-					<h2>K-12 Schools</h2>
-					<?php
-						$tags = get_tags();
-						$html = '<div class="tags">';
-						$html .= '<ul>';
-						foreach ($tags as $tag){
-							$tag_link = get_tag_link($tag->term_id);
-
-							$html .= "<li><a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-							$html .= "{$tag->name}</a></li>";
-						}
-						$html .= '</ul><!-- .tags -->';							
-						$html .= '</div><!-- .tags -->';
-						echo $html;
-					?>					
+					<h2>Volunteer</h2>
+						<div class="tags"><ul><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/4-h/' title='4-h Tag' class='4-h'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/agriculture/' title='agriculture Tag' class='agriculture'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/crops/' title='crops Tag' class='crops'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/disaster-recovery/' title='disaster recovery Tag' class='disaster-recovery'>ipsum</a></li><li><a href='http://agrilifedev/county/tag/food/' title='food Tag' class='food'>Lorem</a></li><li><a href='http://agrilifedev/county/tag/health/' title='health Tag' class='health'>ipsum</a></li></ul><!-- .tags --></div><!-- .tags -->				
 				</div>									
 			</div><!-- #top-level-nav -->				
 
@@ -163,14 +115,14 @@
 	<div id="header">
 			<div id="branding" role="banner">
 				<h1 id="site-title">
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><em>Brazos County</em></a>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span><img src='<?php bloginfo( 'stylesheet_directory' ); ?>/images/ext-logo.png' title="extension logo" alt="texas agrilife extension logo" /><em>in Brazos County</em></a>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			<!--	<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>	 -->			
 
 			</div><!-- #branding -->
 	</div><!-- #header -->		
-			<nav id="access" role="navigation">	
+			<div id="access" role="navigation">	
 				<div class="search">
 				<?php get_search_form(); ?>
 				</div><!-- end .search -->		
@@ -178,5 +130,5 @@
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'county_ext' ); ?>"><?php _e( 'Skip to content', 'county_ext' ); ?></a></div>
 				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>			
-			</nav><!-- #access -->
+			</div><!-- #access -->
 		

@@ -1,6 +1,9 @@
-
+body {
+background: #EAE8D9 url(images/tan-background.png) top left;
+}
+	
 p, li {
-	line-height: 1.75em;
+	line-height: 1.6em;
 	font-size: 14px; 
 }
 
@@ -12,21 +15,15 @@ p, li {
 	font-size: 14px;
 }
 
-#extension-section-nav #drop-nav ul li a[href*='extension'] {
-	padding: 0 0 12px 40px;
-	margin: 0;
-	margin-left: 10px;
-	display: block;
-	float: right;
-	width: 130px;
-	text-indent: -999em;
-	background: transparent url(../images/ext-logo-arrow.png) no-repeat right 60%;
-}
-
 #extension-section-nav #drop-nav ul li.right-align {
-	font-size:1.4em;
+	float: right;
+	display: inline;
+	font: italic 1.4em 'Cambria', georgia, serif;
+	margin-right: 10px;
 }
-	
+body #header {
+	padding: 30px 0 20px 0;
+}		
 #site-title {
 	text-align: left;
 	width: 700px;
@@ -37,19 +34,19 @@ p, li {
 }
 
 #site-title a {
-	background: url(../images/county-shape.png) no-repeat -5px top;
+	background: url(images/tx-state-regions.png) no-repeat -5px 5px;
 	font: 32px 'arno pro', georgia, serif;
 	margin-left: 10px;
-	padding: 20px 0 60px 95px;	
+	padding: 20px 0 60px 85px;	
 }
 
 #site-title a em {
 	margin-left: 97px;
-	margin-top: -10px;
-	font-size: 1.5em;
+	margin-top: -15px;
+	font-size: 1.4em;
 	font-style: normal;
 	font-weight: 400;
-	padding-left: 5px;		
+	padding-left: 30px;		
 }
 	
 div.search {
@@ -66,41 +63,47 @@ div.search form {
 	display: block;
 }
 
-div.search input#s {
-	background: #fff url('../images/search.png') no-repeat 2px center;			
+div.search input.s {
+	background: #fff url('images/search.png') no-repeat 2px center;			
 }
 
-div.search input#s:hover {
+div.search input.s:hover {
 	background-color: #f7f7f7;			
 }
 
-div.search input#s:focus {
+div.search input.s:focus {
 	background-color: #fafafa;			
 }
-			
+
+#access #menu-main-navigation {
+	width: 100%;
+	margin: 0;
+}
+				
 #home-left {
-	width: 564px;
+	max-width: 564px;
 	float: left;
 }
 
 #home-top {
 	display: block;
 	position: relative;
-	width: 574px;
-	height: 368px;
+	max-width: 574px;
+	max-height: 368px;
 	float: left;
 	overflow: hidden;
 }
 
 #home-top #big-feature {
 	margin-left: 10px;
-	width: 564px;
+	max-width: 564px;
 	overflow: hidden;
 	position: relative;
 }
 
 #home-top #big-feature img {
 	max-height: 368px;
+	max-width: 100%;
 }
 
 #home-top #big-feature a {
@@ -112,8 +115,8 @@ div.search input#s:focus {
 	background: #343434;
 	background: rgba(33,33,33,.65);	
 	bottom: 5px;
-	padding: 15px 35px;
-	width: 494px;
+	padding: 15px 20px;
+	width: 524px;
 	display: block;
 	overflow: hidden;
 }
@@ -141,7 +144,7 @@ div.search input#s:focus {
 
 #home-top #slideshow-nav a.slideNext,
 #home-top #slideshow-nav a.slidePrev {
-	background-image: url(../images/arrows.png);
+	background-image: url(images/arrows.png);
 	background-repeat: no-repeat;
 	top: 0;
 	height: 31px;
@@ -202,6 +205,23 @@ div.search input#s:focus {
 	width: 575px;
 }
 
+#home-middle h3.widget-title {
+	margin-bottom: 10px;
+	font-size: 2.7em;
+}
+
+#home-middle h3.widget-title a {
+	color: #444;
+	text-decoration: none;
+	border: none;
+}
+
+#home-middle h3.widget-title a:hover {
+	color: #333;
+	text-decoration: none;
+	border-bottom: 1px solid #333;
+}
+	
 .home-middle-2 {
 	width: 575px;	
 }
@@ -216,12 +236,18 @@ div.search input#s:focus {
 
 #aside {
 	width: 380px;
+	float: right;
 }
 
+#aside #event-bg,
+#aside #books-bg	 {
+	margin-right: 10px;
+}
+	
 #aside #books-bg ul.books {
 	padding-left: 0;
 	margin-left: 0;
-	padding-top: 7px;
+	padding-top: 25px;
 	position: relative;
 	display: block;		
 }
@@ -239,10 +265,10 @@ div.search input#s:focus {
 	padding-top: 25px;
 	line-height: 1em;
 }
-	
+		
 #aside #books-bg ul.books li dd.price {
 	position: absolute;
-	background: url(../images/price-circle.png) no-repeat 40% 50%;
+	background: url(images/price-circle.png) no-repeat 40% 50%;
 	z-index: 6;
 	top: -15px;
 	left: 40px;
@@ -264,7 +290,7 @@ div.search input#s:focus {
 #aside #books-bg ul.books li p.btn {
 	position: absolute;
 	z-index: 5;
-	bottom: 6px;
+	bottom: -1.4em;
 	right: 55px;
 }
 	
@@ -273,32 +299,14 @@ div.search input#s:focus {
 	font-size: 10px;
 	color: #806E38;
 	border: 1px solid #bba563;
-	background: #c7bc7f;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ded8b4), to(#c7bc7f));
-	background: -moz-linear-gradient(top, #ded8b4, #c7bc7f);		
+	background: #c7bc7f;		
 }
 
 #aside #books-bg ul.books li p.btn a:hover {
 	cursor: pointer;
 	border: 1px solid #bba563;	
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shodow: none;	
 	background: #c7bc7f;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cfc591), to(#c7bc7f));
-	background: -moz-linear-gradient(top, #cfc591, #c7bc7f);
 }
-
-#aside #books-bg ul.books li p.btn a:active {
-	cursor: pointer;	
-	background: #c7bc7f;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c7bc7f), to(#cfc591));
-	background: -moz-linear-gradient(top, #c7bc7f, #cfc591);		
-}
-	
-#aside h3.widget-title, aside h3 {
-	font: 14px 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
-}	
 
 div.event dd.sign-up a:active {
 	top: 27px;
@@ -306,6 +314,11 @@ div.event dd.sign-up a:active {
 
 div.event dl dd.title-loc h4 {
 	font-size: 22px;
+}
+
+#aside #aside-widget-area-1,
+#aside #aside-widget-area-2 {
+	margin-right: 10px;
 }
 
 #about,
@@ -325,9 +338,12 @@ div.event dl dd.title-loc h4 {
 	padding: 0 10px;
 }
 
+#footer {
+	background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
+}
+
 #footer .wrap h4 {
 	margin-bottom: 25px;
-	font-size: 1.3em;
 }
 
 #footer .wrap .agrilife-bookstore h4 {
@@ -370,4 +386,4 @@ div.event dl dd.title-loc h4 {
 
 #footer .wrap .contact ul li {
 	margin-bottom: 12px;
-}	
+}

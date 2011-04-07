@@ -16,8 +16,8 @@
 		<div id="about">
 			<div class="about">			
 				<h4>About</h4>
-				<a href=""><img src="<?php bloginfo( 'template_directory' ); ?>/images/about_video.png" alt="liinke to Extension about video" /></a>
-				<p>With teaching, research, extension and laboratory facilities throughout Texas, Texas A&amp;M AgriLife serves people of all ages and backgrounds and is a cornerstone of one of the state's premier institutions of higher education.</p>	
+				<a href="http://www.youtube.com/watch?v=q_UsLHl_YDQ"><img src="<?php bloginfo( 'template_directory' ); ?>/images/about_video.jpg" alt="link to Extension about video" /></a>
+				<p>A unique education agency, the Texas AgriLife Extension Service teaches Texans wherever they live, extending research-based knowledge to benefit their families and communities.</p>	
 			</div><!-- .about -->
 		</div><!-- #about -->		
 		<div id="popular-links">
@@ -40,7 +40,7 @@
 		
 		<div id="texas-a-m">
 			<div class="texas-a-m">			
-			<h4>Texas A&amp;M</h4>
+			<h4>Required Links</h4>
 				<a href=""><img src="<?php bloginfo( 'template_directory' ); ?>/images/texas-a-m-system.png" alt="Texas A&amp;M System image" /></a>	
 				<ul>
 					<li><a href="">Compact with Texans</a></li>
@@ -65,13 +65,11 @@
 				<a href=""><img src="<?php bloginfo( 'template_directory' ); ?>/images/map.png" alt="map of AgriLife Offices" /></a>
 				<ul>
 					<li><a href="">View Larger Map</a></li>
-					<li>Texas A&amp;M AgriLife</li>
-					<li>Jack K. Williams Administration Building 2142 TAMU College Station, TX 77843</li>
-					<li>Phone: (979) 845-4747</li>					
-					<li>Fax: (979) 845-4242</li>
-					<li><a href="">Email Our Team</a></li>					
-					<li>Web Site Contact: <a href="">AgriLife Communications</a></li>
-					<li class="last">&copy; 2010 All rights reserved</li>										
+					<li>Open 8 am - 5 pm; M-F </li>
+					<li>2619 Highway 21 West</li>
+					<li>Bryan, TX 77803</li>					
+					<li>Phone: 979-823-0129</li>
+					<li>Fax: 979-775-3768</li>										
 				</ul>											
 			</div><!-- .contact -->
 		</div><!-- #contact -->
