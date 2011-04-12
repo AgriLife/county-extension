@@ -1235,8 +1235,6 @@ if (isset($agrilife_customizer)) {
 
 
 
-
-
 /**
  * Widget: Watch, Read, Listen
  * Three widgets in one with thoughtful defaults in case of absentee user.
@@ -1250,90 +1248,147 @@ class WatchReadListenWidget extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
+	// Set YouTube Default
+	$youtube_video_default = 'http://www.youtube.com/watch?v=Ly_yfmeR8s8';
+	// Set Podcast Default
+	$podcast_link_default  = 'http://tmnpodcast.libsyn.com/rss';
 	// prints the widget
-
+		if ( isset($instance['error']) && $instance['error'] )
+			return;
 		extract($args, EXTR_SKIP);
+		
+		
+		// YouTube Processing
+ 		$user_video = empty($instance['youtube_video']) ? $youtube_video_default : apply_filters('widget_youtube_video', $instance['youtube_video']);
+ 		// If a URL was passed
+		if ( 'http://' == substr( $user_video, 0, 7 ) ) {
+			// Playlist URL
+			if ( FALSE !== stristr( $user_video, 'view_play_list' ) ) {
+				preg_match( '#http://(www.youtube|youtube|[A-Za-z]{2}.youtube)\.com/view_play_list\?p=([\w-]+)(.*?)#i', $user_video, $matches );
+				if ( empty($matches) || empty($matches[2]) ) return $this->error( sprintf('Unable to parse URL, check for correct %s format', __('YouTube') ) );
+				$embedpath = 'p/' . $matches[2];
+				$fallbacklink = $fallbackcontent = 'http://www.youtube.com/view_play_list?p=' . $matches[2];
+			}
+			// Normal video URL
+			else {
+				preg_match( '#http://(www.youtube|youtube|[A-Za-z]{2}.youtube)\.com/(watch\?v=|w/\?v=|\?v=)([\w-]+)(.*?)#i', $user_video, $matches );
+				if ( empty($matches) || empty($matches[3]) ) return $this->error( sprintf('Unable to parse URL, check for correct %s format', __('YouTube') ) );
+
+				$embedpath = 'v/' . $matches[3];
+				$fallbacklink = 'http://www.youtube.com/watch?v=' . $matches[3];
+				$fallbackcontent = '<img src="http://img.youtube.com/vi/' . $matches[3] . '/0.jpg" alt="' . __('YouTube Preview Image', 'vipers-video-quicktags') . '" />';
+			}
+		}
+		// If a URL wasn't passed, assume a video ID was passed instead
+		else {
+			$embedpath = 'v/' . $user_video;
+			$fallbacklink = 'http://www.youtube.com/watch?v=' . $user_video;
+			$fallbackcontent = '<img src="http://img.youtube.com/vi/' . $user_video . '/0.jpg" alt="' . __('YouTube Preview Image', 'vipers-video-quicktags') . '" />';
+		}
+		
+		$youtube_video = 'http://www.youtube.com/' . $embedpath;
+
+ 		
+ 		// Podcast Processing
+ 		$podcast_link = empty($instance['podcast_link']) ? $podcast_link_default : apply_filters('widget_podcast_link', $instance['podcast_link']);
+		$rss = fetch_feed($podcast_link);
+		if ( ! is_wp_error($rss) ) {
+			$podcast_desc = esc_attr(strip_tags(@html_entity_decode($rss->get_description(), ENT_QUOTES, get_option('blog_charset'))));
+			$podcast_title= esc_attr(strip_tags(@html_entity_decode($rss->get_title(), ENT_QUOTES, get_option('blog_charset'))));
+			$podcast_link_audio= esc_attr(strip_tags(@html_entity_decode($rss->get_link(), ENT_QUOTES, get_option('blog_charset'))));
+			if ( empty($title) )
+				$title = esc_html(strip_tags($rss->get_title()));
+			$link = esc_url(strip_tags($rss->get_permalink()));
+			while ( stristr($link, 'http') != $link )
+				$link = substr($link, 1);
+			$podcast_site_link = $link;
+		}
+		
 		echo $before_widget;
-		$title = empty($instance['title']) ? '&nbsp;' : apply_filters('widget_title', $instance['title']);
- 		$youtube_video = empty($instance['youtube_video']) ? '&nbsp;' : apply_filters('widget_youtube_video', $instance['youtube_video']);
-		//$post_number = empty($instance['post_number']) ? '&nbsp;' : apply_filters('widget_post_number', $instance['post_number']);
-		$post_link = empty($instance['post_link']) ? '&nbsp;' : apply_filters('widget_post_link', $instance['post_link']);
-
-		// if ( !empty( $title ) ) { echo $before_title . $title . $after_title; };
-		echo '<div class="featured_news">';
 		 ?>
-                
-                <h3> <span><?php echo $title; ?></span> </h3>
-                
-               <div class="anythingSlider">
- 				 <div class="wrapper">
-                 
-                 	 <ul> 
+		 
+<div id="watchreadlisten-bg" class="widget">
+	<div id="tabs">	
+	<ul>
+		<li><a href="#tabs-1">Watch</a></li>
+		<li><a href="#tabs-2">Read</a></li>
+		<li><a href="#tabs-3">Listen</a></li>
+	</ul>
+		<div id="tabs-1">
+		<?php // Watch Tab ?>
+		<object width="348" height="221">
+			<param name="movie" value="<?php echo $youtube_video;?>"></param>
+			<param name="allowFullScreen" value="true"></param>
+			<param name="allowscriptaccess" value="always"></param>
+			<embed src="<?php echo $youtube_video;?>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="348" height="221"></embed></object>	
+		<?php // END Watch Tab ?>		
+		</div>
+		<div id="tabs-2">		
+			<?php // Read Tab ?>
+			<ul class="books">
+				<li>
+					<a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=2423">
+					<dl>
+						<dt class="book-title">Brush &amp; Weeds</dt>	
+						<dd class="book-cover"><img class="book" src="http://brazos.agrilife.org/wp-content/themes/county/images/brush-weeds-cover.png" /></dd>
+						<dd class="price"><em>$</em>19<span>99</span></dd>	
+					</dl>
+					</a>
+					<p class="buy btn"><a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=2423">Buy</a></p>					
+				</li>
+				<li>	
+					<a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=1979">
+					<dl>
+						<dt class="book-title">Rainwater Harvest</dt>	
+						<dd class="book-cover"><img class="book" src="http://brazos.agrilife.org/wp-content/themes/county/images/rainwater-harvest-cover.png" /></dd>
+						<dd class="price"><em></em>Free<span></span></dd>						
+					</dl>
+					</a>
+					<p class="buy btn"><a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=1979">Read</a></p>					
+				</li>
+			</ul>
+			<?php // END Read Tab ?>
+			</div>		
+		<div id="tabs-3">
+			<?php // Listen Tab ?>
+			<h4><a href="<?php echo $podcast_site_link;?>"><?php echo $podcast_title;?></a></h4>
+			<?php wp_widget_rss_podcast_output( $rss, $instance ); ?>
+		
+			<!--<p><?php echo $podcast_desc;?></p>-->
+			<?php // END Listen Tab ?>
+		</div>
+	
+		
+	</div>							
+	</div>
 				<?php 
-			        global $post;
-			        $latest_menus = get_posts('numberposts='.$post_number.'postlink='.$post_link.'&youtube_video='.$youtube_video.'');
-                    foreach($latest_menus as $post) :
-                    setup_postdata($post);
-			    ?>
-                 <?php $post_images = bdw_get_images($post->ID,'large');?>
-            
-             		<li>
-                    <h4><a class="widget-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                    <?php if($post_images[0]){ global $thumb_url; ?>
-                    <a class="widget-title" href="<?php the_permalink(); ?>">
-                    <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail( 'post-thumbnails-home-featured' );
-                   		} else { ?>
-                   <img src="<?php echo bloginfo('template_url'); ?>/thumb.php?src=<?php echo $post_images[0];?>&amp;w=460&amp;h=400&amp;zc=1&amp;q=80<?php echo $thumb_url;?>" alt="" title=""  /> 
-                   <?php }?></a>
- 
-            <?php }?>   
-                      
-                 <p class="date"><?php the_time('j F') ?>, at <?php the_time('H : s A') ?>  ~  <a href="<?php the_permalink(); ?>#commentarea"><?php comments_number('0 Comment', '1 Comments', '% Comments'); ?> </a>  </p>
-					</li>
-     
-   
-<?php endforeach; ?>
-<?php
-
-	    echo '</ul></div></div></div>';
-
-		echo $after_widget;
+	echo $after_widget;
 	}
 
 	function update($new_instance, $old_instance) {
 	//save the widget
 		$instance = $old_instance;
-		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['youtube_video'] = strip_tags($new_instance['youtube_video']);
-		$instance['post_number'] = strip_tags($new_instance['post_number']);
-		$instance['post_link'] = strip_tags($new_instance['post_link']);
+		$instance['podcast_link'] = strip_tags($new_instance['podcast_link']);
 		return $instance;
 
 	}
 
 	function form($instance) {
 	//widgetform in backend
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'youtube_video' => '', 'post_number' => '' ) );
-		$title = strip_tags($instance['title']);
+		$instance = wp_parse_args( (array) $instance, array('youtube_video' => '', 'podcast_link' => '' ) );
 		$youtube_video = strip_tags($instance['youtube_video']);
-		$post_number = strip_tags($instance['post_number']);
-		$post_link = strip_tags($instance['post_link']);
+		$podcast_link = strip_tags($instance['podcast_link']);
 
 ?>
 <p>
-  <label for="<?php echo $this->get_field_id('title'); ?>">Title:
-    <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" />
-  </label>
-</p>
-<p>
-  <label for="<?php echo $this->get_field_id('youtube_video'); ?>">YouTube Video Link<code>http://www.youtube.com/watch?v=iRbX2uPgGsw</code>:
+  <label for="<?php echo $this->get_field_id('youtube_video'); ?>">YouTube Video Link: <br /><code>http://www.youtube.com/watch?v=iRbX2uPgGsw</code>
   <input class="widefat" id="<?php echo $this->get_field_id('youtube_video'); ?>" name="<?php echo $this->get_field_name('youtube_video'); ?>" type="text" value="<?php echo attribute_escape($youtube_video); ?>" />
   </label>
 </p>
 <p>
-  <label for="<?php echo $this->get_field_id('post_number'); ?>">Number of posts:
-  <input class="widefat" id="<?php echo $this->get_field_id('post_number'); ?>" name="<?php echo $this->get_field_name('post_number'); ?>" type="text" value="<?php echo attribute_escape($post_number); ?>" />
+  <label for="<?php echo $this->get_field_id('podcast_link'); ?>">Podcast Link: <br /><code>http://tmnpodcast.libsyn.com/rss</code>
+  <input class="widefat" id="<?php echo $this->get_field_id('podcast_link'); ?>" name="<?php echo $this->get_field_name('podcast_link'); ?>" type="text" value="<?php echo attribute_escape($podcast_link); ?>" />
   </label>
 </p>
 <?php
@@ -1343,6 +1398,115 @@ class WatchReadListenWidget extends WP_Widget {
 
 register_widget('WatchReadListenWidget');
 
+
+
+
+/**
+ * Display the RSS podcast entries in a list of html5 .
+ *
+ * @since 2.5.0
+ *
+ * @param string|array|object $rss RSS url.
+ * @param array $args Widget arguments.
+ */
+function wp_widget_rss_podcast_output( $rss, $args = array() ) {
+	if ( is_string( $rss ) ) {
+		$rss = fetch_feed($rss);
+	} elseif ( is_array($rss) && isset($rss['url']) ) {
+		$args = $rss;
+		$rss = fetch_feed($rss['url']);
+	} elseif ( !is_object($rss) ) {
+		return;
+	}
+
+	if ( is_wp_error($rss) ) {
+		if ( is_admin() || current_user_can('manage_options') )
+			echo '<p>' . sprintf( __('<strong>RSS Error</strong>: %s'), $rss->get_error_message() ) . '</p>';
+		return;
+	}
+
+	$default_args = array( 'show_author' => 0, 'show_date' => 0, 'show_summary' => 0 );
+	$args = wp_parse_args( $args, $default_args );
+	extract( $args, EXTR_SKIP );
+
+	$items = (int) $items;
+	if ( $items < 1 || 20 < $items )
+		$items = 10;
+	$show_summary  = (int) $show_summary;
+	$show_author   = (int) $show_author;
+	$show_date     = (int) $show_date;
+
+	if ( !$rss->get_item_quantity() ) {
+		echo '<ul><li>' . __( 'An error has occurred; the feed is probably down. Try again later.' ) . '</li></ul>';
+		$rss->__destruct();
+		unset($rss);
+		return;
+	}
+
+	echo '<ul>';
+	foreach ( $rss->get_items(0, $items) as $item ) {
+		$link = $item->get_link();
+		while ( stristr($link, 'http') != $link )
+			$link = substr($link, 1);
+		$link = esc_url(strip_tags($link));
+		$title = esc_attr(strip_tags($item->get_title()));
+		if ( empty($title) )
+			$title = __('Untitled');
+
+		$desc = str_replace( array("\n", "\r"), ' ', esc_attr( strip_tags( @html_entity_decode( $item->get_description(), ENT_QUOTES, get_option('blog_charset') ) ) ) );
+		$desc = wp_html_excerpt( $desc, 360 );
+
+		// Append ellipsis. Change existing [...] to [&hellip;].
+		if ( '[...]' == substr( $desc, -5 ) )
+			$desc = substr( $desc, 0, -5 ) . '[&hellip;]';
+		elseif ( '[&hellip;]' != substr( $desc, -10 ) )
+			$desc .= ' [&hellip;]';
+
+		$desc = esc_html( $desc );
+
+		if ( $show_summary ) {
+			$summary = "<div class='rssSummary'>$desc</div>";
+		} else {
+			$summary = '';
+		}
+
+		/*
+		$date = '';
+		if ( $show_date ) {
+			$date = $item->get_date( 'U' );
+
+			if ( $date ) {
+				$date = ' <span class="rss-date">' . date_i18n( get_option( 'date_format' ), $date ) . '</span>';
+			}
+		}
+
+		$author = '';
+		if ( $show_author ) {
+			$author = $item->get_author();
+			if ( is_object($author) ) {
+				$author = $author->get_name();
+				$author = ' <cite>' . esc_html( strip_tags( $author ) ) . '</cite>';
+			}
+		}
+		if ( $link == '' ) {
+			echo "<li>$title{$date}{$summary}{$author}";
+		} else {
+			echo "<li><a class='rsswidget' href='$link' title='$desc'>$title</a>{$date}{$summary}{$author}";
+		}
+		*/
+	  
+		if ($enclosure = $item->get_enclosure())
+		{
+			echo "<li><embed type=\"application/x-shockwave-flash\" flashvars=\"audioUrl=".$enclosure->get_link()."\" src=\"http://www.google.com/reader/ui/3523697345-audio-player.swf\" width=\"400\" height=\"27\" quality=\"best\"></embed></li>";
+			//echo "<li><audio src=\"".$enclosure->get_link()."\"> controls preload=\"none\">Your browser does not support the audio element.</audio></li>";
+			//echo "<li><a class='rsswidget' href='".."' title='$desc'>$title</a></li>";
+		}
+		
+	}
+	echo '</ul>';
+	$rss->__destruct();
+	unset($rss);
+}
 
 
 

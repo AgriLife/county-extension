@@ -825,7 +825,6 @@ div.search input.s {
 	}
 
 	#home-top #slidePager a {
-		background-image: url(images/dots.png);
 		background-repeat: no-repeat;
 		background-position: center -23px;
 		text-indent: -9999px;	
@@ -992,6 +991,10 @@ div.search input.s {
 	color: #444;
 }
 
+#aside li embed {
+	width: 100%;
+}
+
 #aside #books-bg {
 	overflow: hidden;	
 	margin-bottom: 20px;		
@@ -1005,12 +1008,7 @@ div.search input.s {
 	overflow: hidden;
 }
 
-#aside #aside-widget-area-1 {
-	padding: 10px;
-	margin-bottom: 10px;
-	background: #eae6d2;
-	background: rgba(217, 208, 173,.40);	
-	padding-right: 10px;
+#aside #aside-widget-area-1 {	
 	padding-bottom: 3px;
 }
 
@@ -1018,9 +1016,22 @@ div.search input.s {
 	margin: 0;
 }
 
+#aside #aside-widget-area-1 ul li.widget-container {
+	padding: 10px;
+	margin-bottom: 20px;	
+	background: #eae6d2;
+	background: rgba(217, 208, 173,.40);
+}
+
+#aside #aside-widget-area-1 ul li.Watch {
+	padding: 0;
+	margin-bottom: 20px;	
+	background: none;
+}
+
 #aside #aside-widget-area-2 {
 	padding: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	background: #efecdb;
 	background: rgba(217, 208, 173,.30);
 }
@@ -1433,7 +1444,8 @@ h3#reply-title {
 }
 #primary {
 }
-#secondary {
+#secondary ul {
+	margin: 0;
 }
 
 /* Footer widget areas */
@@ -1750,7 +1762,6 @@ img#wpstats {
 	}
 
 	#home-top #slidePager a {
-		background-image: url(images/dots.png);
 		background-repeat: no-repeat;
 		background-position: center -23px;
 		text-indent: -9999px;	
@@ -1803,12 +1814,11 @@ img#wpstats {
 		float: right;
 	}
 
-	#aside #event-bg,
-	#aside #books-bg	 {
+	#aside #event-bg {
 		margin-right: 10px;
 	}
 		
-	#aside #books-bg ul.books {
+	#aside ul.books {
 		padding-left: 0;
 		margin-left: 0;
 		padding-top: 25px;
@@ -1816,21 +1826,21 @@ img#wpstats {
 		display: block;		
 	}
 	
-	#aside #books-bg ul.books li {
+	#aside ul.books li {
 		position: relative;
 		display: block;		
 		width: 50%;
 		float: left;
 	}
 	
-	#aside #books-bg ul.books li dt.book-title {
+	#aside ul.books li dt.book-title {
 		float: right;
 		width: 55%;
 		padding-top: 25px;
 		line-height: 1em;
 	}
 			
-	#aside #books-bg ul.books li dd.price {
+	#aside ul.books li dd.price {
 		position: absolute;
 		background: url(images/price-circle.png) no-repeat 40% 50%;
 		z-index: 6;
@@ -1841,24 +1851,24 @@ img#wpstats {
 		font: 1.1em georgia;
 	}
 
-	#aside #books-bg ul.books li dd.price em {
+	#aside ul.books li dd.price em {
 		font-size: .75em;
 		font-style: normal;
 	}
 
-	#aside #books-bg ul.books li dd.price span {
+	#aside ul.books li dd.price span {
 		font-size: .5em;
 		vertical-align:	super;	
 	}
 					
-	#aside #books-bg ul.books li p.btn {
+	#aside ul.books li p.btn {
 		position: absolute;
 		z-index: 5;
 		bottom: -1.4em;
 		right: 55px;
 	}
 		
-	#aside #books-bg ul.books li p.btn a {
+	#aside ul.books li p.btn a {
 		padding: 4px 12px;
 		font-size: 10px;
 		color: #806E38;
@@ -1868,7 +1878,7 @@ img#wpstats {
 		background: -moz-linear-gradient(top, #ded8b4, #c7bc7f);		
 	}
 
-	#aside #books-bg ul.books li p.btn a:hover {
+	#aside ul.books li p.btn a:hover {
 		cursor: pointer;
 		border: 1px solid #bba563;	
 		-webkit-box-shadow: none;
@@ -1879,7 +1889,7 @@ img#wpstats {
 		background: -moz-linear-gradient(top, #cfc591, #c7bc7f);
 	}
 
-	#aside #books-bg ul.books li p.btn a:active {
+	#aside ul.books li p.btn a:active {
 		cursor: pointer;	
 		background: #c7bc7f;
 		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#c7bc7f), to(#cfc591));
@@ -2113,6 +2123,15 @@ div#tabs-3 {
 }
 
 div#tabs-1 object {
+}
+
+div#tabs-3 ul {
+	overflow: hidden;
+}
+
+div#tabs-3 ul li {
+	overflow: hidden;
+	height: 30px;
 }
 
 /**********************************************************
