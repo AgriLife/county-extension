@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="home-left">		
-		<?php $my_query = new WP_Query('meta_key=feature-homepage&meta_value=1&showposts=3&post_type=any');
+		<?php $my_query = new WP_Query('meta_key=feature-homepage&meta_value=1&showposts=5&post_type=any');
 		$count = 0;	?>
   		<?php if ( $my_query->have_posts() ) : ?>
 
