@@ -79,7 +79,72 @@ load:function(b){b=this._getIndex(b);var e=this,a=this.options,c=this.anchors.eq
 url:function(b,e){this.anchors.eq(b).removeData("cache.tabs").data("load.tabs",e);return this},length:function(){return this.anchors.length}});d.extend(d.ui.tabs,{version:"1.8.9"});d.extend(d.ui.tabs.prototype,{rotation:null,rotate:function(b,e){var a=this,c=this.options,h=a._rotate||(a._rotate=function(j){clearTimeout(a.rotation);a.rotation=setTimeout(function(){var k=c.selected;a.select(++k<a.anchors.length?k:0)},b);j&&j.stopPropagation()});e=a._unrotate||(a._unrotate=!e?function(j){j.clientX&&
 a.rotate(null)}:function(){t=c.selected;h()});if(b){this.element.bind("tabsshow",h);this.anchors.bind(c.event+".tabs",e);h()}else{clearTimeout(a.rotation);this.element.unbind("tabsshow",h);this.anchors.unbind(c.event+".tabs",e);delete this._rotate;delete this._unrotate}return this}})})(jQuery);
 
+/*global jQuery */
+/*!	
+* Lettering.JS 0.6.1
+*
+* Copyright 2010, Dave Rupert http://daverupert.com
+* Released under the WTFPL license 
+* http://sam.zoy.org/wtfpl/
+*
+* Thanks to Paul Irish - http://paulirish.com - for the feedback.
+*
+* Date: Mon Sep 20 17:14:00 2010 -0600
+*/
+(function($){
+	function injector(t, splitter, klass, after) {
+		var a = t.text().split(splitter), inject = '';
+		if (a.length) {
+			$(a).each(function(i, item) {
+				inject += '<span class="'+klass+(i+1)+'">'+item+'</span>'+after;
+			});	
+			t.empty().append(inject);
+		}
+	}
+	
+	var methods = {
+		init : function() {
 
+			return this.each(function() {
+				injector($(this), '', 'char', '');
+			});
+
+		},
+
+		words : function() {
+
+			return this.each(function() {
+				injector($(this), ' ', 'word', ' ');
+			});
+
+		},
+		
+		lines : function() {
+
+			return this.each(function() {
+				var r = "eefec303079ad17405c889e092e105b0";
+				// Because it's hard to split a <br/> tag consistently across browsers,
+				// (*ahem* IE *ahem*), we replaces all <br/> instances with an md5 hash 
+				// (of the word "split").  If you're trying to use this plugin on that 
+				// md5 hash string, it will fail because you're being ridiculous.
+				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
+			});
+
+		}
+	};
+
+	$.fn.lettering = function( method ) {
+		// Method calling logic
+		if ( method && methods[method] ) {
+			return methods[ method ].apply( this, [].slice.call( arguments, 1 ));
+		} else if ( method === 'letters' || ! method ) {
+			return methods.init.apply( this, [].slice.call( arguments, 0 ) ); // always pass an array
+		}
+		$.error( 'Method ' +  method + ' does not exist on jQuery.lettering' );
+		return this;
+	};
+
+})(jQuery);
 
 //css3-mediaqueries.js
 if(typeof Object.create!=="function"){
@@ -986,7 +1051,7 @@ jQuery(document).ready(function($) {
         };
     };
     
-/*   jQuery('#extension-section').after(jQuery('#contact-form'));
+   jQuery('#extension-section').after(jQuery('#contact-form'));
     
     var contactForm = new Revealer(
         jQuery('#extension-section .flow'),               // the relatively positioned container
@@ -1011,9 +1076,13 @@ jQuery(document).ready(function($) {
         },'html');
         return false;
     });
-*/	
+	
 	// remove all height attributes from images for flexibility	
 	$('img').removeAttr('height');
+	
+	// wrap event dates with <strong>
+	$(".dtstart").lettering('words');
+
 
     //  Patch for Mobile Safari's orientation change bug
     //  Based on http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/

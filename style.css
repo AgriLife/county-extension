@@ -29,13 +29,13 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
 	background: #fff;
-	font: 62.5% "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-	line-height: 1.8em;
-	color: #666;	
+	font: 62.5% "minion-pro-1","minion-pro-2", "Cambria", Georgia, serif;
+	line-height: 1.2em;
+	color: #52514d;
+	text-rendering: optimizeLegibility;		
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Cambria", Georgia, serif;
 	font-weight: normal;
 	line-height: 1.2em;
 	clear: both;
@@ -82,6 +82,24 @@ del {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	font-size: 1.4em;
+}
+
+tr {
+	padding: 1em 0 1em .5em;
+	border-bottom: 1px solid #D2CA9C;
+	display: block;
+}
+
+th, td {
+	width: 14em;
+	text-align: left;
+	padding-right: .5em;
+	line-height: 1.3em;
+}
+
+tr:nth-child(even) {
+	background: #eae6d1;
 }
 
 a, input {
@@ -199,6 +217,11 @@ audio {
 	color: #999;
 }
 
+.entry-utility, .navigation {
+	font-size: 1.4em;
+	line-height: 1.5em;
+}
+
 input[type="text"],
 textarea {
 	padding: 5px;
@@ -223,7 +246,7 @@ a:hover {
 	border-bottom: 1px solid #004b69;	
 }
 
-.btn a, button.btn {
+span.gigpress-sidebar-status a, .btn a, button.btn {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;	
@@ -239,14 +262,14 @@ a:hover {
 	background: -moz-linear-gradient(top, #00a6ea, #0082b7);
 }
 
-.btn a:hover, button.btn:hover {
+span.gigpress-sidebar-status a, .btn a:hover, button.btn:hover {
 	cursor: pointer;	
 	background: #0082b7;	
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0082b7), to(#00a6ea));
 	background: -moz-linear-gradient(top, #0082b7, #00a6ea);		
 }
 
-.btn a:active, button.btn:active {
+span.gigpress-sidebar-status a, .btn a:active, button.btn:active {
 	cursor: pointer;
 	-webkit-box-shadow: 1px 1px 0 #e9e6d1;
 	-moz-box-shodow: 1px 1px 0 #e9e6d1;
@@ -310,12 +333,13 @@ body.admin-bar #extension-section-nav {
 
 #extension-section-nav #drop-nav ul {
 	padding: 4px 0;
-	margin: 0;	
+	margin: 0 0 0 10px;	
 }
 
 #extension-section-nav #drop-nav ul li {
 	float: left;
-	padding: 0 0 2px 0;	
+	padding: 0 0 2px 0;
+	line-height: .6em;	
 }
 
 #extension-section-nav #drop-nav ul li.ask,
@@ -332,7 +356,7 @@ body.admin-bar #extension-section-nav {
 #extension-section-nav #drop-nav ul li a {
 	position: relative;
 	z-index: 2;	
-	font: 12px "cambria", Georgia, serif;
+	font: 12px "minion-pro-1","minion-pro-2", "cambria", Georgia, serif;
 	padding: 2em 35px 2em 15px;
 	color: #fff;
 	border: none;
@@ -341,9 +365,9 @@ body.admin-bar #extension-section-nav {
 #extension-section-nav #drop-nav ul li a[href*='ask'] {
 	position: relative;
 	z-index: 2;
-	padding: 2em 15px .6em 15px;
+	padding: 2em 15px .4em 15px;
 	font-size: 1.3em;		
-	background: #0082b7 url('images/shine.png') repeat-x left -3px;
+	background: #0082b7;
 	-webkit-box-shadow: 0 0 3px #444;
 	-moz-box-shadow: 0 0 3px #444;
 	text-shadow: 0 1px 0 #006c99;					
@@ -535,7 +559,7 @@ body.admin-bar #extension-section-nav {
 }
 
 #extension-section .flow .contents #top-level-nav .top-level-nav h2 {
-	font: 12px 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font: 12px "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 	text-transform: uppercase;
 	padding: 7px 0 7px 38px;
 	color: #815a08;
@@ -660,6 +684,7 @@ div.menu ul {
 
 #access .menu-header li,
 div.menu li {
+	font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande','Lucida Sans Unicode', sans-serif;
 	float: left;
 	list-style: none;
 	margin: 0 22px 0 0;
@@ -676,7 +701,7 @@ div.menu li {
 	background: url(images/home.png) no-repeat left top;
 	width: 20px;
 	height: 16px;
-	margin-top: 3px;
+	margin-top: 1px;
 }
 
 #access li a[title='home']:hover {
@@ -712,132 +737,124 @@ div.search input.s {
 
 /***** Home Top ********************/
 
-#home-top {
-	position: relative;
-	overflow: hidden;
-	
+#home-left {
+	max-width: 100%;
 }
 
-	#home-left {
-		max-width: 100%;
-		float: left;
-	}
+#home-top {
+	display: block;
+	position: relative;
+	width: 574px;	
+	float: none;
+	margin: 0 auto 25px;
+	overflow: hidden;
+}
+
+#home-top #big-feature {
+	margin-left: 10px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+#home-top #big-feature img {
+	max-height: 368px;
+	max-width: 100%;
+}
+
+#home-top #big-feature a {
+	border: none;
+}
+
+#home-top #big-feature .feature-detail {
+	position: absolute;
+	background: #343434;
+	background: rgba(33,33,33,.65);	
+	bottom: 6px;
+	padding: 15px 20px;
+	width: 524px;
+	display: block;
+	overflow: hidden;
+}
+
+#home-top #big-feature .feature-detail h2 {
+	max-width: 500px;
+	float: left;	
+	font-size: 26px;
+}
+
+#home-top #big-feature .feature-detail h2 a {
+	color: #fff;
+	width: 80%;	
+	display: block;		
+}
 	
-	#home-top {
-		display: block;
-		position: relative;
-		width: 574px;
-		height: 368px;
-		float: none;
-		margin: 0 auto;
-		overflow: hidden;
-	}
+#home-top #slideshow-nav {
+	position: absolute;
+	z-index: 8;
+	margin-right: 15px;
+	bottom: 68px;
+	right: 0px;
+	float: right;
+}
 
-	#home-top #big-feature {
-		margin-left: 10px;
-		width: 100%;
-		overflow: hidden;
-		position: relative;
-	}
+#home-top #slideshow-nav a.slideNext,
+#home-top #slideshow-nav a.slidePrev {
+	background-image: url(images/arrows.png);
+	background-repeat: no-repeat;
+	top: 0;
+	height: 31px;
+	width: 34px;
+	display: block;
+	border: none;
+	float: left;
+}
 
-	#home-top #big-feature img {
-		max-height: 368px;
-		max-width: 100%;
-	}
-	
-	#home-top #big-feature a {
-		border: none;
-	}
+#home-top #slideshow-nav a.slideNext {
+	background-position: right top;
+}
 
-	#home-top #big-feature .feature-detail {
-		position: absolute;
-		background: #343434;
-		background: rgba(33,33,33,.65);	
-		bottom: 0;
-		padding: 15px 20px;
-		width: 524px;
-		display: block;
-		overflow: hidden;
-	}
+#home-top #slideshow-nav a.slidePrev {
+	background-position: left top;
+}
 
-	#home-top #big-feature .feature-detail h2 {
-		max-width: 500px;
-		float: left;	
-		font-size: 26px;
-	}
+#home-top #slideshow-nav a.slideNext:hover {
+	background-position: right -45px;
+}
 
-	#home-top #big-feature .feature-detail h2 a {
-		color: #fff;
-		width: 80%;	
-		display: block;		
-	}
-	
-	#home-top #slideshow-nav {
-		position: absolute;
-		z-index: 8;
-		margin-right: 15px;
-		bottom: 27px;
-		right: 0px;
-		float: right;
-	}
+#home-top #slideshow-nav a.slidePrev:hover {
+	background-position: left -45px;
+}
 
-	#home-top #slideshow-nav a.slideNext,
-	#home-top #slideshow-nav a.slidePrev {
-		background-image: url(images/arrows.png);
-		background-repeat: no-repeat;
-		top: 0;
-		height: 31px;
-		width: 34px;
-		display: block;
-		border: none;
-		float: left;
-	}
+#home-top #slideshow-nav a.slideNext:active {
+	background-position: right -44px;
+}
 
-	#home-top #slideshow-nav a.slideNext {
-		background-position: right top;
-	}
+#home-top #slideshow-nav a.slidePrev:active {
+	background-position: left -44px;
+}
 
-	#home-top #slideshow-nav a.slidePrev {
-		background-position: left top;
-	}
+#home-top #slidePager {
+	position: relative;
+	margin-right: 15px;
+	margin-top: 24px;
+	float: right;
+}
 
-	#home-top #slideshow-nav a.slideNext:hover {
-		background-position: right -45px;
-	}
+#home-top #slidePager a {
+	background-repeat: no-repeat;
+	background-position: center -23px;
+	text-indent: -9999px;	
+	display: block;
+	float: left;
+	width: 20px;
+	height: 14px;
+	border: none;
+}
 
-	#home-top #slideshow-nav a.slidePrev:hover {
-		background-position: left -45px;
-	}
-
-	#home-top #slideshow-nav a.slideNext:active {
-		background-position: right -44px;
-	}
-
-	#home-top #slideshow-nav a.slidePrev:active {
-		background-position: left -44px;
-	}
-
-	#home-top #slidePager {
-		position: relative;
-		margin-right: 15px;
-		margin-top: 24px;
-		float: right;
-	}
-
-	#home-top #slidePager a {
-		background-repeat: no-repeat;
-		background-position: center -23px;
-		text-indent: -9999px;	
-		display: block;
-		float: left;
-		width: 20px;
-		height: 14px;
-		border: none;
-	}
-
-	#home-top #slidePager a.activeSlide {
-		background-position: center top;
-	}
+#home-top #slidePager a.activeSlide {
+	background-position: center top;
+}
 
 /***** Home Middle ********************/
 
@@ -847,7 +864,7 @@ div.search input.s {
 	}
 
 #home-middle {
-	margin: 25px auto 0;
+	margin: 0 auto;
 	padding: 0;
 	overflow: hidden;
 	float: left;
@@ -883,10 +900,13 @@ div.search input.s {
 	
 #home-middle ul li {
 	list-style-type: none;
-	margin: 0 0 7px 0;
-	padding: 0 0 7px 0;
 	}
-
+	
+.widget_rss ul li {
+	margin: 0 0 7px 0;
+	padding: 0 0 7px 0;	
+	}
+	
 #home-middle ul ul {
 	list-style-type: none;
 	margin: 0;
@@ -971,13 +991,19 @@ div.search input.s {
 	margin: 15px 0 25px;
 }
 
+#content .hentry .entry-meta {
+	font-weight: 600;
+	font-style: italic;
+	font-size: 1.6em;
+}
+
 /* Aside
 -------------------------------------------------------------- */
 
 #aside h3.widget-title, #aside h3 {
 	padding: 5px 5px 5px 0;
 	font-size: 16px;
-	font-family: 'Lucida Grande', "Lucida Sans Unicode", sans-serif;
+	font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande', "Lucida Sans Unicode", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
@@ -1017,6 +1043,7 @@ div.search input.s {
 }
 
 #aside #aside-widget-area-1 ul li.widget-container {
+	position: relative;
 	padding: 10px;
 	margin-bottom: 20px;	
 	background: #eae6d2;
@@ -1036,7 +1063,8 @@ div.search input.s {
 	background: rgba(217, 208, 173,.30);
 }
 
-div.event dl {
+div.event dl,
+.gigpress-listing dl {
 	position: relative;
 	overflow: hidden;
 	margin: 0;
@@ -1045,9 +1073,10 @@ div.event dl {
 	border-bottom: 1px solid #d0ca99;	
 }
 
-div.event dt.date {
+div.event dt.date,
+span.gigpress-sidebar-date {
 	position: relative;
-	font: 1em georgia, serif;
+	font: .75em georgia, serif;
 	color: #b19e56;
 	text-shadow: 0 1px 0 #fff;
 	background: #f0eee3;
@@ -1061,49 +1090,108 @@ div.event dt.date {
 	-moz-box-shadow: 0 1px 2px #d8d3ae;
 	box-shodow: 0 1px 2px #d8d3ae;		
 	float: left;
+	text-align: center;	
 }
 
-div.event dl dd.title-loc {
+dd.title-loc {
 	margin-right: .5em;	
 	margin-bottom: 1em;
 	float: left;
 	width: 60%;
 }
 
-div.event dl dd.title-loc h4 {
+dl dd.title-loc h4 {
 	font-size: 1.5em;
 }
 
 div.event dl dd.title-loc h4,
-div.event dl dd.title-loc p {
+div.event dl dd.title-loc p,
+.gigpress-sidebar-notes {
 	padding-right: 1em;
 	margin-bottom: 0.5em;
 }
 
-div.event dl dt.date {
-	text-align: center;
-}
-
-div.event dl dt.date strong {
-	display: block;	
+div.event dl dt.date strong,
+span.word2 {
+	font-weight: bold;
+	display: block;
 	font-size: 2em;
 	margin-top: -.1em;
 }
 
-div.event dd.sign-up a {
+dd.sign-up a {
 	position: absolute;
 	right: 0;
 	top: 26px;
-	font-size: 1.1em;
+	font-size: .7em;
 }
 
-div.event dl.first {
+div.event dl.first,
+.gigpress-listing dl:first-child {
 	border-top: none;
 	margin-top: -15px;
 }
 
 div.event.last dl {
 	border-bottom: none;
+}
+
+h3.widget-title a {
+	color: #444;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+
+h3.widget-title a:hover {
+	color: #333;
+	border-bottom: 1px solid #333;
+}
+
+.widget_twitter_hash_tag ul.twitter-hash-tag-widget li,
+.agrilifetoday ul li {
+	margin: 0;
+	padding: 20px 0 20px 65px;
+	border-bottom: 1px solid #e0dcbc;
+	border-top: 1px solid #F0EEDE;
+	position: relative;
+}
+
+.widget_twitter_hash_tag ul.twitter-hash-tag-widget > li:first-child,
+.agrilifetoday ul  > li:first-child {
+	border-top: none;
+}
+
+ul.twitter-hash-tag-widget li a img,
+.agrilifetoday ul li img {
+	left: 0;
+	top: 20px;
+	padding: 4px;
+	position: absolute;
+	background: #f0eee3;
+	background: rgba(255,255,255,.55);
+	margin-right: 3%;
+	border-top: 1px solid #fff;		
+	-webkit-box-shadow: 0 1px 2px #d8d3ae;
+	-moz-box-shadow: 0 1px 2px #d8d3ae;
+	box-shodow: 0 1px 2px #d8d3ae;	
+	width: 48px;
+	height: 48px;
+}
+
+.agrilifetoday ul li img {
+	width: 48px;	
+}
+
+.agrilifetoday ul li a {
+
+}
+
+.agrilifetoday ul li span.rss-date {
+	display: block;
+	padding-bottom: 3px;
+	text-transform: uppercase;
+	font-family: "minion-pro-1","minion-pro-2", 'Cambria', georgia, serif;	
 }
 
 /* Attachment pages
@@ -1202,9 +1290,7 @@ div.event.last dl {
 #content .gallery dl {
 	margin: 0;
 }
-#content .gallery img {
-	border: 10px solid #f1f1f1;
-}
+
 #content .gallery br+br {
 	display: none;
 }
@@ -1572,6 +1658,78 @@ img#wpstats {
 	}
 }
 
+@media all and (min-width: 640px) {
+
+	#about,
+	#popular-links,
+	#texas-a-m,
+	#contact,
+	#agrilife-bookstore {
+		float: left;
+		width: 20%;
+	}
+
+	.about,
+	.popular-links,
+	.texas-a-m,
+	.contact,
+	.agrilife-bookstore {
+		padding: 0 10px;
+	}
+	
+	#footer {
+		background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
+	}
+	
+	#footer .wrap h4 {
+		margin-bottom: 2.5em;
+		font-size: 1em;
+	}
+
+	#footer .wrap .agrilife-bookstore h4 {
+		margin-bottom: 30px;
+	}
+
+	#footer .wrap a {
+		border: none;
+	}
+
+	#footer .wrap a img:hover {
+		opacity: .75;
+	}
+
+	#footer .wrap ul {
+		margin-left: 0;
+		margin-top: 15px;
+	}
+
+	#footer .wrap p {
+		font-size: 1.1em;
+		line-height: 20px;
+		margin-top: 19px;
+	}
+
+	#footer .wrap ul li {
+		margin-right: 1px;
+		font-size: 1.1em;	
+	}
+
+	#footer .wrap ul li a {
+		display: block;
+		padding: 4px 0;
+		border-bottom: 1px dashed #a3b8b7;	
+	}
+
+	#footer .wrap ul li a:hover {
+		border-bottom: 1px solid #004b69;
+	}
+
+	#footer .wrap .contact ul li {
+		margin-bottom: 12px;
+	}	
+}		
+
+
 @media screen and (min-width: 960px) {
 	
 	body {
@@ -1579,8 +1737,8 @@ img#wpstats {
 	}
 		
 	p, li {
-		line-height: 1.6em;
-		font-size: 14px; 
+		line-height: 1.4em;
+		font-size: 16px; 
 	}
 
 	#wrapper, #extension-section-nav #drop-nav, #extension-section .flow   {
@@ -1594,7 +1752,7 @@ img#wpstats {
 	#extension-section-nav #drop-nav ul li.right-align {
 		float: right;
 		display: inline;
-		font: italic 1.4em 'Cambria', georgia, serif;
+		font: italic 1.4em "minion-pro-1","minion-pro-2", 'Cambria', georgia, serif;
 		margin-right: 10px;
 	}
 	body #header {
@@ -1690,7 +1848,7 @@ img#wpstats {
 		position: absolute;
 		background: #343434;
 		background: rgba(33,33,33,.65);	
-		bottom: 5px;
+		bottom: 0px;
 		padding: 15px 20px;
 		width: 524px;
 		display: block;
@@ -1909,73 +2067,22 @@ img#wpstats {
 		margin-right: 10px;
 	}
 
-	#about,
-	#popular-links,
-	#texas-a-m,
-	#contact,
-	#agrilife-bookstore {
-		float: left;
-		width: 20%;
-	}
-
-	.about,
-	.popular-links,
-	.texas-a-m,
-	.contact,
-	.agrilife-bookstore {
-		padding: 0 10px;
-	}
-	
-	#footer {
-		background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
-	}
 	
 	#footer .wrap h4 {
-		margin-bottom: 25px;
-	}
-
-	#footer .wrap .agrilife-bookstore h4 {
-		margin-bottom: 30px;
-	}
-
-	#footer .wrap a {
-		border: none;
-	}
-
-	#footer .wrap a img:hover {
-		opacity: .75;
-	}
-
-	#footer .wrap ul {
-		margin-left: 0;
-		margin-top: 15px;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		font-weight: 600;
 	}
 
 	#footer .wrap p {
-		font-size: 12px;
-		line-height: 20px;
-		margin-top: 19px;
+		font-size: 1.4em;
 	}
 
 	#footer .wrap ul li {
-		margin-right: 1px;
-		font-size: 12px;	
+		font-size: 1.4em;	
 	}
 
-	#footer .wrap ul li a {
-		display: block;
-		padding: 4px 0;
-		border-bottom: 1px dashed #a3b8b7;	
-	}
-
-	#footer .wrap ul li a:hover {
-		border-bottom: 1px solid #004b69;
-	}
-
-	#footer .wrap .contact ul li {
-		margin-bottom: 12px;
-	}	
-		
 }
 
 @media all and (max-width: 960px) {
@@ -2102,7 +2209,7 @@ jQuery Tabs
 **********************************************************/
 .ui-tabs { position: relative; zoom: 1; overflow: hidden;} /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
 .ui-tabs .ui-tabs-nav { margin: 0; padding:0; overflow: hidden; }
-.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li { font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande','Lucida Sans Unicode', sans-serif; list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
 .ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; background: #e8e7d5; border: none;}
 .ui-tabs .ui-tabs-nav li a:hover { 	background: #e5e0c5; background: rgba(217, 208, 173, 0.7); border: none;}
 .ui-tabs .ui-tabs-nav li.ui-state-active a { 	background: #e5e0c5; background: rgba(217, 208, 173, 0.7); border: none;}
@@ -2143,7 +2250,7 @@ Gravity Forms
 div.gform_wrapper { 
 	margin:10px 0; 
 	max-width:960px;
-	font-family: 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
+	font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;
 }
 	
 .gform_wrapper h1, 

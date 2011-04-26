@@ -1,27 +1,33 @@
 <?php get_header(); ?>
-<div id="home-left">
-	<div id="home-top">		
-		<?php $my_query = new WP_Query('meta_key=feature-homepage&meta_value=checkbox_on&showposts=3&post_type=any');
-	echo '<div id="big-feature">';
-		$count = 0;	
-  		while ($my_query->have_posts()) : $my_query->the_post();
+<div id="home-left">		
+		<?php $my_query = new WP_Query('meta_key=feature-homepage&meta_value=1&showposts=3&post_type=any');
+		$count = 0;	?>
+  		<?php if ( $my_query->have_posts() ) : ?>
+
+		<div id="home-top">	
+		<div id="big-feature">
+		<?php while ($my_query->have_posts()) : $my_query->the_post();
   		global $post;
  		$count++;
   		$feature_title = get_post_meta($post->ID,'feature-title',true);?>
+
 		<div class="feature-item-<?php echo $count;?>">			
 			<a href="<?php the_permalink();?>"><?php the_post_thumbnail('featured');?></a>
 			<div class="feature-detail">
 				<h2><a href="<?php the_permalink();?>"><?php if($feature_title !== '') { echo $feature_title; }else{ echo get_the_title(); } ?></a></h2>
 			</div><!-- end .feature-detail -->
-		</div><!-- end .feature-item -->						
+		</div><!-- end .feature-item -->	
+							
 		<?php endwhile;  wp_reset_query; ?>
+		
 		</div><!-- end #big-feature -->	
 		<div id="slideshow-nav">
 		<a href="#" class="slidePrev"></a> <a href="#" class="slideNext"></a>
 		</div><!-- #slideshow-nav -->
 		<div id="slidePager"></div>											
-	</div><!-- end #home-top -->
-
+		</div><!-- end #home-top -->
+		<?php endif;?>	
+		
 <div id="home-middle-bg">
 	<div id="home-middle">
 		

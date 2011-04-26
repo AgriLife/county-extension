@@ -86,7 +86,23 @@ function county_ext_setup() {
 
 	// This theme allows users to set a custom background
 	add_custom_background();
-	
+
+	/* -- Add typekit js and css to document head -- */
+	add_action('wp_head','typekit_js');
+		function typekit_js() { 
+			if( !is_admin() ) : ?>
+	<script type="text/javascript" src="http://use.typekit.com/thu0wyf.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>	
+	<style type="text/css">
+	  .wf-loading h1#site-title,
+	  .wf-loading .entry-title {
+	    /* Hide the blog title and post titles while web fonts are loading */
+	    visibility: hidden;
+	  }
+	</style>				
+	<?php
+	endif; 
+	}	
 
 	// load Slideshow scripts
 	function load_js() {
@@ -100,20 +116,26 @@ function county_ext_setup() {
 		}	         
 	}    
 	add_action('init', 'load_js');	
-	
-	function load_cycle_js() {
-	        // instruction to only load if it is not the admin area
-		if ( !is_admin() ) { 
-		// register script location, dependencies and version with wp_register_script	
-	   	wp_register_script('cycle',
-	       	get_bloginfo('stylesheet_directory') . '/js/jquery.cycle.all.min.js',
-	       array('jquery'),
-	       '1.4.2' );
-	       // enqueue the jQuery scrollTo script
-	   	wp_enqueue_script('cycle');	
-		}	         
-	}    
-	add_action('init', 'load_cycle_js');
+
+
+	// Disable some widgets so people don't go apeshit
+	function remove_some_wp_widgets(){
+	  unregister_widget('WP_Widget_Calendar');
+	  unregister_widget('WP_Widget_Search');
+	  unregister_widget('WP_Widget_Tag_Cloud');
+	}
+
+	add_action('widgets_init',remove_some_wp_widgets, 1);	
+
+
+	// Custom admin styles
+	function admin_register_head() {
+	    $siteurl = get_option('siteurl');
+	    $url = $siteurl . '/wp-content/themes/' . basename(dirname(__FILE__)) . '/css/admin.css';
+	    echo "<link rel='stylesheet' type='text/css' href='$url' />\n";
+	}
+	add_action('admin_head', 'admin_register_head');
+		
 }	
 endif;
 
@@ -400,6 +422,24 @@ function county_ext_widgets_init() {
 /** Register sidebars by running county_ext_widgets_init() on the widgets_init hook. */
 add_action( 'widgets_init', 'county_ext_widgets_init' );
 
+
+
+/**
+ * Add some custom Widgets
+ *
+ * Widget: Watch, Read, Listen
+ * Widget: AgriLife Today Feed
+ *
+ */
+// Set path to function files
+$includes_path = TEMPLATEPATH . '/includes/';
+
+// Add Custom Widgets
+require_once ($includes_path . 'widgets.php');
+
+
+
+
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
  *
@@ -461,210 +501,6 @@ function county_ext_posted_in() {
 	);
 }
 endif;
-
-// 1. Custom Post Type Registration (Events)
-
-add_action( 'init', 'create_event_postype' );
-
-function create_event_postype() {
-
-$labels = array(
-    'name' => _x('Events', 'post type general name'),
-    'singular_name' => _x('Event', 'post type singular name'),
-    'add_new' => _x('Add New', 'events'),
-    'add_new_item' => __('Add New Event'),
-    'edit_item' => __('Edit Event'),
-    'new_item' => __('New Event'),
-    'view_item' => __('View Event'),
-    'search_items' => __('Search Events'),
-    'not_found' =>  __('No events found'),
-    'not_found_in_trash' => __('No events found in Trash'),
-    'parent_item_colon' => '',
-);
-
-$args = array(
-    'label' => __('Events'),
-    'labels' => $labels,
-    'public' => true,
-    'can_export' => true,
-    'show_ui' => true,
-    '_builtin' => false,
-    '_edit_link' => 'post.php?post=%d', // ?
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => array( "slug" => "events" ),
-    'supports'=> array('title', 'thumbnail', 'excerpt', 'editor') ,
-    'show_in_nav_menus' => true,
-    'taxonomies' => array( 'tf_eventcategory', 'post_tag')
-);
-
-register_post_type( 'tf_events', $args);
-
-}
-
-function create_eventcategory_taxonomy() {
-
-$labels = array(
-    'name' => _x( 'Categories', 'taxonomy general name' ),
-    'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Categories' ),
-    'popular_items' => __( 'Popular Categories' ),
-    'all_items' => __( 'All Categories' ),
-    'parent_item' => null,
-    'parent_item_colon' => null,
-    'edit_item' => __( 'Edit Category' ),
-    'update_item' => __( 'Update Category' ),
-    'add_new_item' => __( 'Add New Category' ),
-    'new_item_name' => __( 'New Category Name' ),
-    'separate_items_with_commas' => __( 'Separate categories with commas' ),
-    'add_or_remove_items' => __( 'Add or remove categories' ),
-    'choose_from_most_used' => __( 'Choose from the most used categories' ),
-);
-
-register_taxonomy('tf_eventcategory','tf_events', array(
-    'label' => __('Event Category'),
-    'labels' => $labels,
-    'hierarchical' => true,
-    'show_ui' => true,
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'event-category' ),
-));
-}
-
-add_action( 'init', 'create_eventcategory_taxonomy', 0 );
-
-// 3. Show Columns
-
-add_filter ("manage_edit-tf_events_columns", "tf_events_edit_columns");
-add_action ("manage_posts_custom_column", "tf_events_custom_columns");
-
-function tf_events_edit_columns($columns) {
-
-$columns = array(
-    "cb" => "<input type=\"checkbox\" />",
-    "tf_col_ev_cat" => "Category",
-    "tf_col_ev_date" => "Dates",
-    "tf_col_ev_times" => "Times",
-    "tf_col_ev_thumb" => "Thumbnail",
-    "title" => "Event",
-    "tf_col_ev_desc" => "Description",
-    );
-return $columns;
-}
-
-function tf_events_custom_columns($column)
-{
-global $post;
-$custom = get_post_custom();
-switch ($column)
-{
-case "tf_col_ev_cat":
-    // - show taxonomy terms -
-    $eventcats = get_the_terms($post->ID, "tf_eventcategory");
-    $eventcats_html = array();
-    if ($eventcats) {
-    foreach ($eventcats as $eventcat)
-    array_push($eventcats_html, $eventcat->name);
-    echo implode($eventcats_html, ", ");
-    } else {
-    _e('None', 'themeforce');;
-    }
-break;
-case "tf_col_ev_date":
-    // - show dates -
-    $startd = $custom["tf_events_startdate"][0];
-    $endd = $custom["tf_events_enddate"][0];
-    $startdate = date("F j, Y", $startd);
-    $enddate = date("F j, Y", $endd);
-    echo $startdate . '<br /><em>' . $enddate . '</em>';
-break;
-case "tf_col_ev_times":
-    // - show times -
-    $startt = $custom["tf_events_startdate"][0];
-    $endt = $custom["tf_events_enddate"][0];
-    $time_format = get_option('time_format');
-    $starttime = date($time_format, $startt);
-    $endtime = date($time_format, $endt);
-    echo $starttime . ' - ' .$endtime;
-break;
-case "tf_col_ev_thumb":
-    // - show thumb -
-    $post_image_id = get_post_thumbnail_id(get_the_ID());
-    if ($post_image_id) {
-    $thumbnail = wp_get_attachment_image_src( $post_image_id, 'post-thumbnail', false);
-    if ($thumbnail) (string)$thumbnail = $thumbnail[0];
-    echo '<img src="';
-    echo bloginfo('template_url');
-    echo '/timthumb/timthumb.php?src=';
-    echo $thumbnail;
-    echo '&h=60&w=60&zc=1" alt="" />';
-}
-break;
-case "tf_col_ev_desc";
-    the_excerpt();
-break;
-
-}
-}
-
-// 4. Show Meta-Box
-
-add_action( 'admin_init', 'tf_events_create' );
-
-function tf_events_create() {
-    add_meta_box('tf_events_meta', 'Events', 'tf_events_meta', 'tf_events');
-}
-
-function tf_events_meta () {
-
-// - grab data -
-
-global $post;
-$custom = get_post_custom($post->ID);
-$meta_sd = $custom["tf_events_startdate"][0];
-$meta_ed = $custom["tf_events_enddate"][0];
-$meta_st = $meta_sd;
-$meta_et = $meta_ed;
-
-// - grab wp time format -
-
-$date_format = get_option('date_format'); // Not required in my code
-$time_format = get_option('time_format');
-
-// - populate today if empty, 00:00 for time -
-
-if ($meta_sd == null) { $meta_sd = time(); $meta_ed = $meta_sd; $meta_st = 0; $meta_et = 0;}
-
-// - convert to pretty formats -
-
-$clean_sd = date("D, M d, Y", $meta_sd);
-$clean_ed = date("D, M d, Y", $meta_ed);
-$clean_st = date($time_format, $meta_st);
-$clean_et = date($time_format, $meta_et);
-
-// - security -
-
-echo '<input type="hidden" name="tf-events-nonce" id="tf-events-nonce" value="' .
-wp_create_nonce( 'tf-events-nonce' ) . '" />';
-
-// - output -
-
-?>
-<div class="tf-meta">
-<ul>
-    <li><label>Start Date</label><input name="tf_events_startdate" class="tfdate" value="<?php echo $clean_sd; ?>" /></li>
-    <li><label>Start Time</label><input name="tf_events_starttime" value="<?php echo $clean_st; ?>" /><em>Use 24h format (7pm = 19:00)</em></li>
-    <li><label>End Date</label><input name="tf_events_enddate" class="tfdate" value="<?php echo $clean_ed; ?>" /></li>
-    <li><label>End Time</label><input name="tf_events_endtime" value="<?php echo $clean_et; ?>" /><em>Use 24h format (7pm = 19:00)</em></li>
-</ul>
-</div>
-<?php
-}
-
-
-
-
-
 
 
 // Admin Menus
@@ -1235,278 +1071,6 @@ if (isset($agrilife_customizer)) {
 
 
 
-/**
- * Widget: Watch, Read, Listen
- * Three widgets in one with thoughtful defaults in case of absentee user.
- */
-
-class WatchReadListenWidget extends WP_Widget {
-	function WatchReadListenWidget() {
-	//Constructor
-		$widget_ops = array('classname' => 'widget Watch Read Listen', 'description' => 'Pick a YouTube Video and a Podcast RSS feed. *coming soon* AgriLife Bookstore Items' );
-		$this->WP_Widget('WatchReadListenWidget', 'AgriLife: Watch, Read, Listen', $widget_ops);
-	}
-
-	function widget($args, $instance) {
-	// Set YouTube Default
-	$youtube_video_default = 'http://www.youtube.com/watch?v=Ly_yfmeR8s8';
-	// Set Podcast Default
-	$podcast_link_default  = 'http://tmnpodcast.libsyn.com/rss';
-	// prints the widget
-		if ( isset($instance['error']) && $instance['error'] )
-			return;
-		extract($args, EXTR_SKIP);
-		
-		
-		// YouTube Processing
- 		$user_video = empty($instance['youtube_video']) ? $youtube_video_default : apply_filters('widget_youtube_video', $instance['youtube_video']);
- 		// If a URL was passed
-		if ( 'http://' == substr( $user_video, 0, 7 ) ) {
-			// Playlist URL
-			if ( FALSE !== stristr( $user_video, 'view_play_list' ) ) {
-				preg_match( '#http://(www.youtube|youtube|[A-Za-z]{2}.youtube)\.com/view_play_list\?p=([\w-]+)(.*?)#i', $user_video, $matches );
-				if ( empty($matches) || empty($matches[2]) ) return $this->error( sprintf('Unable to parse URL, check for correct %s format', __('YouTube') ) );
-				$embedpath = 'p/' . $matches[2];
-				$fallbacklink = $fallbackcontent = 'http://www.youtube.com/view_play_list?p=' . $matches[2];
-			}
-			// Normal video URL
-			else {
-				preg_match( '#http://(www.youtube|youtube|[A-Za-z]{2}.youtube)\.com/(watch\?v=|w/\?v=|\?v=)([\w-]+)(.*?)#i', $user_video, $matches );
-				if ( empty($matches) || empty($matches[3]) ) return $this->error( sprintf('Unable to parse URL, check for correct %s format', __('YouTube') ) );
-
-				$embedpath = 'v/' . $matches[3];
-				$fallbacklink = 'http://www.youtube.com/watch?v=' . $matches[3];
-				$fallbackcontent = '<img src="http://img.youtube.com/vi/' . $matches[3] . '/0.jpg" alt="' . __('YouTube Preview Image', 'vipers-video-quicktags') . '" />';
-			}
-		}
-		// If a URL wasn't passed, assume a video ID was passed instead
-		else {
-			$embedpath = 'v/' . $user_video;
-			$fallbacklink = 'http://www.youtube.com/watch?v=' . $user_video;
-			$fallbackcontent = '<img src="http://img.youtube.com/vi/' . $user_video . '/0.jpg" alt="' . __('YouTube Preview Image', 'vipers-video-quicktags') . '" />';
-		}
-		
-		$youtube_video = 'http://www.youtube.com/' . $embedpath;
-
- 		
- 		// Podcast Processing
- 		$podcast_link = empty($instance['podcast_link']) ? $podcast_link_default : apply_filters('widget_podcast_link', $instance['podcast_link']);
-		$rss = fetch_feed($podcast_link);
-		if ( ! is_wp_error($rss) ) {
-			$podcast_desc = esc_attr(strip_tags(@html_entity_decode($rss->get_description(), ENT_QUOTES, get_option('blog_charset'))));
-			$podcast_title= esc_attr(strip_tags(@html_entity_decode($rss->get_title(), ENT_QUOTES, get_option('blog_charset'))));
-			$podcast_link_audio= esc_attr(strip_tags(@html_entity_decode($rss->get_link(), ENT_QUOTES, get_option('blog_charset'))));
-			if ( empty($title) )
-				$title = esc_html(strip_tags($rss->get_title()));
-			$link = esc_url(strip_tags($rss->get_permalink()));
-			while ( stristr($link, 'http') != $link )
-				$link = substr($link, 1);
-			$podcast_site_link = $link;
-		}
-		
-		echo $before_widget;
-		 ?>
-		 
-<div id="watchreadlisten-bg" class="widget">
-	<div id="tabs">	
-	<ul>
-		<li><a href="#tabs-1">Watch</a></li>
-		<li><a href="#tabs-2">Read</a></li>
-		<li><a href="#tabs-3">Listen</a></li>
-	</ul>
-		<div id="tabs-1">
-		<?php // Watch Tab ?>
-		<object width="348" height="221">
-			<param name="movie" value="<?php echo $youtube_video;?>"></param>
-			<param name="allowFullScreen" value="true"></param>
-			<param name="allowscriptaccess" value="always"></param>
-			<embed src="<?php echo $youtube_video;?>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="348" height="221"></embed></object>	
-		<?php // END Watch Tab ?>		
-		</div>
-		<div id="tabs-2">		
-			<?php // Read Tab ?>
-			<ul class="books">
-				<li>
-					<a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=2423">
-					<dl>
-						<dt class="book-title">Brush &amp; Weeds</dt>	
-						<dd class="book-cover"><img class="book" src="http://brazos.agrilife.org/wp-content/themes/county/images/brush-weeds-cover.png" /></dd>
-						<dd class="price"><em>$</em>19<span>99</span></dd>	
-					</dl>
-					</a>
-					<p class="buy btn"><a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=2423">Buy</a></p>					
-				</li>
-				<li>	
-					<a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=1979">
-					<dl>
-						<dt class="book-title">Rainwater Harvest</dt>	
-						<dd class="book-cover"><img class="book" src="http://brazos.agrilife.org/wp-content/themes/county/images/rainwater-harvest-cover.png" /></dd>
-						<dd class="price"><em></em>Free<span></span></dd>						
-					</dl>
-					</a>
-					<p class="buy btn"><a href="https://agrilifebookstore.org/publications_details.cfm?whichpublication=1979">Read</a></p>					
-				</li>
-			</ul>
-			<?php // END Read Tab ?>
-			</div>		
-		<div id="tabs-3">
-			<?php // Listen Tab ?>
-			<h4><a href="<?php echo $podcast_site_link;?>"><?php echo $podcast_title;?></a></h4>
-			<?php wp_widget_rss_podcast_output( $rss, $instance ); ?>
-		
-			<!--<p><?php echo $podcast_desc;?></p>-->
-			<?php // END Listen Tab ?>
-		</div>
-	
-		
-	</div>							
-	</div>
-				<?php 
-	echo $after_widget;
-	}
-
-	function update($new_instance, $old_instance) {
-	//save the widget
-		$instance = $old_instance;
-		$instance['youtube_video'] = strip_tags($new_instance['youtube_video']);
-		$instance['podcast_link'] = strip_tags($new_instance['podcast_link']);
-		return $instance;
-
-	}
-
-	function form($instance) {
-	//widgetform in backend
-		$instance = wp_parse_args( (array) $instance, array('youtube_video' => '', 'podcast_link' => '' ) );
-		$youtube_video = strip_tags($instance['youtube_video']);
-		$podcast_link = strip_tags($instance['podcast_link']);
-
-?>
-<p>
-  <label for="<?php echo $this->get_field_id('youtube_video'); ?>">YouTube Video Link: <br /><code>http://www.youtube.com/watch?v=iRbX2uPgGsw</code>
-  <input class="widefat" id="<?php echo $this->get_field_id('youtube_video'); ?>" name="<?php echo $this->get_field_name('youtube_video'); ?>" type="text" value="<?php echo attribute_escape($youtube_video); ?>" />
-  </label>
-</p>
-<p>
-  <label for="<?php echo $this->get_field_id('podcast_link'); ?>">Podcast Link: <br /><code>http://tmnpodcast.libsyn.com/rss</code>
-  <input class="widefat" id="<?php echo $this->get_field_id('podcast_link'); ?>" name="<?php echo $this->get_field_name('podcast_link'); ?>" type="text" value="<?php echo attribute_escape($podcast_link); ?>" />
-  </label>
-</p>
-<?php
-	}
-
-}
-
-register_widget('WatchReadListenWidget');
-
-
-
-
-/**
- * Display the RSS podcast entries in a list of html5 .
- *
- * @since 2.5.0
- *
- * @param string|array|object $rss RSS url.
- * @param array $args Widget arguments.
- */
-function wp_widget_rss_podcast_output( $rss, $args = array() ) {
-	if ( is_string( $rss ) ) {
-		$rss = fetch_feed($rss);
-	} elseif ( is_array($rss) && isset($rss['url']) ) {
-		$args = $rss;
-		$rss = fetch_feed($rss['url']);
-	} elseif ( !is_object($rss) ) {
-		return;
-	}
-
-	if ( is_wp_error($rss) ) {
-		if ( is_admin() || current_user_can('manage_options') )
-			echo '<p>' . sprintf( __('<strong>RSS Error</strong>: %s'), $rss->get_error_message() ) . '</p>';
-		return;
-	}
-
-	$default_args = array( 'show_author' => 0, 'show_date' => 0, 'show_summary' => 0 );
-	$args = wp_parse_args( $args, $default_args );
-	extract( $args, EXTR_SKIP );
-
-	$items = (int) $items;
-	if ( $items < 1 || 20 < $items )
-		$items = 10;
-	$show_summary  = (int) $show_summary;
-	$show_author   = (int) $show_author;
-	$show_date     = (int) $show_date;
-
-	if ( !$rss->get_item_quantity() ) {
-		echo '<ul><li>' . __( 'An error has occurred; the feed is probably down. Try again later.' ) . '</li></ul>';
-		$rss->__destruct();
-		unset($rss);
-		return;
-	}
-
-	echo '<ul>';
-	foreach ( $rss->get_items(0, $items) as $item ) {
-		$link = $item->get_link();
-		while ( stristr($link, 'http') != $link )
-			$link = substr($link, 1);
-		$link = esc_url(strip_tags($link));
-		$title = esc_attr(strip_tags($item->get_title()));
-		if ( empty($title) )
-			$title = __('Untitled');
-
-		$desc = str_replace( array("\n", "\r"), ' ', esc_attr( strip_tags( @html_entity_decode( $item->get_description(), ENT_QUOTES, get_option('blog_charset') ) ) ) );
-		$desc = wp_html_excerpt( $desc, 360 );
-
-		// Append ellipsis. Change existing [...] to [&hellip;].
-		if ( '[...]' == substr( $desc, -5 ) )
-			$desc = substr( $desc, 0, -5 ) . '[&hellip;]';
-		elseif ( '[&hellip;]' != substr( $desc, -10 ) )
-			$desc .= ' [&hellip;]';
-
-		$desc = esc_html( $desc );
-
-		if ( $show_summary ) {
-			$summary = "<div class='rssSummary'>$desc</div>";
-		} else {
-			$summary = '';
-		}
-
-		/*
-		$date = '';
-		if ( $show_date ) {
-			$date = $item->get_date( 'U' );
-
-			if ( $date ) {
-				$date = ' <span class="rss-date">' . date_i18n( get_option( 'date_format' ), $date ) . '</span>';
-			}
-		}
-
-		$author = '';
-		if ( $show_author ) {
-			$author = $item->get_author();
-			if ( is_object($author) ) {
-				$author = $author->get_name();
-				$author = ' <cite>' . esc_html( strip_tags( $author ) ) . '</cite>';
-			}
-		}
-		if ( $link == '' ) {
-			echo "<li>$title{$date}{$summary}{$author}";
-		} else {
-			echo "<li><a class='rsswidget' href='$link' title='$desc'>$title</a>{$date}{$summary}{$author}";
-		}
-		*/
-	  
-		if ($enclosure = $item->get_enclosure())
-		{
-			echo "<li><embed type=\"application/x-shockwave-flash\" flashvars=\"audioUrl=".$enclosure->get_link()."\" src=\"http://www.google.com/reader/ui/3523697345-audio-player.swf\" width=\"400\" height=\"27\" quality=\"best\"></embed></li>";
-			//echo "<li><audio src=\"".$enclosure->get_link()."\"> controls preload=\"none\">Your browser does not support the audio element.</audio></li>";
-			//echo "<li><a class='rsswidget' href='".."' title='$desc'>$title</a></li>";
-		}
-		
-	}
-	echo '</ul>';
-	$rss->__destruct();
-	unset($rss);
-}
 
 
 
@@ -1559,7 +1123,7 @@ function remove_capability($role,$cap) {
 //remove_capability('subscriber','read_private_pages'); //Example
 
 
-add_capability('editor','edit_theme_options');
+add_capability('editor','edit_theme_options');  // Allow an editor to edit widgets
 
 
 // Brute-force Remove Tools Menu
@@ -1574,11 +1138,11 @@ global $menu;
 		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
 	}
 }
-add_action('admin_menu', 'remove_menus');
+add_action('admin_menu', 'remove_menus');  
 
 
 
-/* new 3.1 style 
+/* new 3.1 style menu removal *testing*
 add_action( 'admin_init', 'my_remove_menu_pages' );
 
 function my_remove_menu_pages() {
@@ -1589,3 +1153,21 @@ function my_remove_menu_pages() {
 	}
 }
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
