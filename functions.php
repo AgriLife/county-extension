@@ -365,9 +365,9 @@ function custom_search_form() {
 function county_ext_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'county_ext' ),
-		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'county_ext' ),
+		'name' => __( 'Right Column', 'county_ext' ),
+		'id' => 'right-column-widget-area',
+		'description' => __( 'The right column area', 'county_ext' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -376,9 +376,9 @@ function county_ext_widgets_init() {
 
 	// Area 2, located in the second sidebar.
 	register_sidebar( array(
-		'name' => __( 'Aside Widget Area', 'county_ext' ),
-		'id' => 'aside-widget-area',
-		'description' => __( 'The aside widget area', 'county_ext' ),
+		'name' => __( 'Right Column Bottom', 'county_ext' ),
+		'id' => 'right-column-bottom-widget-area',
+		'description' => __( 'The right column bottom widget area', 'county_ext' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -387,7 +387,7 @@ function county_ext_widgets_init() {
 
 	// Area 3, located in the second sidebar.
 	register_sidebar( array(
-		'name' => __( 'Home Middle #1', 'county_ext' ),
+		'name' => __( 'Home Page Bottom', 'county_ext' ),
 		'id' => 'home-middle-1',
 		'description' => __( 'Home Middle #1', 'county_ext' ),
 		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
@@ -396,27 +396,6 @@ function county_ext_widgets_init() {
 		'after_title' => '</h3>',
 	) );	
 
-	// Area 4, located in the second sidebar.
-	register_sidebar( array(
-		'name' => __( 'Home Middle #2', 'county_ext' ),
-		'id' => 'home-middle-2',
-		'description' => __( 'Home Middle #2', 'county_ext' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );		
-	
-	// Area 5, located in the second sidebar.
-	register_sidebar( array(
-		'name' => __( 'Home Middle #3', 'county_ext' ),
-		'id' => 'home-middle-3',
-		'description' => __( 'Home Middle #3', 'county_ext' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
 }
 
 /** Register sidebars by running county_ext_widgets_init() on the widgets_init hook. */
