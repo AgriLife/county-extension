@@ -858,6 +858,14 @@ div.search input.s {
 
 /***** Home Middle ********************/
 
+
+body.home #container,
+body.home #content {
+	margin: 0;
+	padding: 0;
+	float: none;
+	}
+
 #home-middle-bg {
 	float: left;
 	overflow: hidden;	
@@ -875,8 +883,13 @@ div.search input.s {
 	margin: 0;
 	padding: 0 10px 10px 0;
 	}
-	
-#home-middle h2 {
+
+body.home .page p {
+	margin: 0;
+	padding: 0 10px 10px 10px;
+	}
+		
+#home-middle h2, body.home .page h2.entry-title {
 	margin: 0 0 5px 0;
 	padding: 0 0 0 10px;
 	text-decoration: none;

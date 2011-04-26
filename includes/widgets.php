@@ -71,7 +71,7 @@ class WatchReadListenWidget extends WP_Widget {
 		echo $before_widget;
 		 ?>
 		 
-<div id="watchreadlisten-bg" class="widget">
+<div class="watchreadlisten-bg widget">
 	<div id="tabs">	
 	<ul>
 		<li><a href="#tabs-1">Watch</a></li>
@@ -329,7 +329,7 @@ class Agrilife_Today_Widget_RSS extends WP_Widget {
 		echo $before_widget;
 		 ?>
 		 
-<div id="watchreadlisten-bg" class="widget">
+<div class="watchreadlisten-bg widget">
 			<h3 class="widget-title"><a href="<?php echo $podcast_site_link;?>"><?php echo $podcast_title;?></a></h3>
 			<?php agrilife_widget_agrilifetoday_rss_output( $rss, $instance ); ?>		
 </div>
