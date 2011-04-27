@@ -84,9 +84,6 @@ function county_ext_setup() {
 		'primary' => __( 'Primary Navigation', 'county_ext' ),
 	) );
 
-	// This theme allows users to set a custom background
-	add_custom_background();
-
 	/* -- Add typekit js and css to document head -- */
 	add_action('wp_head','typekit_js');
 		function typekit_js() { 
