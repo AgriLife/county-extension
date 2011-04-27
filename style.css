@@ -935,6 +935,10 @@ body.home .page p {
 	margin: 0;
 	}
 	
+#home-middle .widget-container {
+	padding-bottom: 2em;
+	}
+		
 #home-middle .textwidget {
 	margin: 0;
 	padding: 0;
