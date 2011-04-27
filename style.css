@@ -989,6 +989,11 @@ body.home .page p {
 	padding-bottom: 3em;
 }
 
+body.home .hentry {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
 .entry-meta {
 	font-size: 1.3em;
 	margin: 15px 0 25px;
