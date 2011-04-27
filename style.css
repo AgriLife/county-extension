@@ -936,7 +936,9 @@ body.home .page p {
 	}
 	
 #home-middle .widget-container {
-	padding-bottom: 2em;
+	padding-top: 2em;
+	margin-top: 2em;	
+	border-top: 1px dashed #d2ca9c;		
 	}
 		
 #home-middle .textwidget {
@@ -970,21 +972,6 @@ body.home .page p {
 	margin: 0;
 	padding: 0 0 20px 10px;
 	}
-	
-.home-middle-2 {
-	float: left;
-	margin: 0 0 0 10px;
-	padding: 15px 0 10px 0;	
-	border-top: 1px dashed #d2ca9c;	
-	}
-	
-.home-middle-3 {
-	float: left;
-	clear: right;
-	margin: 0 0 0 10px;
-	padding: 15px 0 10px 0;
-	border-top: 1px dashed #d2ca9c;		
-	}
 
 /* =Content
 -------------------------------------------------------------- */
@@ -1000,7 +987,6 @@ body.home .page p {
 .hentry {
 	margin-bottom: 3em;
 	padding-bottom: 3em;
-	border-bottom: 1px solid #ddd;	
 }
 
 .entry-meta {
