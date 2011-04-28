@@ -13,7 +13,7 @@ class WatchReadListenWidget extends WP_Widget {
 
 	function widget($args, $instance) {
 	// Set YouTube Default
-	$youtube_video_default = 'http://www.youtube.com/watch?v=Ly_yfmeR8s8';
+	$youtube_video_default = 'hhttp://www.youtube.com/watch?v=q_UsLHl_YDQ';
 	// Set Podcast Default
 	$podcast_link_default  = 'http://tmnpodcast.libsyn.com/rss';
 	// prints the widget
