@@ -5,11 +5,7 @@
  */
 
 get_header(); ?>
-
-		<div id="container">
-			<div id="content" role="main">
-
-<div id="home-left">		
+			<div id="content" role="main">		
 		<?php $my_query = new WP_Query('meta_key=feature-homepage&meta_value=1&showposts=5&post_type=any');
 		$count = 0;	?>
   		<?php if ( $my_query->have_posts() ) : ?>
@@ -71,10 +67,8 @@ get_header(); ?>
 
     </div><!-- end #home-middle -->
 </div><!-- end #home-middle-bg -->
-</div><!-- end #home-left -->
 			
 			</div><!-- #content -->
-		</div><!-- #container -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
