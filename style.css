@@ -1814,7 +1814,11 @@ img#wpstats {
 		width: 100%;
 		margin: 0;
 	}
-					
+
+	#content {
+		padding-bottom: 2em;
+	}
+						
 	body.home #content {
 		max-width: 564px;
 		float: left;
