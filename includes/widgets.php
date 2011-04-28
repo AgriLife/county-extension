@@ -13,7 +13,7 @@ class WatchReadListenWidget extends WP_Widget {
 
 	function widget($args, $instance) {
 	// Set YouTube Default
-	$youtube_video_default = 'http://www.youtube.com/watch?v=Ly_yfmeR8s8';
+	$youtube_video_default = 'hhttp://www.youtube.com/watch?v=q_UsLHl_YDQ';
 	// Set Podcast Default
 	$podcast_link_default  = 'http://tmnpodcast.libsyn.com/rss';
 	// prints the widget
@@ -166,7 +166,7 @@ register_widget('WatchReadListenWidget');
 
 
 /**
- * Display the RSS podcast entries in a list of html5 .
+ * Display the RSS podcast entries in a list
  *
  * @since 2.5.0
  *
@@ -193,7 +193,7 @@ function wp_widget_rss_podcast_output( $rss, $args = array() ) {
 	$args = wp_parse_args( $args, $default_args );
 	extract( $args, EXTR_SKIP );
 
-	$items = 1;
+	$items = 1;  // Just show the latest podcast
 	$show_summary  = (int) $show_summary;
 	$show_author   = (int) $show_author;
 	$show_date     = (int) $show_date;
@@ -231,37 +231,10 @@ function wp_widget_rss_podcast_output( $rss, $args = array() ) {
 		} else {
 			$summary = '';
 		}
-
-		/*
-		$date = '';
-		if ( $show_date ) {
-			$date = $item->get_date( 'U' );
-
-			if ( $date ) {
-				$date = ' <span class="rss-date">' . date_i18n( get_option( 'date_format' ), $date ) . '</span>';
-			}
-		}
-
-		$author = '';
-		if ( $show_author ) {
-			$author = $item->get_author();
-			if ( is_object($author) ) {
-				$author = $author->get_name();
-				$author = ' <cite>' . esc_html( strip_tags( $author ) ) . '</cite>';
-			}
-		}
-		if ( $link == '' ) {
-			echo "<li>$title{$date}{$summary}{$author}";
-		} else {
-			echo "<li><a class='rsswidget' href='$link' title='$desc'>$title</a>{$date}{$summary}{$author}";
-		}
-		*/
 	  
 		if ($enclosure = $item->get_enclosure())
 		{
 			echo "<li><embed type=\"application/x-shockwave-flash\" flashvars=\"audioUrl=".$enclosure->get_link()."\" src=\"http://www.google.com/reader/ui/3523697345-audio-player.swf\" width=\"400\" height=\"27\" quality=\"best\"></embed></li>";
-			//echo "<li><audio src=\"".$enclosure->get_link()."\"> controls preload=\"none\">Your browser does not support the audio element.</audio></li>";
-			//echo "<li><a class='rsswidget' href='".."' title='$desc'>$title</a></li>";
 		}
 		
 	}
@@ -373,7 +346,7 @@ register_widget('Agrilife_Today_Widget_RSS');
 
 
 /**
- * Display the RSS podcast entries in a list of html5 .
+ * Display the RSS feed from AgriLife Today and include image
  *
  * @since 2.5.0
  *
