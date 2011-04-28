@@ -8,6 +8,8 @@
  * @subpackage county_ext
  * @since county_ext 1.0
  */
+ $options = get_option('AgrilifeCountyOptions');
+    GLOBAL $options, $googlemap;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -26,6 +28,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php if ($googlemap) echo $googlemap; ?>
 <?php
 	/* We add some JavaScript to pages with the comment form
 	 * to support sites with threaded comments (when in use).
@@ -43,7 +46,8 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> <?php if($googlemap) echo " onload=\"initialize()\""; ?>>
+
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>
