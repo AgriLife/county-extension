@@ -51,9 +51,9 @@
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>
-			<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
-			<li class='explore right-align'><a class="ext-link" href="/explore/">Explore</a></li>				
-			<li class="tx-ext-item"><a class="ext-link" href="#extension-section">Texas AgriLife Extension Service</a></li>	
+		<!--	<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
+			<li class='explore right-align'><a class="ext-link" href="/explore/">Explore</a></li> -->				
+			<li class="tx-ext-item"><a class="ext-link" href="#extension-section">Texas AgriLife	 Extension Service</a></li>
 		</ul>				
 	</div><!-- #drop-nav -->	
 </div><!-- #extension-section-nav -->

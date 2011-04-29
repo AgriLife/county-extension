@@ -333,7 +333,7 @@ body.admin-bar #extension-section-nav {
 
 #extension-section-nav #drop-nav ul {
 	padding: 4px 0;
-	margin: 0 0 0 10px;	
+	margin: 0;	
 }
 
 #extension-section-nav #drop-nav ul li {
@@ -784,10 +784,9 @@ body.home #content {
 }
 	
 #home-top #slideshow-nav {
-	position: absolute;
+	position: relative;
 	z-index: 8;
-	bottom: 0;
-	right: 0px;
+	margin-top: 1em;
 	float: right;
 }
 
@@ -829,19 +828,20 @@ body.home #content {
 
 #home-top #slidePager {
 	position: relative;
-	margin-right: 15px;
-	margin-top: 24px;
+	margin-right: 1em;
+	margin-top: 1.8em;
 	float: right;
 }
 
 #home-top #slidePager a {
+	background-image: url(images/dots.png);
 	background-repeat: no-repeat;
-	background-position: center -23px;
+	background-position: center -33px;
 	text-indent: -9999px;	
 	display: block;
 	float: left;
 	width: 20px;
-	height: 14px;
+	height: 15px;
 	border: none;
 }
 
