@@ -317,9 +317,9 @@ span.gigpress-sidebar-status a, .btn a:active, button.btn:active {
 	color: #fff;
 	border-bottom: 1px dashed #005e88;
 	border-top: 1px solid #12a2e8;	
-	-webkit-box-shadow: 0 2px 5px rgba(6,6,6,.4);
-	-moz-box-shadow: -6px 2px 5px rgba(6,6,6,.4);
-	box-shadow: 0 2px 5px rgba(6,6,6,.4);	
+	-webkit-box-shadow: 0 2px 5px rgba(6,6,6,.3);
+	-moz-box-shadow: -6px 2px 5px rgba(6,6,6,.3);
+	box-shadow: 0 2px 5px rgba(6,6,6,.3);	
 }
 
 body.admin-bar #extension-section-nav {	

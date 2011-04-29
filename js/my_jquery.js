@@ -1034,22 +1034,22 @@ jQuery(document).ready(function($) {
 				{duration:200})
 			})
 
-//		var Revealer = function(relativeParent,absoluteChild,speed) {
- //       var revealHeight = absoluteChild.height();
-//        relativeParent.height(revealHeight);
-//        relativeParent.addClass('hidden');
-//        this.toggleReveal = function() {
-//            if (!relativeParent.parent().find(':animated').length) {
- //               if (relativeParent.css('display')!='none' ) {
-//                    relativeParent.animate({height:0}, speed, function() {
-//                        relativeParent.hide();
-//                    });
-//                } else {
- //                   relativeParent.height(0).show().animate({height: revealHeight}, speed);
-//                }
-  //          }
-//        };
- //   };
+		var Revealer = function(relativeParent,absoluteChild,speed) {
+        var revealHeight = absoluteChild.height();
+        relativeParent.height(revealHeight);
+        relativeParent.addClass('hidden');
+        this.toggleReveal = function() {
+            if (!relativeParent.parent().find(':animated').length) {
+                if (relativeParent.css('display')!='none' ) {
+                    relativeParent.animate({height:0}, speed, function() {
+                        relativeParent.hide();
+                    });
+                } else {
+                    relativeParent.height(0).show().animate({height: revealHeight}, speed);
+                }
+            }
+        };
+    };
     
    jQuery('#extension-section').after(jQuery('#contact-form'));
     
