@@ -3,36 +3,38 @@
  * Template Name: Contact
  * @package WordPress
  */
-$googlemap = '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
-<script type="text/javascript"> 
-  var geocoder;
-  var map;
-  var query = "Toledo";
+/*
+$googlemap = '
+
+
+<script type="text/javascript" charset="utf-8">
   function initialize() {
-    geocoder = new google.maps.Geocoder();
+    var myLatlng = new google.maps.LatLng(31.970804,-99.898682);
     var myOptions = {
-      zoom: 8,
+      zoom: 6,
+      center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    codeAddress();
+    var map = new google.maps.Map(document.getElementById(\'map_canvas\'), myOptions);
+    new google.maps.Map($(\'#map_canvas\'),myOptions); 
   }
- 
-  function codeAddress() {
-    var address = query;
-    geocoder.geocode( { \'address\': address}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map, 
-            position: results[0].geometry.location
-        });
-      } else {
-        alert("Geocode was not successful for the following reason: " + status);
-      }
-    });
+  
+  function loadScript() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://maps.google.com/maps/api/js?sensor=false&callback=initialize&region=US";
+    document.head.appendChild(script);
   }
-</script> ';
+  
+  //window.onload = loadScript();  
+  </script> 
+  
+  <style type="text/css">
+#map_canvas { height: 500px; width: 95%; margin: 10px auto; }
+</style> 
+
+  ';
+  */
 
 get_header(); ?>
 		<div id="container">
@@ -45,32 +47,53 @@ get_header(); ?>
 					<div class="entry-content">
 						<?php the_content(); ?>
 					</div><!-- .entry-content -->
-					<hr />
-					<h2>Google Map</h2>
- 
-
-<div id="map_canvas"></div> 
-					
 					<?php
 					if (is_array($options)) {
-   						echo "<h3>variables to use</h3>";
-   						echo "<h4>Address</h4>";
-   						echo 'address-street1: '.$options['address-street1'];
-   						echo '<br/>address-street2: '.$options['address-street2'];
-   						echo '<br/>address-city: '.$options['address-city'];
-   						echo '<br/>address-zip: '.$options['address-zip'];
-   						echo "<h4>Mailing Address</h4>";
-   						echo '<br/>address-mail-street1: '.$options['address-mail-street1'];
-   						echo '<br/>address-mail-street2: '.$options['address-mail-street2'];
-   						echo '<br/>address-mail-city: '.$options['address-mail-city'];
-   						echo '<br/>address-mail-zip: '.$options['address-mail-zip'];
-   						echo "<h4>Other info</h4>";
-   						echo 'phone: '.$options['phone'];
-   						echo '<br />fax: '.$options['fax'];
-   						
-   					}
+					    echo '<div class="vcard">';
+					    
+					    echo '<a class="url fn org" href="'.get_bloginfo('home').'">'.$options['county-name-human'].' County Extension Office</a>';
+					    
+					    if($options['phone']<>'') {
+						    echo '<div class="tel">';
+						    echo '<span class="type">office</span>:';
+	 						echo '<span class="value">'.$options['phone'].'</span>';
+	 						echo '</div>';
+	 					}
+	 					if($options['fax']<>'') {
+						    echo '<div class="tel">';
+						    echo '<span class="type">fax</span>:';
+	 						echo '<span class="value">'.$options['fax'].'</span>';
+	 						echo '</div>';
+	 					}
+
+   						echo "<div class=\"adr\">";
+   						echo "<div class=\"street-address\">".$options['address-street1']."</div>";
+   						if($options['address-street2']<>'')
+							echo '<div class="extended-address">'.$options['address-street2'].'</div>';
+						echo '<span class="locality">'.$options['address-city'].'</span>, ';
+						echo '<span class="region">TX</span> <span class="postal-code">'.$options['address-zip'].'</span>';
+						echo '<div class="country-name">U.S.A.</div>';
+						echo '</div>';
+						
+						if($options['address-mail-street1']<>'') {
+							echo "<div class=\"adr\">";
+	   						echo "<div class=\"street-address\">".$options['address-mail-street1'];
+	   						if($options['address-mail-street2']<>'')
+								echo '<br /><span class="extended-address">'.$options['address-mail-street2'].'</span>';
+							echo '<br /><span class="locality">'.$options['address-mail-city'].'</span>, ';
+							echo '<span class="region">TX</span> <span class="postal-mail-code">'.$options['address-mail-zip'].'</span>';
+							echo '<div class="country-name">U.S.A.</div>';
+							echo '</div>';						
+						}
+						echo '</div> <!-- .vcard -->';
+					}
+
 					
 					?>
+
+					
+					<div id="map_canvas"></div>
+					
 				</div><!-- #post-## -->
 
 <?php endwhile; ?>

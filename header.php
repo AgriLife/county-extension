@@ -46,7 +46,7 @@
 
 </head>
 
-<body <?php body_class(); ?> <?php if($googlemap) echo " onload=\"initialize()\""; ?>>
+<body <?php body_class(); ?>>
 
 <div id="extension-section-nav">
 	<div id="drop-nav">
