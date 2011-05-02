@@ -14,9 +14,8 @@
 
 get_header(); ?>
 
-		<section id="wrap">
-			<section id="content" role="main">
-
+		<div id="wrap">
+			<div id="content" role="main">
 <?php
 	/* Queue the first post, that way we know
 	 * what date we're dealing with (if that is the case).
@@ -54,8 +53,8 @@ get_header(); ?>
 	 get_template_part( 'loop', 'archive' );
 ?>
 
-			</section><!-- #content -->
-		</section><!-- #wrap -->
+			</div><!-- #content -->
+		</div><!-- #wrap -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

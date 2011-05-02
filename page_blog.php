@@ -6,13 +6,13 @@
 
 get_header(); ?>
 
-		<div id="container">
+		<div id="wrap">
 			<div id="content" role="main">
 
 			<?php get_template_part( 'loop', 'index' ); ?>
 			
 			</div><!-- #content -->
-		</div><!-- #container -->
+		</div><!-- #wrap -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

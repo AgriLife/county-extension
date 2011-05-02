@@ -9,8 +9,8 @@
 
 get_header(); ?>
 
-		<section id="wrap">
-			<section id="content" role="main">
+		<div id="wrap">
+			<div id="content" role="main">
 
 				<h1 class="page-title"><?php
 					printf( __( 'Tag Archives: %s', 'county_ext' ), '<span>' . single_tag_title( '', false ) . '</span>' );
@@ -23,8 +23,8 @@ get_header(); ?>
  */
  get_template_part( 'loop', 'tag' );
 ?>
-			</section<!-- #content -->
-		</section><!-- #wrap -->
+			</div><!-- #content -->
+		</div><!-- #wrap -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

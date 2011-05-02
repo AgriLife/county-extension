@@ -1830,7 +1830,7 @@ img#wpstats {
 		max-width: 574px;
 	}
 		
-	#home-middle-bg, #home-middle, .home-middle-1, #wrap, #container  {
+	#home-middle-bg, #home-middle, .home-middle-1, #wrap  {
 		width: 575px;
 	}
 	
@@ -1851,7 +1851,7 @@ img#wpstats {
 		border-bottom: 1px solid #333;
 	}
 	
-	#wrap, #container {
+	#wrap {
 		float: left;
 	}
 	

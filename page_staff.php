@@ -37,7 +37,7 @@ $googlemap = '
   */
 
 get_header(); ?>
-		<div id="container">
+		<div id="wrap">
 			<div id="content" role="main">
 
 <?php  if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -176,7 +176,7 @@ get_header(); ?>
 				
 	
 			</div><!-- #content -->
-		</div><!-- #container -->
+		</div><!-- #wrap -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
