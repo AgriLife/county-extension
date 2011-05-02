@@ -77,10 +77,10 @@ get_header(); ?>
 						
 						if($options['address-mail-street1']<>'') {
 							echo "<div class=\"adr\">";
-	   						echo "<div class=\"street-address\">".$options['address-mail-street1'];
+	   						echo "<div class=\"street-address\">".$options['address-mail-street1']."</div>";
 	   						if($options['address-mail-street2']<>'')
-								echo '<br /><span class="extended-address">'.$options['address-mail-street2'].'</span>';
-							echo '<br /><span class="locality">'.$options['address-mail-city'].'</span>, ';
+								echo '<div class="extended-address">'.$options['address-mail-street2'].'</div>';
+							echo '<span class="locality">'.$options['address-mail-city'].'</span>, ';
 							echo '<span class="region">TX</span> <span class="postal-mail-code">'.$options['address-mail-zip'].'</span>';
 							echo '<div class="country-name">U.S.A.</div>';
 							echo '</div>';						
