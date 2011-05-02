@@ -123,16 +123,17 @@ header, nav, section, aside, article, footer, figure {
 
 /* Text elements */
 p {
-	margin-bottom: 1.8em;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
 	font-size: 1.2em;
 }
 ul {	
 	list-style: none;
-	margin: 0 0 1.8em 1.5em;
+	margin: 1.2em 0 1.2em 1.5em;
 }
 ol {
 	list-style: decimal;
-	margin: 0 0 1.8em 1.5em;
+	margin: 1.2em 0 1.2em 1.5em;
 }
 ol ol {
 	list-style:upper-alpha;
@@ -665,7 +666,7 @@ body.admin-bar #extension-section-nav {
 div.menu {
 	overflow: hidden;
 	display: block;	
-	padding: 15px 0;
+	padding: 10px 0;
 	margin: 5px 10px 30px 10px;	
 	border-top: 1px dashed #b2c4c4;
 	border-bottom: 1px dashed #b2c4c4;	
@@ -693,6 +694,7 @@ div.menu li {
 #access a {
 	font-size: 1.4em;
 	border: none;
+	padding-bottom: 10px;
 }
 
 #access li a[title='home'] {

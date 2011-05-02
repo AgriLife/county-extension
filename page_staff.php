@@ -49,42 +49,42 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 					<?php
 					if (is_array($options)) {
-					    echo '<div class="vcard">';
+					    echo '<div class="vcard">';				
 					    
-					    echo '<a class="url fn org" href="'.get_bloginfo('home').'">'.$options['county-name-human'].' County Extension Office</a>';
-					    
+					    echo '<p><a class="url fn org" href="'.get_bloginfo('home').'">'.$options['county-name-human'].' County Extension Office</a></p>';
+					
 					    if($options['phone']<>'') {
-						    echo '<div class="tel">';
-						    echo '<span class="type">office</span>:';
+						    echo '<p class="tel">';
+						    echo '<span class="type">Office</span>: ';
 	 						echo '<span class="value">'.$options['phone'].'</span>';
-	 						echo '</div>';
+	 						echo '</p>';
 	 					}
 	 					if($options['fax']<>'') {
-						    echo '<div class="tel">';
+						    echo '<p class="tel">';
 						    echo '<span class="type">fax</span>:';
 	 						echo '<span class="value">'.$options['fax'].'</span>';
-	 						echo '</div>';
+	 						echo '</p>';
 	 					}
 
    						echo "<div class=\"adr\">";
-   						echo "<div class=\"street-address\">".$options['address-street1']."</div>";
+   						echo "<p class=\"street-address\">".$options['address-street1'].'<br>';
    						if($options['address-street2']<>'')
-							echo '<div class="extended-address">'.$options['address-street2'].'</div>';
+							echo '<span class="extended-address">'.$options['address-street2'].'</span><br>';
 						echo '<span class="locality">'.$options['address-city'].'</span>, ';
 						echo '<span class="region">TX</span> <span class="postal-code">'.$options['address-zip'].'</span>';
-						echo '<div class="country-name">U.S.A.</div>';
+						echo '<span class="country-name">U.S.A.</span></p>';
 						echo '</div>';
 						
 						if($options['address-mail-street1']<>'') {
 							echo "<div class=\"adr\">";
-	   						echo "<div class=\"street-address\">".$options['address-mail-street1']."</div>";
+	   						echo "<p class=\"street-address\">".$options['address-mail-street1']."<br>";
 	   						if($options['address-mail-street2']<>'')
-								echo '<div class="extended-address">'.$options['address-mail-street2'].'</div>';
+								echo '<span class="extended-address">'.$options['address-mail-street2'].'</span>';
 							echo '<span class="locality">'.$options['address-mail-city'].'</span>, ';
 							echo '<span class="region">TX</span> <span class="postal-mail-code">'.$options['address-mail-zip'].'</span>';
-							echo '<div class="country-name">U.S.A.</div>';
+							echo '<span class="country-name">U.S.A.</span></p>';
 							echo '</div>';						
-						}
+						}						
 						echo '</div> <!-- .vcard -->';
 					}
 
