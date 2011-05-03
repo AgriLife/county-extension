@@ -247,7 +247,7 @@ a:hover {
 	border-bottom: 1px solid #004b69;	
 }
 
-span.gigpress-sidebar-status a, .btn a, button.btn {
+span.gigpress-sidebar-status a, .btn a, button.btn, a.gigpress-tickets-link {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;	
@@ -263,14 +263,14 @@ span.gigpress-sidebar-status a, .btn a, button.btn {
 	background: -moz-linear-gradient(top, #00a6ea, #0082b7);
 }
 
-span.gigpress-sidebar-status a, .btn a:hover, button.btn:hover {
+span.gigpress-sidebar-status a, .btn a:hover, button.btn:hover, a.gigpress-tickets-link:hover {
 	cursor: pointer;	
 	background: #0082b7;	
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0082b7), to(#00a6ea));
 	background: -moz-linear-gradient(top, #0082b7, #00a6ea);		
 }
 
-span.gigpress-sidebar-status a, .btn a:active, button.btn:active {
+span.gigpress-sidebar-status a, .btn a:active, button.btn:active, a.gigpress-tickets-link:active {
 	cursor: pointer;
 	-webkit-box-shadow: 1px 1px 0 #e9e6d1;
 	-moz-box-shodow: 1px 1px 0 #e9e6d1;
@@ -1124,8 +1124,8 @@ div.event dl dd.title-loc p,
 	margin-bottom: 0.5em;
 }
 
-div.event dl dt.date strong,
-span.word2 {
+#aside div.event dl dt.date strong,
+#aside span.word2 {
 	font-weight: bold;
 	display: block;
 	font-size: 2em;
@@ -1205,6 +1205,46 @@ ul.twitter-hash-tag-widget li a img,
 	padding-bottom: 3px;
 	text-transform: uppercase;
 	font-family: "minion-pro-1","minion-pro-2", 'Cambria', georgia, serif;	
+}
+
+/* Events page
+-------------------------------------------------------------- */
+
+body.page .gigpress-table th,
+body.page tr.gigpress-info td,
+body.page .gigpress-table th {
+	border: none;
+}
+
+body.page .gigpress-table th a,
+body.page tr.gigpress-info td a,
+body.page .gigpress-table th a {
+	border: none;
+}
+
+body.page #content tr.gigpress-info td.description {
+	padding: 0;
+}
+
+.gigpress-subscribe a,
+.gigpress-artist-subscriptions a {
+	border: none;
+}
+
+body.page #content .gigpress-info {
+	position: relative;
+}
+
+body.page #content a.gigpress-tickets-link {
+	font-size: 1.1em;
+	position: absolute;
+	right: 15px;
+	top: 20px;
+	padding: .7em .8em;
+}
+
+a.gigpress-tickets-link {
+	
 }
 
 /* Attachment pages
