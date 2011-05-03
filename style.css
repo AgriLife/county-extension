@@ -776,7 +776,6 @@ body.home #content {
 
 #home-top #big-feature .feature-detail h2 a {
 	color: #fff;
-	width: 100%;
 	font-size: 26px;
 	position: absolute;
 	background: #343434;
@@ -1886,6 +1885,16 @@ img#wpstats {
 		
 	#home-middle-bg, #home-middle, .home-middle-1, #wrap  {
 		width: 575px;
+	}
+		
+	#home-middle li,
+	#home-middle p	  {
+		padding-right: 1em;
+		
+	}
+	
+	body.page-template-onecolumn-page-php #wrap {
+		width: 100%;
 	}
 	
 	#home-middle h3.widget-title {
