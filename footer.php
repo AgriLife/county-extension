@@ -76,7 +76,7 @@
 						echo '<li>'./*$options['county-name-human'].*/' County Extension Office <br />'.$options['address-street1'];
 						if($options['address-street2']<>'')
 							echo '<br />'.$options['address-street2'];
-						echo '<br .>'.$options['address-city'].', TX '.$options['address-zip'].'</li>';
+						echo '<br />'.$options['address-city'].', TX '.$options['address-zip'].'</li>';
 					}
 					if($options['phone']<>'')
 						echo '<li>Phone: '.$options['phone'].'</li>';

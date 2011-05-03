@@ -758,6 +758,7 @@ body.home #content {
 	height: 368px;	
 	overflow: hidden;
 	position: relative;
+	display: block;
 }
 
 #home-top #big-feature img {
@@ -783,6 +784,7 @@ body.home #content {
 	top: 282px;
 	padding: 15px 60px 50px 20px;
 	display: block;	
+	line-height: 1.1em;
 }
 	
 #home-top #slideshow-nav {
