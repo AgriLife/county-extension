@@ -80,11 +80,11 @@ class WatchReadListenWidget extends WP_Widget {
 	</ul>
 		<div id="tabs-1">
 		<?php // Watch Tab ?>
-		<object width="348" height="221">
-			<param name="movie" value="<?php echo $youtube_video;?>"></param>
-			<param name="allowFullScreen" value="true"></param>
-			<param name="allowscriptaccess" value="always"></param>
-			<embed src="<?php echo $youtube_video;?>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="348" height="221"></embed></object>	
+		<object type="application/x-shockwave-flash" width="348" height="221" data="<?php echo $youtube_video;?>">
+			<param name="movie" value="<?php echo $youtube_video;?>">
+			<param name="allowFullScreen" value="true">
+			<param name="allowscriptaccess" value="always">
+</object>	
 		<?php // END Watch Tab ?>		
 		</div>
 		<div id="tabs-2">		
@@ -234,7 +234,7 @@ function wp_widget_rss_podcast_output( $rss, $args = array() ) {
 	  
 		if ($enclosure = $item->get_enclosure())
 		{
-			echo "<li><embed type=\"application/x-shockwave-flash\" flashvars=\"audioUrl=".$enclosure->get_link()."\" src=\"http://www.google.com/reader/ui/3523697345-audio-player.swf\" width=\"400\" height=\"27\" quality=\"best\"></embed></li>";
+			echo "<li><embed type=\"application/x-shockwave-flash\" flashvars=\"audioUrl=".$enclosure->get_link()."\" src=\"http://www.google.com/reader/ui/3523697345-audio-player.swf\" width=\"400\" height=\"27\" quality=\"best\"></li>";
 		}
 		
 	}

@@ -63,7 +63,7 @@
 		<div class="contents">
 			<div class="wrap">
 			<div class="gform_wrapper">
-	            <form id='gform_1' action="" method="" enctype='multipart/form-data' accept-charset="utf-8">
+	            <form id='gform_1' action="http://agrilife.org" method="post" enctype='multipart/form-data' accept-charset="utf-8">
 	                <fieldset class="first">
 	                    <div class="container">
 	                        <input type="text" name="name" id="name" placeholder="Your Name" value="">
