@@ -1163,6 +1163,7 @@ h3.widget-title a:hover {
 }
 
 .widget_twitter_hash_tag ul.twitter-hash-tag-widget li,
+.widget_twitter ul li,
 .agrilifetoday ul li {
 	margin: 0;
 	padding: 20px 0 20px 65px;
@@ -1171,12 +1172,18 @@ h3.widget-title a:hover {
 	position: relative;
 }
 
+.widget_twitter ul li {
+	padding: 20px 0 0 65px;
+}
+
 .widget_twitter_hash_tag ul.twitter-hash-tag-widget > li:first-child,
+.widget_twitter > li:first-child,
 .agrilifetoday ul  > li:first-child {
 	border-top: none;
 }
 
 ul.twitter-hash-tag-widget li a img,
+.widget_twitter ul li a img,
 .agrilifetoday ul li img {
 	left: 0;
 	top: 20px;
@@ -1191,6 +1198,12 @@ ul.twitter-hash-tag-widget li a img,
 	box-shodow: 0 1px 2px #d8d3ae;	
 	width: 48px;
 	height: 48px;
+}
+
+.widget_twitter ul li .entry-meta {
+	font-size: 1em;
+	font-weight: 600;
+	display: block;
 }
 
 .agrilifetoday ul li img {
