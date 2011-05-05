@@ -29,7 +29,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 body {
 	background: #fff;
-	font: 62.5% "minion-pro-1","minion-pro-2", "Cambria", Georgia, serif;
+	font: 62.5% "minion-pro-1","minion-pro-2", 'Cambria', 'Georgia', 'Times New Roman', serif;
 	line-height: 1.2em;
 	color: #52514d;
 	text-rendering: optimizeLegibility;		
