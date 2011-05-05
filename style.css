@@ -977,11 +977,19 @@ body.home .page p {
 	padding-left: 10px;
 }
 
+#breadcrumbs {
+	font-size: 1.6em;
+	margin-bottom: 1.6em;
+	display: block;
+	width: 100%;
+	float: left;
+}
+
 #content {
 	padding-right: 10px;
 }
 
-.home #breadcrumbs {
+body.home #breadcrumbs {
 	display: none;
 }
 
@@ -1004,6 +1012,10 @@ body.home .hentry {
 	font-weight: 600;
 	font-style: italic;
 	font-size: 1.6em;
+}
+
+#content ul {
+	list-style: circle;	
 }
 
 #content dl {
@@ -1904,6 +1916,10 @@ img#wpstats {
 	#home-middle-bg, #home-middle, .home-middle-1, #wrap  {
 		width: 575px;
 	}
+	
+	#breadcrumbs {
+		width: 570px;
+	}	
 		
 	#home-middle li,
 	#home-middle p	  {
