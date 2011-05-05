@@ -61,7 +61,7 @@ get_header(); ?>
 	 					}
 	 					if($options['fax']<>'') {
 						    echo '<p class="tel">';
-						    echo '<span class="type">fax</span>:';
+						    echo '<span class="type">Fax</span>: ';
 	 						echo '<span class="value">'.$options['fax'].'</span>';
 	 						echo '</p>';
 	 					}
@@ -72,7 +72,7 @@ get_header(); ?>
 							echo '<span class="extended-address">'.$options['address-street2'].'</span><br>';
 						echo '<span class="locality">'.$options['address-city'].'</span>, ';
 						echo '<span class="region">TX</span> <span class="postal-code">'.$options['address-zip'].'</span>';
-						echo '<span class="country-name">U.S.A.</span></p>';
+						echo '<span class="country-name"> U.S.A.</span></p>';
 						echo '</div>';
 						
 						if($options['address-mail-street1']<>'') {
@@ -82,7 +82,7 @@ get_header(); ?>
 								echo '<span class="extended-address">'.$options['address-mail-street2'].'</span>';
 							echo '<span class="locality">'.$options['address-mail-city'].'</span>, ';
 							echo '<span class="region">TX</span> <span class="postal-mail-code">'.$options['address-mail-zip'].'</span>';
-							echo '<span class="country-name">U.S.A.</span></p>';
+							echo '<span class="country-name"> U.S.A.</span></p>';
 							echo '</div>';						
 						}						
 						echo '</div> <!-- .vcard -->';
