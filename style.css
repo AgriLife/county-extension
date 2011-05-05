@@ -973,7 +973,7 @@ body.home .page p {
 /* =Content
 -------------------------------------------------------------- */
 
-#wrap, #container, #breadcrumbs {
+#wrap, #container {
 	padding-left: 10px;
 }
 
@@ -983,6 +983,16 @@ body.home .page p {
 	display: block;
 	width: 100%;
 	float: left;
+	border-top: 2px solid #eae6d2;
+	border-top: 2px solid rgba(217, 208, 173,.40);
+	border-bottom: 2px solid #eae6d2;
+	border-bottom: 2px solid rgba(217, 208, 173,.40);	
+	background: #f7f7ee;	
+	padding: .8em 0;
+}
+
+#breadcrumbs a {
+	border: none;
 }
 
 #content {
