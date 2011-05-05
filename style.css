@@ -129,11 +129,11 @@ p {
 }
 ul {	
 	list-style: none;
-	margin: 1.2em 0 1.2em 1.5em;
+	margin: 1.2em 0 1.2em 4.5em;
 }
 ol {
 	list-style: decimal;
-	margin: 1.2em 0 1.2em 1.5em;
+	margin: 1.2em 0 1.2em 4.5em;
 }
 ol ol {
 	list-style:upper-alpha;
@@ -881,7 +881,6 @@ body.home #content {
 	}
 
 body.home .page p {
-	margin: 0;
 	padding: 0 10px 10px 10px;
 	}
 		
