@@ -973,12 +973,16 @@ body.home .page p {
 /* =Content
 -------------------------------------------------------------- */
 
-#wrap, #container {
+#wrap, #container, #breadcrumbs {
 	padding-left: 10px;
 }
 
 #content {
 	padding-right: 10px;
+}
+
+.home #breadcrumbs {
+	display: none;
 }
 
 .hentry {
