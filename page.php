@@ -15,6 +15,9 @@
 get_header(); ?>
 
 		<div id="wrap">
+		<?php if ( function_exists('yoast_breadcrumb') ) {
+		yoast_breadcrumb('<div id="breadcrumbs">','</div>');
+		} ?>
 			<div id="content" role="main">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
