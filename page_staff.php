@@ -159,12 +159,17 @@ get_header(); ?>
 			echo "<th scope=\"col\">Name</th>";
 			echo "<th scope=\"col\">Title</th>";
 			echo "<th scope=\"col\">Email</th>";
+			echo "<th scope=\"col\">Phone/Fax</th>";
 			echo "</tr>";
 			foreach ( $result['ResultQuery']['data'] as $item ) {
 				echo "<tr>";
 				echo "<td>".$item[2]." ".$item[3]." ".$item[4]."</td>";
 				echo "<td>".$item[9]."</td>";
 				echo "<td><a href=\"mailto:".$item[7]."\">".$item[7]."</a></td>";
+				echo "<td>". preg_replace("/^(\d{3})(\d{3})(\d{4})$/", "($1) $2-$3", $item[10]);
+				if($item[11]<>'')
+					echo '<br />'. preg_replace("/^(\d{3})(\d{3})(\d{4})$/", "($1) $2-$3", $item[11]);
+				echo "</td>";
 				echo "</tr>";
 			}
 			echo "</table>";
