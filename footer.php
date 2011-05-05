@@ -45,11 +45,11 @@
 			<h4>Required Links</h4>
 				<a href=""><img src="<?php bloginfo( 'template_directory' ); ?>/images/texas-a-m-system.png" alt="Texas A&amp;M System image" /></a>	
 				<ul>
-					<li><a href="">Compact with Texans</a></li>
-					<li><a href="">Privacy and Security</a></li>
-					<li><a href="">Accessibility Policy</a></li>
-					<li><a href="">State Link Policy</a></li>					
-					<li><a href="">Statewide Search</a></li>
+					<li><a href="http://agrilife.tamu.edu/compact/">Compact with Texans</a></li>
+					<li><a href="http://agrilife.tamu.edu/privacy/">Privacy and Security</a></li>
+					<li><a href="http://itaccessibility.tamu.edu/">Accessibility Policy</a></li>
+					<li><a href="http://www.dir.state.tx.us/standards/link_policy.htm">State Link Policy</a></li>					
+					<li><a href="http://www.tsl.state.tx.us/trail">Statewide Search</a></li>
 					<li><a href="">Plug-ins</a></li>					
 					<li><a href="">Equal Opportunity for Educational Programs Statement</a></li>
 					<li><a href="">Veterans Benefits</a></li>		
