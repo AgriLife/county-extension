@@ -973,15 +973,33 @@ body.home .page p {
 /* =Content
 -------------------------------------------------------------- */
 
-#wrap, #container, #breadcrumbs {
+#wrap, #container {
 	padding-left: 10px;
+}
+
+#breadcrumbs {
+	font-size: 1.6em;
+	margin-bottom: 1.6em;
+	display: block;
+	width: 100%;
+	float: left;
+	border-top: 2px solid #eae6d2;
+	border-top: 2px solid rgba(217, 208, 173,.40);
+	border-bottom: 2px solid #eae6d2;
+	border-bottom: 2px solid rgba(217, 208, 173,.40);	
+	background: #f7f7ee;	
+	padding: .8em 0;
+}
+
+#breadcrumbs a {
+	border: none;
 }
 
 #content {
 	padding-right: 10px;
 }
 
-.home #breadcrumbs {
+body.home #breadcrumbs {
 	display: none;
 }
 
@@ -1004,6 +1022,10 @@ body.home .hentry {
 	font-weight: 600;
 	font-style: italic;
 	font-size: 1.6em;
+}
+
+#content ul {
+	list-style: circle;	
 }
 
 #content dl {
@@ -1904,6 +1926,10 @@ img#wpstats {
 	#home-middle-bg, #home-middle, .home-middle-1, #wrap  {
 		width: 575px;
 	}
+	
+	#breadcrumbs {
+		width: 570px;
+	}	
 		
 	#home-middle li,
 	#home-middle p	  {
