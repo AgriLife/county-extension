@@ -37,12 +37,11 @@ $googlemap = '
   */
 
 get_header(); ?>
-		<div id="wrap">
+		<div id="wrap">	
+			<div id="content" role="main">
 		<?php if ( function_exists('yoast_breadcrumb') ) {
 		yoast_breadcrumb('<div id="breadcrumbs">','</div>');
-		} ?>			
-			<div id="content" role="main">
-
+		} ?>
 <?php  if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -101,7 +100,7 @@ get_header(); ?>
 
 <?php endwhile; ?>
 				
-				<h3>Staff List</h3>
+				<h2>Staff List</h2>
 				
 				<?php 
 	// Get The County's Code to pass to web service

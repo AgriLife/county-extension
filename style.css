@@ -98,12 +98,13 @@ tr {
 th, td {
 	width: 14em;
 	text-align: left;
-	padding-right: .5em;
+	padding: 0 10px 0 3px;
 	line-height: 1.3em;
 }
 
 tr:nth-child(odd) {
 	background: #f7f7ee;
+	background: rgba(247,247,238, 0.75);
 }
 
 tr:nth-child(even) {
@@ -161,6 +162,13 @@ ol ol,
 ul ol,
 ol ul {
 	margin-bottom:0;
+}
+
+ul ul ul li,
+ol ol ol li,
+ul ol ul li,
+ol ul ul li {
+	margin: .2em 1em;
 }
 
 #content dl, #content dd {
@@ -1803,6 +1811,17 @@ img#wpstats {
 		padding: 0 10px;
 	}
 	
+	#breadcrumbs {
+		width: 100%;
+		margin-right: 25px;
+		border-top: 2px solid #eae6d2;
+		border-top: 2px solid rgba(217, 208, 173,.40);
+		border-bottom: 2px solid #eae6d2;
+		border-bottom: 2px solid rgba(217, 208, 173,.40);	
+		background: #f7f7ee;	
+		padding: .8em 10px;		
+	}	
+	
 	#footer {
 		background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
 	}
@@ -1939,9 +1958,14 @@ img#wpstats {
 		width: 100%;
 		margin: 0;
 	}
-
+	
+	#breadcrumbs {
+		width: 550px;	
+	}	
+	
 	#content {
-		padding-bottom: 2em;
+		padding-bottom: 2em
+		overflow: hidden;
 	}
 						
 	body.home #content {
@@ -1958,16 +1982,6 @@ img#wpstats {
 	#home-middle-bg, #home-middle, .home-middle-1, #wrap  {
 		width: 575px;
 	}
-	
-	#breadcrumbs {
-		width: 550px;
-		border-top: 2px solid #eae6d2;
-		border-top: 2px solid rgba(217, 208, 173,.40);
-		border-bottom: 2px solid #eae6d2;
-		border-bottom: 2px solid rgba(217, 208, 173,.40);	
-		background: #f7f7ee;	
-		padding: .8em 10px;		
-	}	
 		
 	#home-middle li,
 	#home-middle p	  {
@@ -2008,7 +2022,19 @@ img#wpstats {
 	#aside #event-bg {
 		margin-right: 10px;
 	}
+	
+	#aside ul#menu-custom-menu  {
+		margin-left: 1.5em;
+	}
 		
+	#aside #menu-custom-menu li  {
+		list-style: circle;
+	}
+			
+	#aside #menu-custom-menu li a {
+		border: none;
+	}
+			
 	#aside ul.books {
 		padding-left: 0;
 		margin-left: 0;
