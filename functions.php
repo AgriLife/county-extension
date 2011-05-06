@@ -915,7 +915,8 @@ if (!class_exists("AgriLifeCounties")) {
 
 
 <h3>Address</h3>
-<h4>Physical</h4>
+<h4>Physical Address</h4>
+<h5>Not a PO Box.  This needs to be a 'Physical Adress'.</h5>
 <table class="form-table">
 	<tr valign="top"> 
 		<th scope="row">Street 1</th> 
@@ -942,7 +943,7 @@ if (!class_exists("AgriLifeCounties")) {
 		</td>
 	</tr>
 </table>
-<h4>Mailing (optional)</h4>
+<h4>Mailing Address (optional)</h4>
 <table class="form-table">
 	<tr valign="top"> 
 		<th scope="row">Street 1</th> 
