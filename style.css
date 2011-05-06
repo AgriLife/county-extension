@@ -85,8 +85,10 @@ del {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	font-size: 1.4em;
+	font-size: 1.2em;
+	margin-bottom: 1.2em;
 }
+
 tr {
 	padding: 1em 0 1em .5em;
 	border-bottom: 1px solid #D2CA9C;
@@ -100,8 +102,16 @@ th, td {
 	line-height: 1.3em;
 }
 
+tr:nth-child(odd) {
+	background: #f7f7ee;
+}
+
 tr:nth-child(even) {
 	background: #eae6d1;
+}
+
+tr:first-child {
+	background: none;
 }
 
 a, input {
@@ -983,12 +993,7 @@ body.home .page p {
 	margin-bottom: 1.6em;
 	display: block;
 	width: 100%;
-	float: left;
-	border-top: 2px solid #eae6d2;
-	border-top: 2px solid rgba(217, 208, 173,.40);
-	border-bottom: 2px solid #eae6d2;
-	border-bottom: 2px solid rgba(217, 208, 173,.40);	
-	background: #f7f7ee;	
+	float: left;	
 	padding: .8em 0;
 }
 
@@ -1051,7 +1056,8 @@ body.home .hentry {
 }
 
 #aside h4 {
-
+	font-size: 1.4em;
+	margin-bottom: .6em;
 }
 
 #aside h4 a {
@@ -1190,6 +1196,10 @@ h3.widget-title a:hover {
 	border-bottom: 1px solid #333;
 }
 
+.widget_twitter {
+	position: relative;
+}
+
 .widget_twitter_hash_tag ul.twitter-hash-tag-widget li,
 .widget_twitter ul li,
 .agrilifetoday ul li {
@@ -1200,12 +1210,29 @@ h3.widget-title a:hover {
 	position: relative;
 }
 
+.widget_twitter .twitter-avatar a {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	padding: 4px;
+	margin-bottom: 3%;
+	background: #f0eee3;
+	background: rgba(255,255,255,.55);
+	border: none;
+	border-top: 1px solid #fff;		
+	-webkit-box-shadow: 0 1px 2px #d8d3ae;
+	-moz-box-shadow: 0 1px 2px #d8d3ae;
+	box-shodow: 0 1px 2px #d8d3ae;	
+	width: 48px;
+	height: 48px;	
+}
+
 .widget_twitter ul li {
 	padding: 20px 0 0 65px;
 }
 
 .widget_twitter_hash_tag ul.twitter-hash-tag-widget > li:first-child,
-.widget_twitter > li:first-child,
+.widget_twitter ul > li:first-child,
 .agrilifetoday ul  > li:first-child {
 	border-top: none;
 }
@@ -1755,6 +1782,10 @@ img#wpstats {
 
 @media all and (min-width: 640px) {
 
+	table {
+		font-size: 1.4em;
+	}
+	
 	#about,
 	#popular-links,
 	#texas-a-m,
@@ -1763,7 +1794,7 @@ img#wpstats {
 		float: left;
 		width: 20%;
 	}
-
+	
 	.about,
 	.popular-links,
 	.texas-a-m,
@@ -1929,7 +1960,13 @@ img#wpstats {
 	}
 	
 	#breadcrumbs {
-		width: 570px;
+		width: 550px;
+		border-top: 2px solid #eae6d2;
+		border-top: 2px solid rgba(217, 208, 173,.40);
+		border-bottom: 2px solid #eae6d2;
+		border-bottom: 2px solid rgba(217, 208, 173,.40);	
+		background: #f7f7ee;	
+		padding: .8em 10px;		
 	}	
 		
 	#home-middle li,
@@ -2002,7 +2039,7 @@ img#wpstats {
 		left: 40px;
 		padding: 13px 10px 16px 10px;
 		color: #8C2B17;
-		font: 1.1em georgia;
+		font: .95em georgia;
 	}
 
 	#aside ul.books li dd.price em {
@@ -2018,7 +2055,7 @@ img#wpstats {
 	#aside ul.books li p.btn {
 		position: absolute;
 		z-index: 5;
-		bottom: -1.4em;
+		bottom: -0.7em;
 		right: 55px;
 	}
 		
