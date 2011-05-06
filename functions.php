@@ -915,7 +915,8 @@ if (!class_exists("AgriLifeCounties")) {
 
 
 <h3>Address</h3>
-<h4>Physical</h4>
+<h4>Physical Address</h4>
+<h5>Not a PO Box.  This needs to be a 'Physical Adress'.</h5>
 <table class="form-table">
 	<tr valign="top"> 
 		<th scope="row">Street 1</th> 
@@ -942,7 +943,7 @@ if (!class_exists("AgriLifeCounties")) {
 		</td>
 	</tr>
 </table>
-<h4>Mailing (optional)</h4>
+<h4>Mailing Address (optional)</h4>
 <table class="form-table">
 	<tr valign="top"> 
 		<th scope="row">Street 1</th> 
@@ -1105,7 +1106,7 @@ add_capability('editor','edit_theme_options');  // Allow an editor to edit widge
 // Brute-force Remove Tools Menu
 function remove_menus () {
 global $menu;
-	if( (current_user_can('moderate_comments')) ) { $restricted = array(__('Tools'),  __('Media'),  __('Comments')); } // check if moderator or less and hide 
+	if( current_user_can('moderate_comments') && !current_user_can('manage_sites') ) { $restricted = array(__('Tools'),  __('Media'),  __('Comments')); } // check if moderator or less and hide 
 
 	//$restricted = array(__('Dashboard'), __('Posts'), __('Media'), __('Links'), __('Pages'), __('Appearance'), __('Tools'), __('Users'), __('Settings'), __('Comments'), __('Plugins'));
 	end ($menu);
