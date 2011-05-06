@@ -107,7 +107,7 @@ function county_ext_setup() {
 		if ( !is_admin() ) { 
 		// register script location with wp_register_script	
 	   	wp_register_script('my_jquery',
-	       	get_bloginfo('stylesheet_directory') . '/js/my_jquery.js', array('jquery-ui-tabs'));	
+	       	get_bloginfo('stylesheet_directory') . '/js/my_jquery.js', array('jquery'));	
 	       // enqueue the custom jquery js
 	   	wp_enqueue_script('my_jquery');	
 		}	         
