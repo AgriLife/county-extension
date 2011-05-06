@@ -1106,7 +1106,7 @@ add_capability('editor','edit_theme_options');  // Allow an editor to edit widge
 // Brute-force Remove Tools Menu
 function remove_menus () {
 global $menu;
-	if( (current_user_can('moderate_comments')) ) { $restricted = array(__('Tools'),  __('Media'),  __('Comments')); } // check if moderator or less and hide 
+	if( current_user_can('moderate_comments') && !current_user_can('manage_network') ) { $restricted = array(__('Tools'),  __('Media'),  __('Comments')); } // check if moderator or less and hide 
 
 	//$restricted = array(__('Dashboard'), __('Posts'), __('Media'), __('Links'), __('Pages'), __('Appearance'), __('Tools'), __('Users'), __('Settings'), __('Comments'), __('Plugins'));
 	end ($menu);
