@@ -1301,6 +1301,7 @@ body.page .gigpress-table th a {
 
 body.page #content tr.gigpress-info td.description {
 	padding: 0;
+	width: 66%;
 }
 
 .gigpress-subscribe a,
@@ -1315,7 +1316,7 @@ body.page #content .gigpress-info {
 body.page #content a.gigpress-tickets-link {
 	font-size: 1.1em;
 	position: absolute;
-	right: 15px;
+	left: 15px;
 	top: 20px;
 	padding: .7em .8em;
 }
