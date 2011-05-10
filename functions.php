@@ -1118,18 +1118,18 @@ global $menu;
 add_action('admin_menu', 'remove_menus');  
 
 
-
-/* new 3.1 style menu removal *testing*
-add_action( 'admin_init', 'my_remove_menu_pages' );
-
-function my_remove_menu_pages() {
-	if( (current_user_can('moderate_comments')) ) {
-		remove_menu_page('edit-comments.php');
-		remove_menu_page('tools.php');	
-		remove_menu_page('upload.php');
-	}
+//Remove unwanted wdigets from dashboard
+function remove_dashboard_widgets(){
+  global $wp_meta_boxes;
+  
+  //remove gravity forms dashboard widget
+  unset($wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard']);
+  
+  //remove Twitter Widget Pro/xavisys dashboard widget
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboardb_xavisys']);
+  
 }
-*/
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets', 11);
 
 
 
