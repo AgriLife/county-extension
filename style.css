@@ -85,8 +85,10 @@ del {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	font-size: 1.4em;
+	font-size: 1.2em;
+	margin-bottom: 1.2em;
 }
+
 tr {
 	padding: 1em 0 1em .5em;
 	border-bottom: 1px solid #D2CA9C;
@@ -96,12 +98,21 @@ tr {
 th, td {
 	width: 14em;
 	text-align: left;
-	padding-right: .5em;
+	padding: 0 10px 0 3px;
 	line-height: 1.3em;
+}
+
+tr:nth-child(odd) {
+	background: #f7f7ee;
+	background: rgba(247,247,238, 0.75);
 }
 
 tr:nth-child(even) {
 	background: #eae6d1;
+}
+
+tr:first-child {
+	background: none;
 }
 
 a, input {
@@ -151,6 +162,13 @@ ol ol,
 ul ol,
 ol ul {
 	margin-bottom:0;
+}
+
+ul ul ul li,
+ol ol ol li,
+ul ol ul li,
+ol ul ul li {
+	margin: .2em 1em;
 }
 
 #content dl, #content dd {
@@ -786,6 +804,7 @@ body.home #content {
 	padding: 15px 60px 50px 20px;
 	display: block;	
 	line-height: 1.1em;
+	width: 100%;
 }
 	
 #home-top #slideshow-nav {
@@ -982,12 +1001,7 @@ body.home .page p {
 	margin-bottom: 1.6em;
 	display: block;
 	width: 100%;
-	float: left;
-	border-top: 2px solid #eae6d2;
-	border-top: 2px solid rgba(217, 208, 173,.40);
-	border-bottom: 2px solid #eae6d2;
-	border-bottom: 2px solid rgba(217, 208, 173,.40);	
-	background: #f7f7ee;	
+	float: left;	
 	padding: .8em 0;
 }
 
@@ -1050,7 +1064,8 @@ body.home .hentry {
 }
 
 #aside h4 {
-
+	font-size: 1.4em;
+	margin-bottom: .6em;
 }
 
 #aside h4 a {
@@ -1189,6 +1204,10 @@ h3.widget-title a:hover {
 	border-bottom: 1px solid #333;
 }
 
+.widget_twitter {
+	position: relative;
+}
+
 .widget_twitter_hash_tag ul.twitter-hash-tag-widget li,
 .widget_twitter ul li,
 .agrilifetoday ul li {
@@ -1199,12 +1218,29 @@ h3.widget-title a:hover {
 	position: relative;
 }
 
+.widget_twitter .twitter-avatar a {
+	position: absolute;
+	top: 50px;
+	left: 0;
+	padding: 4px;
+	margin-bottom: 3%;
+	background: #f0eee3;
+	background: rgba(255,255,255,.55);
+	border: none;
+	border-top: 1px solid #fff;		
+	-webkit-box-shadow: 0 1px 2px #d8d3ae;
+	-moz-box-shadow: 0 1px 2px #d8d3ae;
+	box-shodow: 0 1px 2px #d8d3ae;	
+	width: 48px;
+	height: 48px;	
+}
+
 .widget_twitter ul li {
 	padding: 20px 0 0 65px;
 }
 
 .widget_twitter_hash_tag ul.twitter-hash-tag-widget > li:first-child,
-.widget_twitter > li:first-child,
+.widget_twitter ul > li:first-child,
 .agrilifetoday ul  > li:first-child {
 	border-top: none;
 }
@@ -1265,6 +1301,7 @@ body.page .gigpress-table th a {
 
 body.page #content tr.gigpress-info td.description {
 	padding: 0;
+	width: 66%;
 }
 
 .gigpress-subscribe a,
@@ -1279,7 +1316,7 @@ body.page #content .gigpress-info {
 body.page #content a.gigpress-tickets-link {
 	font-size: 1.1em;
 	position: absolute;
-	right: 15px;
+	left: 15px;
 	top: 20px;
 	padding: .7em .8em;
 }
@@ -1754,6 +1791,10 @@ img#wpstats {
 
 @media all and (min-width: 640px) {
 
+	table {
+		font-size: 1.4em;
+	}
+	
 	#about,
 	#popular-links,
 	#texas-a-m,
@@ -1762,7 +1803,7 @@ img#wpstats {
 		float: left;
 		width: 20%;
 	}
-
+	
 	.about,
 	.popular-links,
 	.texas-a-m,
@@ -1770,6 +1811,17 @@ img#wpstats {
 	.agrilife-bookstore {
 		padding: 0 10px;
 	}
+	
+	#breadcrumbs {
+		width: 100%;
+		margin-right: 25px;
+		border-top: 2px solid #eae6d2;
+		border-top: 2px solid rgba(217, 208, 173,.40);
+		border-bottom: 2px solid #eae6d2;
+		border-bottom: 2px solid rgba(217, 208, 173,.40);	
+		background: #f7f7ee;	
+		padding: .8em 10px;		
+	}	
 	
 	#footer {
 		background: #f1efe5 url(images/footer-texture.png) repeat-x left top;
@@ -1907,9 +1959,14 @@ img#wpstats {
 		width: 100%;
 		margin: 0;
 	}
-
+	
+	#breadcrumbs {
+		width: 550px;	
+	}	
+	
 	#content {
-		padding-bottom: 2em;
+		padding-bottom: 2em
+		overflow: hidden;
 	}
 						
 	body.home #content {
@@ -1926,10 +1983,6 @@ img#wpstats {
 	#home-middle-bg, #home-middle, .home-middle-1, #wrap  {
 		width: 575px;
 	}
-	
-	#breadcrumbs {
-		width: 570px;
-	}	
 		
 	#home-middle li,
 	#home-middle p	  {
@@ -1970,7 +2023,19 @@ img#wpstats {
 	#aside #event-bg {
 		margin-right: 10px;
 	}
+	
+	#aside ul#menu-custom-menu  {
+		margin-left: 1.5em;
+	}
 		
+	#aside #menu-custom-menu li  {
+		list-style: circle;
+	}
+			
+	#aside #menu-custom-menu li a {
+		border: none;
+	}
+			
 	#aside ul.books {
 		padding-left: 0;
 		margin-left: 0;
@@ -2001,7 +2066,7 @@ img#wpstats {
 		left: 40px;
 		padding: 13px 10px 16px 10px;
 		color: #8C2B17;
-		font: 1.1em georgia;
+		font: .95em georgia;
 	}
 
 	#aside ul.books li dd.price em {
@@ -2017,7 +2082,7 @@ img#wpstats {
 	#aside ul.books li p.btn {
 		position: absolute;
 		z-index: 5;
-		bottom: -1.4em;
+		bottom: -0.7em;
 		right: 55px;
 	}
 		
