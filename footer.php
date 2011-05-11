@@ -63,9 +63,9 @@
 			<h4>Contact</h4>
 				<!--<a href="/contact/#map"><img src="<?php bloginfo( 'template_directory' ); ?>/images/map.png" alt="map of AgriLife Offices" /></a>-->
 				<?php $mapaddress=$options['address-street1'].' '.$options['address-street2'].' '.$options['address-city'].', TX '.$options['address-zip'];?>
-				<a href="/contact/#map"><img src="http://maps.google.com/maps/api/staticmap?size=175x101&amp;markers=size:mid%7Ccolor:blue%7Clabel:Office%7C<?php echo urlencode($mapaddress); ?>&amp;sensor=false" height="101" width="175" alt="" /></a>
+				<img src="http://maps.google.com/maps/api/staticmap?size=175x101&amp;markers=size:mid%7Ccolor:blue%7Clabel:Office%7C<?php echo urlencode($mapaddress); ?>&amp;sensor=false" height="101" width="175" alt="Map to county office" />
 				<ul>
-					<li><a href="/contact/#map">View Larger Map</a></li>
+					<!--<li><a href="/contact/#map">View Larger Map</a></li>-->
 					<li>Open 8 am - 5 pm; M-F </li>
 				<?php
 				if (is_array($options)) {
