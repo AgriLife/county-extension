@@ -686,7 +686,7 @@ body.admin-bar #extension-section-nav {
 div.menu {
 	overflow: hidden;
 	display: block;	
-	padding: 10px 0;
+	padding: 15px 0;
 	margin: 5px 10px 30px 10px;	
 	border-top: 1px dashed #b2c4c4;
 	border-bottom: 1px dashed #b2c4c4;	
@@ -714,7 +714,6 @@ div.menu li {
 #access a {
 	font-size: 1.4em;
 	border: none;
-	padding-bottom: 10px;
 }
 
 #access li a[title='home'] {
@@ -1936,7 +1935,7 @@ img#wpstats {
 	
 	div.search form {
 		position: absolute;
-		top: 17px;
+		top: 15px;
 		right: 30px;		
 		margin: 0;	
 		width: 20em;
@@ -1958,6 +1957,7 @@ img#wpstats {
 	#access #menu-main-navigation {
 		width: 100%;
 		margin: 0;
+		overflow: hidden;
 	}
 	
 	#breadcrumbs {
