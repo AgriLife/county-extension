@@ -1120,13 +1120,26 @@ add_action('admin_menu', 'remove_menus');
 
 //Remove unwanted wdigets from dashboard
 function remove_dashboard_widgets(){
-  global $wp_meta_boxes;
-  
-  //remove gravity forms dashboard widget
-  unset($wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard']);
-  
-  //remove Twitter Widget Pro/xavisys dashboard widget
-  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboardb_xavisys']);
+	global $wp_meta_boxes;
+	
+	//remove gravity forms dashboard widget
+	unset($wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard']);
+	
+	//remove Twitter Widget Pro/xavisys dashboard widget
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboardb_xavisys']);
+	
+	//remove Yoast breadcrumb dashboard widget
+	unset($wp_meta_boxes['dashboard']['normal']['core']['yoast_db_widget']);
+	
+	// remove core widgets
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts']);
+	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
   
 }
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets', 11);
