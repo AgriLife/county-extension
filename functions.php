@@ -1146,6 +1146,34 @@ add_action('wp_dashboard_setup', 'remove_dashboard_widgets', 11);
 
 
 
+// add asynchronous google analytics code
+add_action('wp_head','analytics_code',0);
+	function analytics_code() { 
+		if( !is_admin() ) : ?>
+<script type="text/javascript">//<![CDATA[
+// Google Analytics asynchronous
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount','UA-7414081-1']); 	//county-co
+_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+<?php 
+if (class_exists("AgriLifeCounties")) {
+  $agrilifeOptions	= get_option('AgrilifeCountyOptions');
+  if($agrilifeOptions['googleAnalytics']<>''){
+    echo "_gaq.push(['_setAccount','".$agrilifeOptions['googleAnalytics']."']);	//local-co\n";
+    echo "_gaq.push(['_trackPageview'],['_trackPageLoadTime']);";
+  }
+}
+?> 
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//]]>
+</script>
+<?php
+endif; 
+}	
 
 
 
