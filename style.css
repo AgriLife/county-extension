@@ -1835,10 +1835,6 @@ img#wpstats {
 		font-size: 1em;
 	}
 
-	#footer .wrap .agrilife-bookstore h4 {
-		margin-bottom: 30px;
-	}
-
 	#footer .wrap a {
 		border: none;
 	}
@@ -2234,12 +2230,13 @@ img#wpstats {
 
 	#access a:hover {
 		background: #054b6b;	
-	}
-	
+	}	 
 	#access li.current-menu-item a {
-		background: #004B69;
+		background-color: #004B69;
 	}
-		
+	#access li.current-menu-item a[title="home"] {
+		background-color: white;
+		}		
 	#extension-section-nav #drop-nav ul li.tx-ext-item a {
 		font-size: .9em;
 	}
@@ -2261,12 +2258,7 @@ img#wpstats {
 	}	
 	#access a {
 		font-size: 1.1em;
-	}
-	
-	#access li.current-menu-item a {
-		background: #004B69;
-	}
-		
+	}	
 	div.event dl dd.title-loc h4 {
 		font-size: 18px;
 		padding-right: 15px;
