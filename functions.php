@@ -382,7 +382,7 @@ function county_ext_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	// Area 3, located in the second sidebar.
+	// Area 3
 	register_sidebar( array(
 		'name' => __( 'Home Page Bottom', 'county_ext' ),
 		'id' => 'home-middle-1',
@@ -392,7 +392,15 @@ function county_ext_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );	
-
+	
+	// Area 4, located in the sidebar.
+	register_sidebar( array(
+		'name' => __( 'Sidebar Navigation', 'county_ext' ),
+		'id' => 'sidebar-widget-navigation',
+		'description' => __( 'Sidebar Navigation', 'county_ext' ),
+		'before_title' => '<h3 class="widget-title"><a>',
+		'after_title' => '</a></h3>',
+	) );	
 }
 
 /** Register sidebars by running county_ext_widgets_init() on the widgets_init hook. */
