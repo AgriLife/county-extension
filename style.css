@@ -1163,7 +1163,7 @@ body.home .hentry {
 	margin: 0;
 }
 
-#aside #aside-widget-area-1 ul li.widget-container {
+#aside ul li.widget-container {
 	position: relative;
 	padding: 10px;
 	margin-bottom: 20px;	
@@ -1175,13 +1175,6 @@ body.home .hentry {
 	padding: 0;
 	margin-bottom: 20px;	
 	background: none;
-}
-
-#aside #aside-widget-area-2 {
-	padding: 10px;
-	margin-bottom: 20px;
-	background: #efecdb;
-	background: rgba(217, 208, 173,.30);
 }
 
 div.event dl,
@@ -1290,7 +1283,7 @@ h3.widget-title a:hover {
 .widget_twitter .twitter-avatar a {
 	position: absolute;
 	top: 50px;
-	left: 0;
+	left: 10px;
 	padding: 4px;
 	margin-bottom: 3%;
 	background: #f0eee3;
@@ -1356,6 +1349,10 @@ ul.twitter-hash-tag-widget li a img,
 /* Events page
 -------------------------------------------------------------- */
 
+body.page h1.entry-title {
+	margin-bottom: .8em;
+}
+
 body.page .gigpress-table th,
 body.page tr.gigpress-info td,
 body.page .gigpress-table th {
@@ -1392,6 +1389,15 @@ body.page #content a.gigpress-tickets-link {
 
 a.gigpress-tickets-link {
 	
+}
+
+body.page tr.gigpress-tour td,
+body.page th.gigpress-heading {
+	background: none;
+}
+
+body.page .gigpress-table {
+	margin: 0.5em 0px 5em;
 }
 
 /* Attachment pages
