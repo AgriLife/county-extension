@@ -5,7 +5,6 @@ document.createElement("aside");
 document.createElement("footer");
 
 
-
 /*!
  * jQuery UI 1.8.9
  *
@@ -1067,7 +1066,9 @@ jQuery(document).ready(function($) {
 				{backgroundPosition:"(0 -31px)"}, 
 				{duration:200})
 			})
-
+			
+			
+	// Top level drop down
 		var Revealer = function(relativeParent,absoluteChild,speed) {
         var revealHeight = absoluteChild.height();
         relativeParent.height(revealHeight);
@@ -1136,6 +1137,20 @@ jQuery(document).ready(function($) {
 		function gestureStart() {
 			viewport.attr('content', 'width=device-width, minimum-scale=0.25, maximum-scale=1.6');
 		}
+		
+	$.fn.fadeToggle = function(speed, easing, callback) {
+       return this.animate({opacity: "toggle"}, speed, easing, callback); 
+    };  
+    $("a.gigpress-links-toggle").click(function() {
+        target = $(this).attr("href").replace(document.location.href,'');
+        $(target).fadeToggle("fast");
+        $(this).toggleClass("gigpress-link-active");
+        return false;
+    });
+    $("select.gigpress_menu").change(function()
+    {
+        window.location = $(this).val();
+    });
 });
 
 /*

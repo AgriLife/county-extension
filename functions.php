@@ -104,12 +104,24 @@ function county_ext_setup() {
 	// load Slideshow scripts
 	function load_js() {
 	        // instruction to only load if it is not the admin area
-		if ( !is_admin() ) { 
+		if ( !is_admin() ) {
+			 
+		// deregister swfobject js							
+		wp_deregister_script('swfobject');
+		
+		// deregister l10n js			
+		wp_deregister_script( 'l10n' );	
+			
+		// register jquery CDN				
+		wp_deregister_script('jquery');
+		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"), false);		
+	   	wp_enqueue_script('jquery');
+					
 		// register script location with wp_register_script	
 	   	wp_register_script('my_jquery',
-	       	get_bloginfo('stylesheet_directory') . '/js/my_jquery.js', array('jquery'));	
+	       	get_bloginfo('stylesheet_directory') . '/js/my_jquery.js');	
 	       // enqueue the custom jquery js
-	   	wp_enqueue_script('my_jquery');	
+	   	wp_enqueue_script('my_jquery');	       
 		}	         
 	}    
 	add_action('init', 'load_js');	
