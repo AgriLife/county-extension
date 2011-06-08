@@ -762,6 +762,19 @@ div.search input.s {
 	display: none;	
 }
 
+/***** Search Page Template ********************/
+
+body.search div.entry-meta,
+body.search div.entry-utility {
+	display: none;
+}
+
+body.search h1.page-title{
+	margin-bottom: 20px;
+	font-style: italic;
+	font-weight: 600;
+}
+
 /***** Home Top ********************/
 
 body.home #content {
