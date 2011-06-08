@@ -47,7 +47,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>

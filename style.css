@@ -1096,7 +1096,8 @@ body.home .hentry {
 	color: #444;
 }
 
-#aside .menu {
+#aside .menu,
+#aside .blogroll {
 	margin: 0;
 }
 
@@ -1110,7 +1111,8 @@ body.home .hentry {
 	font-family: "ff-dagny-web-pro-1","ff-dagny-web-pro-2", 'Lucida Grande', "Lucida Sans Unicode", sans-serif;	
 }
 
-#aside #sidebar-navigation-widgets .widget_nav_menu {
+#aside #sidebar-navigation-widgets .widget_nav_menu,
+#aside #sidebar-navigation-widgets .widget_links {
 	background: #e0dbb9;	
 	background: rgba(217, 208, 173,.35);						
 }
@@ -1146,14 +1148,16 @@ body.home .hentry {
 	background-color: rgba(217, 208, 173,.7);		
 }
 
-#aside .menu li a {
+#aside .menu li a,
+#aside .blogroll li a {
 	display: block;
 	padding: 5px 10px;
 	border-bottom: 1px solid #E0DCBC;
 	border-top: 1px solid #F0EEDE;
 }
 
-#aside .menu li ul li a {
+#aside .menu li ul li a,
+#aside .blogroll li ul li a {
 	display: block;
 	padding: 5px 0;
 	border: none;
