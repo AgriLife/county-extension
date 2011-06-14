@@ -343,7 +343,6 @@ span.gigpress-sidebar-status a, .btn a:active, button.btn:active, a.gigpress-tic
 	background: #004b69;
 	color: #fff;
 	border-bottom: 1px dashed #005e88;
-	border-top: 1px solid #12a2e8;	
 	-webkit-box-shadow: 0 2px 5px rgba(6,6,6,.3);
 	-moz-box-shadow: -6px 2px 5px rgba(6,6,6,.3);
 	box-shadow: 0 2px 5px rgba(6,6,6,.3);	
@@ -372,7 +371,7 @@ body.admin-bar #extension-section-nav {
 #extension-section-nav #drop-nav ul li.ask,
 #extension-section-nav #drop-nav ul li.explore,
 #extension-section-nav #drop-nav ul li.tx-ext-item {
-	padding: 7px 0 5px 0;
+	padding: 0;
 }
 
 #extension-section-nav #drop-nav ul li.tx-ext-item a {
@@ -431,6 +430,12 @@ body.admin-bar #extension-section-nav {
 #extension-section-nav #drop-nav ul li a[href*='extension'] {
 	position: relative;
 	z-index: 2;
+	display: block;
+	text-indent: -999em;
+	background: url(images/ext-system-logo.png) no-repeat left top;
+	width: 150px;
+	height: 22px;
+	margin-top: 2px;
 }
 
 #extension-section-nav #drop-nav ul li.right-align {
@@ -1401,16 +1406,19 @@ body.page #content tr.gigpress-info td.description {
 	border: none;
 }
 
-body.page #content .gigpress-info {
+body.page #content tr.gigpress-info {
 	position: relative;
+	padding: 1em 1em 1em .5em;
+	overflow: hidden;
 }
 
 body.page #content a.gigpress-tickets-link {
 	font-size: 1.1em;
-	position: absolute;
-	left: 15px;
-	top: 20px;
+	position: relative;
+	z-index: 999;
+	float: right;
 	padding: .7em .8em;
+	margin: 15px;
 }
 
 a.gigpress-tickets-link {
@@ -2010,31 +2018,29 @@ img#wpstats {
 		margin-right: 10px;
 	}
 	body #header {
-		padding: 30px 0 20px 0;
+		padding: 50px 0 0;
 	}		
 	#site-title {
 		text-align: left;
 		width: 700px;
 		margin-top: 0;
 		padding: 0;
-		height: 110px;
-		margin-bottom: 0;			
+		margin-bottom: 0;
+		height: 115px;			
 	}
 	
 	#site-title a {
 		background: url(images/tx-state-regions.png) no-repeat -5px 5px;
 		font: 32px 'arno pro', georgia, serif;
 		margin-left: 10px;
-		padding: 20px 0 60px 85px;	
+		padding: 5px 0 60px 100px;	
 	}
 
 	#site-title a em {
-		margin-left: 97px;
-		margin-top: -10px;
-		font-size: 1.4em;
-		font-style: normal;
-		font-weight: 400;
-		padding-left: 30px;		
+		margin-left: 102px;
+		font-size: 1.5em;
+		margin-top: -5px;
+		font-style: normal;		
 	}
 		
 	div.search {

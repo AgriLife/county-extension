@@ -50,8 +50,8 @@
 <div id="extension-section-nav">
 	<div id="drop-nav">
 		<ul>
-			<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
-			<li class='explore right-align'><a class="ext-link" href="/explore/">Explore</a></li>			
+		<!--	<li class='ask'><a class="ext-link" href="/ask/">Ask</a></li>
+			<li class='explore right-align'><a class="ext-link" href="/explore/">Explore</a></li>-->			
 			<li class="tx-ext-item"><a href="http://agrilifeextension.tamu.edu/">Texas AgriLife	 Extension Service</a></li>
 		</ul>				
 	</div><!-- #drop-nav -->	
@@ -119,7 +119,7 @@
 	<div id="header">
 			<div id="branding" role="banner">
 				<h1 id="site-title">
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span><?php bloginfo( 'name' ); ?></span><img src='<?php bloginfo( 'stylesheet_directory' ); ?>/images/ext-logo.png' title="extension logo" alt="texas agrilife extension logo" /><em>in <?php echo $options['county-name-human']; ?> County</em></a>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">AgriLife Extension<br> <em>in <?php echo $options['county-name-human']; ?> County</em></a>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			<!--	<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>	 -->			
