@@ -664,7 +664,7 @@ body.admin-bar #extension-section-nav {
 }
 
 #site-title a span {
-	display: none;
+
 }
 
 #site-title a em {
@@ -2022,13 +2022,14 @@ img#wpstats {
 	}		
 	#site-title {
 		text-align: left;
-		width: 700px;
 		margin-top: 0;
 		padding: 0;
 		margin-bottom: 0;
 		height: 115px;			
 	}
-	
+	#site-title a span{
+		width: 390px;			
+	}	
 	#site-title a {
 		background: url(images/tx-state-regions.png) no-repeat -5px 5px;
 		font: 32px 'arno pro', georgia, serif;
