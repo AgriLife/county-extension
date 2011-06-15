@@ -119,7 +119,7 @@
 	<div id="header">
 			<div id="branding" role="banner">
 				<h1 id="site-title">
-						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>AgriLife Extension</span> <em>in <?php echo $options['county-name-human']; ?> County</em></a>
+						<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><span>Texas AgriLife Extension Service</span> <em>in <?php echo $options['county-name-human']; ?> County</em></a>
 				</h1>
 				<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			<!--	<div id="state-regions"><a href="">Find Local Events, Educators,<br> and More...</a></div>	 -->			
