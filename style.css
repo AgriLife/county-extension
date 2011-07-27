@@ -798,14 +798,14 @@ body.home #content {
 #home-top #big-feature {
 	margin-left: 10px;
 	width: 100%;
-	height: 368px;	
+	height: 350px;	
 	overflow: hidden;
 	position: relative;
 	display: block;
 }
 
 #home-top #big-feature img {
-	max-height: 368px;
+	max-height: 350px;
 	max-width: 100%;
 }
 
@@ -823,8 +823,8 @@ body.home #content {
 	position: absolute;
 	background: #343434;
 	background: rgba(33,33,33,.65);	
-	top: 282px;
-	padding: 15px 60px 50px 20px;
+	top: 265px;
+	padding: 15px 15px 50px;
 	display: block;	
 	line-height: 1.1em;
 	width: 100%;
@@ -1398,7 +1398,7 @@ body.page .gigpress-table th a {
 
 body.page #content tr.gigpress-info td.description {
 	padding: 0;
-	width: 66%;
+	width: 98%;
 }
 
 .gigpress-subscribe a,
@@ -2031,7 +2031,7 @@ img#wpstats {
 		width: 390px;			
 	}	
 	#site-title a {
-		background: url(images/tx-state-regions.png) no-repeat -5px -2px;
+		background: url('images/tx-state-regions.png') no-repeat -5px -2px;
 		font: 32px 'arno pro', georgia, serif;
 		margin-left: 10px;
 		padding: 5px 0 60px 100px;	

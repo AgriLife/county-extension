@@ -41,6 +41,14 @@ if ( ! function_exists( 'county_ext_setup' ) ):
  */
 function county_ext_setup() {
 
+	// Remove things that get stuck up in the doc head that we don't need
+	remove_action( 'wp_head', 'wp_generator' );
+	remove_action( 'wp_head', 'index_rel_link' );
+	remove_action( 'wp_head', 'rsd_link' );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
+	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start
+
 	add_action( 'wp_print_styles', 'add_ie_style_sheet', 200 );
 	function add_ie_style_sheet() {
 	    wp_enqueue_style( 'ie7', get_bloginfo('stylesheet_directory') . '/css/ie.css', array(), '1.0' );
@@ -66,7 +74,7 @@ function county_ext_setup() {
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
 	// Add new image sizes
-	add_image_size('featured',960,9999);
+	add_image_size('featured',564,350, true);
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
