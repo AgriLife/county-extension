@@ -124,6 +124,12 @@ function county_ext_setup() {
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"), false);		
 	   	wp_enqueue_script('jquery');
+		
+		// register script location with wp_register_script	
+	   	wp_register_script('modernizr',
+	       	get_bloginfo('stylesheet_directory') . '/js/modernizr-2.0.6.min.js');	
+	       // enqueue the custom jquery js
+	   	wp_enqueue_script('modernizr');
 					
 		// register script location with wp_register_script	
 	   	wp_register_script('my_jquery',
