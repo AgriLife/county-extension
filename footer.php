@@ -90,7 +90,7 @@
 		<div id="agrilife-bookstore">
 			<div class="agrilife-bookstore">			
 			<h4>AgriLife Bookstore</h4>
-				<a href="https://agrilifebookstore.org/"><img src="<?php bloginfo( 'template_directory' ); ?>/images/bookstore-books.png" alt="Image of books for the AgriLife Bookstore" /></a>
+				<a href="https://agrilifelearn.tamu.edu/"><img src="<?php bloginfo( 'template_directory' ); ?>/images/bookstore-books.png" alt="Image of books for the AgriLife Bookstore" /></a>
 				<p>The Texas AgriLife Extension Bookstore offers educational publications, CDs and videos on topics related to agriculture, 4-H and youth development.</p>				
 			</div><!-- .agrilife-bookstore -->			
 		</div><!-- #agrilife-bookstore -->
